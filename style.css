@@ -1,7 +1,8 @@
 body {
-  font-family: 'Inter', sans-serif;
   margin: 0;
+  font-family: 'Inter', sans-serif;
   color: #1a1a1a;
+  background: #fff;
 }
 
 /* TOP BAR */
@@ -10,29 +11,36 @@ body {
   color: white;
   text-align: center;
   padding: 6px;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 /* NAV */
-.navbar {
+.nav {
   background: white;
-  border-bottom: 1px solid #eee;
   position: sticky;
   top: 0;
+  border-bottom: 1px solid #eee;
 }
 
-.nav-flex {
+.navwrap {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px;
 }
 
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
 /* HERO */
 .hero {
   background: linear-gradient(135deg,#0a6ebd,#00a8a8);
   color: white;
-  padding: 80px 20px;
+  padding: 90px 20px;
 }
 
 .hero-grid {
@@ -43,7 +51,7 @@ body {
 }
 
 .hero-img img {
-  width: 250px;
+  width: 260px;
   border-radius: 16px;
 }
 
@@ -65,16 +73,25 @@ body {
   margin-left: 10px;
 }
 
-/* STATS */
-.stats {
+/* TRUST */
+.trust {
   background: #f5f7fb;
-  padding: 40px 0;
+  padding: 20px 0;
 }
 
-.stats-grid {
+.trust-grid {
   display: flex;
   justify-content: space-around;
-  text-align: center;
+  font-weight: 600;
+}
+
+/* SECTION */
+.section {
+  padding: 70px 20px;
+}
+
+.light {
+  background: #f7f9fc;
 }
 
 /* GRID */
@@ -90,14 +107,16 @@ body {
   background: white;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
 }
 
 /* FORM */
-.form input, .form select, .form textarea {
+.form input,
+.form select,
+.form textarea {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin-top: 10px;
-  border: 1px solid #ddd;
   border-radius: 8px;
+  border: 1px solid #ddd;
 }
