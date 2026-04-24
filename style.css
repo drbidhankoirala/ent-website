@@ -29,13 +29,6 @@ body {
   padding: 15px;
 }
 
-nav a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-}
-
 /* HERO */
 .hero {
   background: linear-gradient(135deg,#0a6ebd,#00a8a8);
@@ -73,19 +66,7 @@ nav a {
   margin-left: 10px;
 }
 
-/* TRUST */
-.trust {
-  background: #f5f7fb;
-  padding: 20px 0;
-}
-
-.trust-grid {
-  display: flex;
-  justify-content: space-around;
-  font-weight: 600;
-}
-
-/* SECTION */
+/* GRID */
 .section {
   padding: 70px 20px;
 }
@@ -94,7 +75,6 @@ nav a {
   background: #f7f9fc;
 }
 
-/* GRID */
 .grid {
   display: flex;
   gap: 20px;
