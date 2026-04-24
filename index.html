@@ -1,79 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-  <form action="https://formspree.io/f/mjgjjdol" method="POST" class="form">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Dr. Bidhan Koirala | ENT & Head Neck Oncosurgeon</title>
-<meta name="description" content="ENT, Thyroid & Head Neck Cancer Specialist in Bharatpur">
+<title>Dr. Bidhan Koirala | ENT & Head Neck Oncosurgeon | Bharatpur</title>
+
+<meta name="description" content="Advanced ENT, Thyroid & Head & Neck Cancer treatment in Bharatpur, Nepal">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 
-</head>
-<body>
+<script>
+function setLang(lang){
+  document.querySelectorAll('[data-en]').forEach(e=>{
+    e.style.display = (lang==='en') ? 'block':'none';
+  });
+  document.querySelectorAll('[data-ne]').forEach(e=>{
+    e.style.display = (lang==='ne') ? 'block':'none';
+  });
+}
+</script>
 
+</head>
+
+<body onload="setLang('en')">
+
+<!-- TOP ALERT -->
+<div class="topbar">
+  <p>24/7 Emergency ENT & Head-Neck Consultation Available</p>
+</div>
+
+<!-- NAV -->
 <header class="navbar">
   <div class="container nav-flex">
     <h1 class="logo">Dr. Koirala</h1>
+
     <nav>
       <a href="#home">Home</a>
       <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#booking" class="nav-btn">Book</a>
+      <a href="#services">Departments</a>
+      <a href="#booking">Appointment</a>
     </nav>
+
+    <div class="lang">
+      <button onclick="setLang('en')">EN</button>
+      <button onclick="setLang('ne')">नेपाली</button>
+    </div>
   </div>
 </header>
 
 <!-- HERO -->
 <section id="home" class="hero">
+
   <div class="container hero-grid">
-    
+
     <div>
-      <h2>Precision ENT & Head–Neck Cancer Surgery</h2>
-      <p>Advanced, evidence-based care in ENT, thyroid and oncology.</p>
-      <a href="#booking" class="btn-primary">Book Appointment</a>
+      <h2 data-en>Advanced ENT & Head-Neck Cancer Care</h2>
+      <h2 data-ne style="display:none;">उन्नत ENT तथा हेड नेक क्यान्सर उपचार</h2>
+
+      <p data-en>Specialized surgical care in ENT, Thyroid & Oncology – Bharatpur</p>
+      <p data-ne style="display:none;">ENT, थाइराइड तथा क्यान्सरको विशेषज्ञ उपचार – भरतपुर</p>
+
+      <div class="cta">
+        <a href="#booking" class="btn-primary">Book Appointment</a>
+        <a href="https://wa.me/9779828769908" class="btn-outline">WhatsApp</a>
+      </div>
     </div>
 
     <div class="hero-img">
-      <img src="images/doctor.jpg" alt="Dr Koirala">
+      <img src="images/doctor.jpg" alt="Doctor">
     </div>
 
   </div>
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="section">
+<section class="section">
   <div class="container">
-    <h2>About</h2>
+
+    <h2 data-en>About Consultant</h2>
+    <h2 data-ne style="display:none;">डाक्टर परिचय</h2>
+
     <p>
-      ENT & Head-Neck Oncosurgeon specializing in thyroid and cancer surgery.
-      Delivering precision surgery with patient-centered care.
+      ENT & Head-Neck Oncosurgeon with expertise in thyroid surgery and head & neck oncology.
+      Focused on evidence-based, patient-centered care in Bharatpur.
     </p>
+
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="container stats-grid">
+
+    <div>
+      <h3>1000+</h3>
+      <p>Surgeries</p>
+    </div>
+
+    <div>
+      <h3>10+ Years</h3>
+      <p>Experience</p>
+    </div>
+
+    <div>
+      <h3>24/7</h3>
+      <p>Emergency Care</p>
+    </div>
+
   </div>
 </section>
 
 <!-- SERVICES -->
 <section id="services" class="section light">
   <div class="container">
-    <h2>Services</h2>
+
+    <h2 data-en>Clinical Departments</h2>
+    <h2 data-ne style="display:none;">क्लिनिकल विभागहरू</h2>
 
     <div class="grid">
+
       <div class="card">
-        <h3>ENT Care</h3>
-        <p>Sinus, ear, allergy, voice disorders</p>
+        <h3>ENT Services</h3>
+        <p>Sinus, ear disease, allergy, voice disorders</p>
       </div>
 
       <div class="card">
-        <h3>Thyroid Surgery</h3>
-        <p>Nodules, goiter, thyroid cancer</p>
+        <h3>Thyroid Unit</h3>
+        <p>Goiter, nodules, thyroid cancer surgery</p>
       </div>
 
       <div class="card">
         <h3>Head & Neck Oncology</h3>
-        <p>Oral, larynx, neck tumors</p>
+        <p>Oral cancer, larynx cancer, neck tumors</p>
       </div>
+
     </div>
 
   </div>
@@ -82,9 +144,10 @@
 <!-- BOOKING -->
 <section id="booking" class="section">
   <div class="container">
+
     <h2>Book Appointment</h2>
 
-    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="form">
+    <form action="https://formspree.io/f/mjgjjdol" method="POST" class="form">
 
       <input type="text" name="name" placeholder="Full Name" required>
       <input type="tel" name="phone" placeholder="Phone Number" required>
@@ -93,35 +156,40 @@
       <select name="service">
         <option>ENT Consultation</option>
         <option>Thyroid Consultation</option>
-        <option>Cancer Consultation</option>
+        <option>Head & Neck Cancer Consultation</option>
       </select>
 
       <textarea name="message" placeholder="Describe your problem"></textarea>
 
-      <button type="submit" class="btn-primary">Submit</button>
+      <button type="submit" class="btn-primary">Submit Request</button>
 
     </form>
+
   </div>
 </section>
 
 <!-- CONTACT -->
 <section class="section light">
   <div class="container">
-    <h2>Contact</h2>
+
+    <h2>Contact & Location</h2>
+
     <p>📞 +977-9828769908</p>
     <p>📍 Bharatpur, Nepal</p>
-<a href="https://wa.me/9779828769908" class="whatsapp-float" target="_blank">
-  WhatsApp
-    <iframe 
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1046.2763821278277!2d84.43172263019791!3d27.685122138175437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3994fb63be173f5b%3A0x551928f70d657130!2sDr.%20Bidhan%20Koirala-ENT%20%2CHead%20and%20Neck%20Oncosurgeon!5e1!3m2!1sen!2snp!4v1777011369689!5m2!1sen!2snp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>"
+
+    <a href="https://wa.me/9779828769908" class="btn-primary">WhatsApp</a>
+
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1046.2763821278277!2d84.43172263019791!3d27.685122138175437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1"
+      width="100%" height="320" style="border:0;" loading="lazy">
     </iframe>
+
   </div>
 </section>
 
 <footer>
-  <p>© 2026 Dr. Bidhan Koirala</p>
+  <p>© 2026 Dr. Bidhan Koirala | ENT & Head Neck Surgery, Bharatpur</p>
 </footer>
 
-</a>
 </body>
 </html>
