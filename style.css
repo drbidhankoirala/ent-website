@@ -156,3 +156,47 @@ input:focus, textarea:focus, select:focus {
   font-size: 13px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
+:root {
+  --bg: #0b1220;
+  --surface: #111a2e;
+  --primary: #1f7a8c;
+  --accent: #2aa3b3;
+  --text: #eaf2f8;
+  --muted: #9fb0c7;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* buttons */
+.btn-primary {
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #1f7a8c, #2aa3b3);
+  color: white;
+  border-radius: 10px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn-outline {
+  padding: 12px 20px;
+  border: 1px solid #2aa3b3;
+  color: #2aa3b3;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+/* cards */
+.card {
+  background: #111a2e;
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: #2aa3b3;
+}
