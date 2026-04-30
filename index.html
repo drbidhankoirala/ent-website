@@ -1,23 +1,107 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Head & Neck Oncology Institute | Bharatpur</title>
-<link rel="stylesheet" href="style.css">
+
+<style>
+body {
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:#f1f5f9;
+  color:#0f172a;
+}
+
+header {
+  background:white;
+  padding:20px;
+  text-align:center;
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
+}
+
+nav a {
+  margin:0 12px;
+  text-decoration:none;
+  color:#0284c7;
+  font-weight:600;
+}
+
+.hero {
+  background:linear-gradient(135deg,#0284c7,#0ea5e9);
+  color:white;
+  text-align:center;
+  padding:70px 20px;
+}
+
+.hero h2 {
+  font-size:32px;
+}
+
+.btn {
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 22px;
+  border-radius:8px;
+  background:#16a34a;
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.container {
+  max-width:1000px;
+  margin:auto;
+  padding:40px 20px;
+}
+
+.section-title {
+  text-align:center;
+  margin-bottom:30px;
+  color:#b91c1c;
+}
+
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+}
+
+.card {
+  background:white;
+  padding:25px;
+  border-radius:14px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.05);
+}
+
+.cta {
+  text-align:center;
+  background:white;
+  padding:50px 20px;
+}
+
+.whatsapp {
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:white;
+  padding:16px;
+  border-radius:50%;
+  font-size:22px;
+  box-shadow:0 6px 15px rgba(0,0,0,0.3);
+  text-decoration:none;
+}
+</style>
+
 </head>
-<div class="fab">
 
-  <a href="tel:+9779828769908">📞 Call</a>
-
-  <a href="https://wa.me/9779828769908">💬 WhatsApp</a>
-
-  <a href="appointment.html">📅 Book</a>
-
-</div>
 <body>
 
-<header class="container">
+<header>
   <h1>Head & Neck Oncology Institute</h1>
-  <p>ENT • Thyroid • Head & Neck Cancer Care | Bharatpur, Nepal</p>
+  <p>ENT • Thyroid • Head & Neck Cancer Care | Bharatpur</p>
 
   <nav>
     <a href="about.html">About</a>
@@ -30,43 +114,70 @@
 </header>
 
 <section class="hero">
-  <div class="container">
-
-    <h2>Advanced Surgical Care in ENT & Oncology</h2>
-
-    <p>
-      Evidence-based treatment for head & neck cancers, thyroid diseases and ENT disorders.
-    </p>
-
-    <a class="btn" href="appointment.html">Book Consultation</a>
-
-  </div>
+  <h2>Precision Surgery. Better Outcomes.</h2>
+  <p>Specialized care in thyroid, ENT, and head & neck cancer with focus on function and quality of life.</p>
+  <a class="btn" href="appointment.html">Book Consultation</a>
 </section>
 
 <section class="container">
-
-  <h2>Core Specialties</h2>
+  <h2 class="section-title">Core Expertise</h2>
 
   <div class="grid">
-
     <div class="card">
       <h3>Oral Cancer</h3>
-      <p>Early diagnosis, surgery & reconstruction</p>
+      <p>Early detection, oncologic resection, and reconstruction.</p>
     </div>
 
     <div class="card">
       <h3>Thyroid Surgery</h3>
-      <p>Goiter, nodules, thyroid malignancy</p>
+      <p>Safe thyroidectomy with nerve preservation.</p>
     </div>
 
     <div class="card">
       <h3>Head & Neck Oncology</h3>
-      <p>Complex tumor & neck mass management</p>
+      <p>Complex tumor surgery with cosmetic and functional outcomes.</p>
     </div>
+  </div>
+</section>
 
+<section class="cta">
+  <h2>Early Diagnosis Saves Life & Function</h2>
+  <a class="btn" href="appointment.html">Book Appointment</a>
+</section>
+
+<!-- MAP SECTION -->
+<section style="padding:30px 20px; text-align:center; background:#f8fafc;">
+
+  <h3>Find Us</h3>
+  <p style="font-size:14px; color:#475569;">
+    Dr. Bidhan Koirala – ENT, Head & Neck Oncosurgeon
+  </p>
+
+  <div style="max-width:500px; margin:auto; border-radius:10px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+    <iframe 
+      src="https://www.google.com/maps?q=Dr.+Bidhan+Koirala+ENT+Head+and+Neck+Oncosurgeon+Bharatpur&output=embed"
+      width="100%" 
+      height="220" 
+      style="border:0;" 
+      loading="lazy">
+    </iframe>
+  </div>
+
+  <div style="margin-top:10px;">
+    <a href="https://www.google.com/maps/dir/?api=1&destination=Dr.+Bidhan+Koirala+ENT+Head+and+Neck+Oncosurgeon+Bharatpur"
+    target="_blank"
+    style="display:inline-block; padding:10px 18px; background:#0284c7; color:white; border-radius:6px; text-decoration:none;">
+    📍 Get Directions
+    </a>
   </div>
 
 </section>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/9779828769908?text=Hello%20Doctor,%20I%20would%20like%20to%20book%20consultation."
+class="whatsapp" target="_blank">
+💬
+</a>
 
 </body>
 </html>
