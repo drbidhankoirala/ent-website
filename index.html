@@ -14,6 +14,7 @@ body {
   color:#0f172a;
 }
 
+/* HEADER */
 header {
   background:white;
   padding:20px;
@@ -21,31 +22,63 @@ header {
   box-shadow:0 2px 10px rgba(0,0,0,0.05);
 }
 
+nav {
+  margin-top:10px;
+}
+
 nav a {
-  margin:0 12px;
+  margin:0 10px;
   text-decoration:none;
   color:#0284c7;
   font-weight:600;
+  padding:6px 10px;
+  border-radius:6px;
+  transition:0.3s;
 }
 
+nav a:hover {
+  background:#e0f2fe;
+}
+
+/* HERO */
 .hero {
   background:linear-gradient(135deg,#0284c7,#0ea5e9);
   color:white;
   text-align:center;
-  padding:70px 20px;
+  padding:80px 20px;
 }
 
+.hero h2 {
+  font-size:32px;
+  margin-bottom:10px;
+}
+
+.hero p {
+  max-width:600px;
+  margin:auto;
+  opacity:0.95;
+}
+
+/* PREMIUM BUTTON */
 .btn {
   display:inline-block;
   margin-top:20px;
-  padding:12px 22px;
+  padding:12px 24px;
   border-radius:8px;
-  background:#16a34a;
+  background:linear-gradient(135deg,#16a34a,#22c55e);
   color:white;
   text-decoration:none;
-  font-weight:bold;
+  font-weight:600;
+  transition:0.3s;
+  box-shadow:0 4px 12px rgba(0,0,0,0.2);
 }
 
+.btn:hover {
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* CONTAINER */
 .container {
   max-width:1000px;
   margin:auto;
@@ -58,19 +91,30 @@ nav a {
   color:#b91c1c;
 }
 
+/* GRID */
 .grid {
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:20px;
 }
 
+/* CARD (CLICKABLE) */
 .card {
   background:white;
   padding:25px;
   border-radius:14px;
   box-shadow:0 8px 20px rgba(0,0,0,0.05);
+  transition:0.3s;
+  text-decoration:none;
+  color:inherit;
 }
 
+.card:hover {
+  transform:translateY(-5px);
+  box-shadow:0 12px 30px rgba(0,0,0,0.15);
+}
+
+/* WHATSAPP */
 .whatsapp {
   position:fixed;
   bottom:20px;
@@ -98,15 +142,15 @@ nav a {
     <a href="oral-cancer.html">Oral Cancer</a>
     <a href="thyroid.html">Thyroid</a>
     <a href="head-neck.html">Head & Neck</a>
-    <a href="appointment.html">Appointment</a>
-    <a href="contact.html">Contact</a>
+    <a href="appointment.html" class="btn">Book</a>
   </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-  <h2>Specialized Cancer Surgery with Precision & Care</h2>
+  <h2>Focused Surgical Care for Head & Neck Cancer</h2>
   <p>
-  Led by Dr. Bidhan Koirala, providing advanced head & neck cancer surgery at CMC Cancer Institute with focus on function and long-term outcomes.
+  Dedicated to precise, safe cancer surgery with emphasis on speech, swallowing, and long-term quality of life.
   </p>
   <a class="btn" href="appointment.html">Book Consultation</a>
 </section>
@@ -116,15 +160,11 @@ nav a {
   <div style="display:flex; justify-content:center; gap:40px; flex-wrap:wrap;">
     <div>
       <h2 style="margin:0; color:#0284c7;">1000+</h2>
-      <p style="margin:0; font-size:14px; color:#475569;">Surgeries</p>
+      <p style="margin:0; font-size:14px;">Surgeries</p>
     </div>
     <div>
       <h2 style="margin:0; color:#0284c7;">10+ Years</h2>
-      <p style="margin:0; font-size:14px; color:#475569;">Experience</p>
-    </div>
-    <div>
-      <h2 style="margin:0; color:#0284c7;">Specialist</h2>
-      <p style="margin:0; font-size:14px; color:#475569;">Oncosurgery</p>
+      <p style="margin:0; font-size:14px;">Experience</p>
     </div>
   </div>
 </section>
@@ -134,20 +174,22 @@ nav a {
   <h2 class="section-title">Core Services</h2>
 
   <div class="grid">
-    <div class="card">
+
+    <a href="oral-cancer.html" class="card">
       <h3>Oral Cancer</h3>
       <p>Early diagnosis, surgery, and reconstruction.</p>
-    </div>
+    </a>
 
-    <div class="card">
+    <a href="thyroid.html" class="card">
       <h3>Thyroid Cancer</h3>
       <p>Safe thyroid surgery with nerve preservation.</p>
-    </div>
+    </a>
 
-    <div class="card">
+    <a href="head-neck.html" class="card">
       <h3>Head & Neck Cancer</h3>
       <p>Comprehensive management of complex tumors.</p>
-    </div>
+    </a>
+
   </div>
 </section>
 
@@ -159,32 +201,23 @@ nav a {
 
     <div style="flex:1; text-align:center;">
       <img src="profile.jpg" alt="Dr Bidhan Koirala"
-      style="width:220px; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.15);">
+      style="width:220px; border-radius:12px;">
     </div>
 
     <div style="flex:2;">
       <h3>Dr. Bidhan Koirala</h3>
       <p><b>MBBS, MS-ENT & Head & Neck Surgery</b></p>
-      <p><b>NMC: 16430</b></p>
 
       <p>
       Assistant Professor – ENT & Head & Neck Oncosurgery  
-      <br><b>CMC Cancer Institute, Bharatpur</b>
-      </p>
-
-      <p>
-      Fellowship – Tata Medical Center, India
+      <br><b>CMC Cancer Institute</b>
       </p>
 
       <p style="color:#475569;">
-      Over <b>10+ years of experience</b> with <b>1000+ surgeries</b>, specializing in thyroid, oral, and complex head & neck cancers with focus on functional outcomes.
+      Over <b>10+ years of experience</b> with <b>1000+ surgeries</b>, focusing on thyroid, oral, and complex head & neck cancers.
       </p>
 
-      <!-- AFFILIATION -->
-      <div style="margin-top:15px; padding:12px; background:#f1f5f9; border-radius:8px;">
-        <b>Affiliation:</b><br>
-        CMC Cancer Institute, Bharatpur
-      </div>
+      <a href="about.html" class="btn">View Full Profile</a>
 
     </div>
 
@@ -193,43 +226,22 @@ nav a {
 
 <!-- MAP -->
 <section style="padding:40px 20px; text-align:center; background:#f8fafc;">
-
   <h3>Find Us</h3>
 
-  <p style="font-size:14px; color:#475569;">
-    Dr. Bidhan Koirala – ENT, Head & Neck Oncosurgeon
-  </p>
-
-  <div style="max-width:600px; margin:auto; border-radius:12px; overflow:hidden; box-shadow:0 6px 18px rgba(0,0,0,0.1);">
-    
+  <div style="max-width:600px; margin:auto; border-radius:12px; overflow:hidden;">
     <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28153.777238551003!2d84.426752!3d27.685683199999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3994fb63be173f5b%3A0x551928f70d657130!2sDr.%20Bidhan%20Koirala-ENT%20%2CHead%20and%20Neck%20Oncosurgeon!5e1!3m2!1sen!2snp!4v1777012901984!5m2!1sen!2snp"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28153.777238551003!2d84.426752!3d27.685683199999996"
     width="100%" height="250"
     style="border:0;" loading="lazy">
     </iframe>
-
   </div>
 
-  <div style="margin-top:15px;">
-    <a href="https://www.google.com/maps/dir/?api=1&destination=Dr.+Bidhan+Koirala+ENT+Head+and+Neck+Oncosurgeon"
-    target="_blank"
-    style="display:inline-block; padding:12px 20px; background:#0284c7; color:white; border-radius:8px; text-decoration:none;">
-    📍 Get Directions
-    </a>
-  </div>
-
+  <a href="https://www.google.com/maps/dir/?api=1&destination=Dr.+Bidhan+Koirala"
+  target="_blank" class="btn">Get Directions</a>
 </section>
 
-<!-- FOOTER LINE -->
-<p style="text-align:center; font-size:13px; color:#64748b; padding:20px;">
-Consultations and surgeries performed at CMC Cancer Institute, Bharatpur
-</p>
-
 <!-- WHATSAPP -->
-<a href="https://wa.me/9779828769908?text=Hello%20Doctor,%20I%20would%20like%20to%20book%20consultation."
-class="whatsapp" target="_blank">
-💬
-</a>
+<a href="https://wa.me/9779828769908" class="whatsapp">💬</a>
 
 </body>
 </html>
