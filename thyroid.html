@@ -1,210 +1,332 @@
-<section class="container">
+<!DOCTYPE html>
 
-<h1 style="color:#b91c1c;">Thyroid Cancer Management</h1>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thyroid Cancer Specialist | Dr. Bidhan Koirala</title>
 
-<!-- LANGUAGE TOGGLE -->
-<div style="margin-bottom:20px;">
-<button onclick="showLang('en')" class="btn">English</button>
-<button onclick="showLang('np')" class="btn">नेपाली</button>
+<style>
+:root {
+  --primary:#0f172a; --accent:#0ea5e9; --accent2:#22c55e;
+}
+body{
+  margin:0; font-family:'Segoe UI',sans-serif;
+  background:linear-gradient(135deg,#f8fafc,#e0f2fe); color:#1e293b;
+}
+
+/* NAVBAR */
+.navbar{
+  position:fixed; top:0; width:100%; z-index:1000;
+  backdrop-filter:blur(10px); background:rgba(255,255,255,0.75);
+  display:flex; justify-content:space-between; padding:10px 20px;
+}
+.brand{font-weight:700;}
+.lang-toggle{cursor:pointer; padding:6px 10px; background:#0ea5e9; color:#fff; border-radius:6px;}
+
+/* HERO */
+.hero{
+  background:linear-gradient(135deg,#0ea5e9,#22c55e);
+  color:#fff; padding:120px 20px 80px; text-align:center; position:relative;
+}
+.badge{
+  position:absolute; top:20px; right:20px;
+  background:rgba(255,255,255,0.2); padding:10px; border-radius:10px;
+}
+
+/* SECTION */
+.section{
+  background:rgba(255,255,255,0.9); margin:30px; padding:25px;
+  border-radius:16px; box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+h2{border-left:5px solid var(--accent); padding-left:10px;}
+
+/* GRID */
+.grid{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
+}
+.card{
+  background:#f1f5f9; padding:15px; border-radius:10px;
+}
+
+/* BUTTON */
+.btn{
+  padding:12px 20px; background:#0ea5e9; color:#fff;
+  border-radius:8px; text-decoration:none;
+}
+
+/* FLOAT */
+.floating{
+  position:fixed; right:20px; bottom:20px;
+  display:flex; flex-direction:column; gap:10px;
+}
+.whatsapp{background:#25D366; color:#fff; padding:10px; border-radius:50px; text-decoration:none;}
+.call{background:#0ea5e9; color:#fff; padding:10px; border-radius:50px; text-decoration:none;}
+
+.hidden{display:none;}
+
+.highlight{
+  margin:20px 30px; padding:20px;
+  background:linear-gradient(135deg,#0ea5e9,#0284c7);
+  color:#fff; border-radius:12px; text-align:center; font-weight:600;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+  <div class="brand">Dr. Bidhan Koirala</div>
+  <div class="lang-toggle" onclick="toggleLang()">नेपाली</div>
 </div>
 
-<!-- ================= ENGLISH ================= -->
-<div id="en">
+<!-- HERO -->
 
-<p>
-<b>Thyroid cancer is highly treatable when managed correctly. The key is accurate surgery with preservation of vital structures.</b>
-</p>
+<section class="hero">
+  <div class="badge">Head & Neck Surgeon</div>
 
-<h2 style="color:#0284c7;">Early Signs</h2>
-<ul>
-<li>Neck swelling / thyroid nodule</li>
-<li>Voice change (hoarseness)</li>
-<li>Difficulty swallowing</li>
-<li>Neck lymph node enlargement</li>
-</ul>
+  <h1 class="en">Thyroid Cancer Specialist</h1>
+  <h1 class="np hidden">थाइराइड क्यान्सर विशेषज्ञ</h1>
 
-<h2 style="color:#f59e0b;">Risk Factors</h2>
-<ul>
-<li>Iodine imbalance</li>
-<li>Radiation exposure (childhood)</li>
-<li>Family history</li>
-<li>Female gender</li>
-<li>Long-standing goiter</li>
-</ul>
+  <p class="en">Precision Surgery • Early Detection • Advanced Cancer Care</p>
+  <p class="np hidden">सटीक शल्यक्रिया • छिटो पहिचान • आधुनिक उपचार</p>
 
-<h2 style="color:#7c3aed;">Final Staging</h2>
-<ul>
-<li>TNM Classification (AJCC 8th edition)</li>
-<li>Final staging after surgery (Histopathology – pTNM)</li>
-</ul>
-
-<h2 style="color:#16a34a;">Types & Prognosis</h2>
-<p><b>Papillary (PTC)</b> – OS >95%, DFS 85–90%</p>
-<p><b>Follicular (FTC)</b> – OS 80–90%, DFS 70–85%</p>
-<p><b>Medullary (MTC)</b> – OS 60–80%</p>
-<p><b>Anaplastic (ATC)</b> – OS <10–20%</p>
-
-<h2 style="color:#16a34a;">Treatment</h2>
-<ul>
-<li>FNAC (Bethesda)</li>
-<li>Surgery (Hemi/Total thyroidectomy)</li>
-<li>Neck dissection</li>
-<li>Radioactive iodine (RAI)</li>
-<li>TSH suppression</li>
-</ul>
-
-<h2 style="color:#0284c7;">Post-Thyroidectomy Hypocalcemia</h2>
-<ul>
-<li>Tingling, cramps due to low calcium</li>
-<li>Usually temporary</li>
-<li>Rarely permanent</li>
-</ul>
-<p><b>Expert surgery reduces this risk significantly.</b></p>
-
-<h2 style="color:#0284c7;">Voice Change After Surgery</h2>
-<ul>
-<li>Temporary: <b>3–10%</b></li>
-<li>Permanent: <b><1%</b></li>
-<li>Symptoms: hoarseness, weak voice</li>
-</ul>
-<p><b>Proper nerve preservation minimizes risk.</b></p>
-
-<h2 style="color:#dc2626;">Why High-Volume Oncosurgeon?</h2>
-<ul>
-<li>Lower complication rates</li>
-<li>Better nerve preservation</li>
-<li>Better long-term outcomes</li>
-</ul>
-
-<h2 style="color:#dc2626;">Why Head & Neck Oncosurgeon?</h2>
-<ul>
-<li>Precise RLN & EBSLN preservation</li>
-<li>Parathyroid preservation</li>
-<li>Complete cancer removal</li>
-<li>Expert neck dissection</li>
-</ul>
-
-</div>
-
-<!-- ================= NEPALI ================= -->
-<div id="np" style="display:none;">
-
-<p>
-<b>थाइराइड क्यान्सर सही तरिकाले उपचार गरेमा धेरैजसो अवस्थामा निको हुन सक्छ। सही सर्जरी र विशेषज्ञको छनोट अत्यन्त महत्त्वपूर्ण हुन्छ।</b>
-</p>
-
-<h2 style="color:#0284c7;">प्रारम्भिक लक्षणहरू</h2>
-<ul>
-<li>घाँटीमा गाँठो देखिनु वा बढ्दै जानु</li>
-<li>स्वर बस्नु</li>
-<li>निल्न गाह्रो हुनु</li>
-<li>घाँटीका गाँठा बढ्नु</li>
-</ul>
-
-<h2 style="color:#f59e0b;">जोखिम कारकहरू</h2>
-<ul>
-<li>आयोडिनको कमी वा बढी</li>
-<li>Radiation exposure</li>
-<li>परिवारिक इतिहास</li>
-<li>महिला</li>
-<li>लामो समयको गोइटर</li>
-</ul>
-
-<h2 style="color:#7c3aed;">स्टेज निर्धारण</h2>
-<ul>
-<li>TNM प्रणाली</li>
-<li>T – ट्युमरको आकार</li>
-<li>N – लिम्फ नोड</li>
-<li>M – टाढा फैलावट</li>
-</ul>
-
-<p><b>अन्तिम स्टेज अपरेशनपछि Histopathology बाट निर्धारण हुन्छ।</b></p>
-
-<h2 style="color:#16a34a;">प्रकार र नतिजा</h2>
-<ul>
-<li>PTC – धेरै राम्रो</li>
-<li>FTC – मध्यम</li>
-<li>MTC – विशेष</li>
-<li>ATC – गम्भीर</li>
-</ul>
-
-<h2 style="color:#16a34a;">उपचार</h2>
-<ul>
-<li>FNAC</li>
-<li>सर्जरी</li>
-<li>Neck dissection</li>
-<li>RAI therapy</li>
-</ul>
-
-<h2 style="color:#0284c7;">Hypocalcemia (क्याल्सियम घट्ने)</h2>
-<ul>
-<li>झमझमाहट, क्र्याम्प</li>
-<li>अधिकांश temporary</li>
-<li>दुर्लभमा permanent</li>
-</ul>
-
-<h2 style="color:#0284c7;">आवाज परिवर्तन</h2>
-<ul>
-<li>अस्थायी: ३–१०%</li>
-<li>स्थायी: १% भन्दा कम</li>
-<li>स्वर बस्नु, कमजोर आवाज</li>
-</ul>
-
-<h2 style="color:#dc2626;">किन High-volume Surgeon?</h2>
-<ul>
-<li>कम complication</li>
-<li>नस सुरक्षित</li>
-<li>राम्रो नतिजा</li>
-</ul>
-
-<h2 style="color:#dc2626;">किन Oncosurgeon?</h2>
-<ul>
-<li>सही अपरेशन</li>
-<li>नस जोगाउने</li>
-<li>क्यान्सर हटाउने</li>
-</ul>
-
-</div>
-
-<!-- CONTACT BUTTONS -->
-<div style="margin-top:20px; display:flex; gap:10px; flex-wrap:wrap;">
-
-<a href="https://wa.me/9779828769908?text=Hello%20Doctor,%20I%20would%20like%20to%20book%20consultation%20for%20thyroid%20problem.%0AName:%0AAge:%0ASymptoms:%0ADuration:"
-target="_blank"
-style="background:#25D366; color:white; padding:12px 18px; border-radius:8px; text-decoration:none; font-weight:bold;">
-📱 WhatsApp Booking
-</a>
-
-<a href="https://health.hamropatro.com/doctors/dr_bidhan_koirala_16430"
-target="_blank"
-style="background:#0ea5e9; color:white; padding:12px 18px; border-radius:8px; text-decoration:none; font-weight:bold;">
-📅 Book via HamroPatro
-</a>
-
-</div>
+<a href="contact.html" class="btn en">Book Consultation</a> <a href="contact.html" class="btn np hidden">परामर्श लिनुहोस्</a>
 
 </section>
 
-<!-- FLOATING BUTTONS -->
-<div style="position:fixed; bottom:20px; right:20px; display:flex; flex-direction:column; gap:10px; z-index:999;">
+<!-- HIGHLIGHT -->
 
-<a href="https://wa.me/9779828769908?text=Hello%20Doctor,%20I%20would%20like%20to%20book%20consultation%20for%20thyroid%20problem.%0AName:%0AAge:%0ASymptoms:%0ADuration:"
-target="_blank"
-style="background:#25D366; color:white; padding:14px; border-radius:50%; text-align:center; font-size:20px;">
-💬
-</a>
+<div class="highlight">
+  <span class="en">⚠ Many thyroid cancers may have no symptoms initially — early check-up is important</span>
+  <span class="np hidden">⚠ धेरै थाइराइड क्यान्सर सुरुमा लक्षण नदेखिन सक्छ — समयमै जाँच जरुरी</span>
+</div>
 
-<a href="https://health.hamropatro.com/doctors/dr_bidhan_koirala_16430"
-target="_blank"
-style="background:#0ea5e9; color:white; padding:14px; border-radius:50%; text-align:center; font-size:20px;">
-📅
-</a>
+<!-- TYPES -->
 
+<div class="section">
+  <h2 class="en">Types of Thyroid Cancer</h2>
+  <h2 class="np hidden">थाइराइड क्यान्सरका प्रकार</h2>
+
+  <div class="grid">
+    <div class="card en">Papillary (most common, excellent prognosis)</div>
+    <div class="card np hidden">प्यापिलरी (सबैभन्दा धेरै, राम्रो निको हुन्छ)</div>
+
+```
+<div class="card en">Follicular</div>
+<div class="card np hidden">फोलिकुलर</div>
+
+<div class="card en">Medullary</div>
+<div class="card np hidden">मेडुलरी</div>
+
+<div class="card en">Anaplastic (rare, aggressive)</div>
+<div class="card np hidden">एनाप्लास्टिक (दुर्लभ, आक्रामक)</div>
+```
+
+  </div>
+</div>
+
+<!-- SYMPTOMS -->
+
+<div class="section">
+  <h2 class="en">Possible Signs</h2>
+  <h2 class="np hidden">सम्भावित लक्षण</h2>
+
+  <div class="grid">
+    <div class="card en">Neck lump (moves on swallowing)</div>
+    <div class="card np hidden">निल्दा सर्ने गाँठो</div>
+
+```
+<div class="card en">Voice change</div>
+<div class="card np hidden">आवाज परिवर्तन</div>
+
+<div class="card en">Difficulty swallowing</div>
+<div class="card np hidden">निल्न गाह्रो</div>
+
+<div class="card en">Breathing difficulty</div>
+<div class="card np hidden">सास फेर्न गाह्रो</div>
+```
+
+  </div>
+</div>
+
+<!-- WHEN TO SEE DOCTOR -->
+
+<div class="section">
+  <h2 class="en">When Should You See a Doctor?</h2>
+  <h2 class="np hidden">कहिले डाक्टर देखाउने?</h2>
+
+  <div class="grid">
+    <div class="card en">Lump >2–3 weeks</div>
+    <div class="card np hidden">२–३ हप्ता भन्दा बढी गाँठो</div>
+
+```
+<div class="card en">Voice change</div>
+<div class="card np hidden">आवाज परिवर्तन</div>
+
+<div class="card en">Swallowing difficulty</div>
+<div class="card np hidden">निल्न गाह्रो</div>
+
+<div class="card en">Detected on scan without symptoms</div>
+<div class="card np hidden">लक्षण नभए पनि जाँचमा देखिएमा</div>
+```
+
+  </div>
+</div>
+
+<!-- DIAGNOSIS -->
+
+<div class="section">
+  <h2 class="en">Diagnosis</h2>
+  <h2 class="np hidden">रोग पहिचान</h2>
+
+  <div class="grid">
+    <div class="card en">Ultrasound (USG)</div>
+    <div class="card np hidden">अल्ट्रासाउन्ड</div>
+
+```
+<div class="card en">FNAC (confirmatory)</div>
+<div class="card np hidden">FNAC</div>
+
+<div class="card en">Blood tests</div>
+<div class="card np hidden">रगत जाँच</div>
+
+<div class="card en">CT/MRI (selected cases)</div>
+<div class="card np hidden">CT/MRI</div>
+```
+
+  </div>
+</div>
+
+<!-- TREATMENT -->
+
+<div class="section">
+  <h2 class="en">Treatment</h2>
+  <h2 class="np hidden">उपचार</h2>
+
+  <div class="grid">
+    <div class="card en">Thyroid Surgery</div>
+    <div class="card np hidden">अपरेशन</div>
+
+```
+<div class="card en">Radioiodine (oral, short stay)</div>
+<div class="card np hidden">रेडियोआयोडिन</div>
+
+<div class="card en">Radiation (selected)</div>
+<div class="card np hidden">रेडियोथेरापी</div>
+
+<div class="card en">Chemotherapy (advanced)</div>
+<div class="card np hidden">केमोथेरापी</div>
+```
+
+  </div>
+</div>
+
+<!-- SAFETY -->
+
+<div class="section">
+  <h2 class="en">Special Surgical Focus</h2>
+  <h2 class="np hidden">विशेष ध्यान</h2>
+
+  <div class="grid">
+    <div class="card en"><b>Voice Preservation</b><br>Protecting voice nerve</div>
+    <div class="card np hidden"><b>आवाज जोगाउने</b></div>
+
+```
+<div class="card en"><b>Calcium Balance</b><br>Parathyroid preservation</div>
+<div class="card np hidden"><b>क्याल्सियम सन्तुलन</b></div>
+```
+
+  </div>
+</div>
+
+<!-- WHY SPECIALIST -->
+
+<div class="section">
+  <h2 class="en">Why High-Volume Oncosurgeon?</h2>
+  <h2 class="np hidden">किन विशेषज्ञ सर्जन?</h2>
+
+  <div class="grid">
+    <div class="card en">Better outcomes & lower complications</div>
+    <div class="card np hidden">राम्रो परिणाम</div>
+
+```
+<div class="card en">Precise cancer clearance</div>
+<div class="card np hidden">क्यान्सर राम्रोसँग हटाउने</div>
+
+<div class="card en">Expert lymph node management</div>
+<div class="card np hidden">लिम्फ नोड व्यवस्थापन</div>
+
+<div class="card en">Long-term follow-up planning</div>
+<div class="card np hidden">दीर्घकालीन हेरचाह</div>
+```
+
+  </div>
+</div>
+
+<!-- SURVIVAL GRAPH -->
+
+<div class="section">
+  <h2 class="en">Survival & Outcomes</h2>
+  <h2 class="np hidden">जीवित दर</h2>
+
+  <svg viewBox="0 0 420 260" style="width:100%;max-width:500px;margin:auto;display:block;">
+    <line x1="50" y1="210" x2="380" y2="210" stroke="#333" stroke-width="2"/>
+    <line x1="50" y1="40" x2="50" y2="210" stroke="#333" stroke-width="2"/>
+
+```
+<polyline id="curve1" fill="none" stroke="#22c55e" stroke-width="3"
+  points="50,60 110,65 170,70 230,75 290,80 350,85"
+  stroke-dasharray="400" stroke-dashoffset="400"/>
+
+<polyline id="curve2" fill="none" stroke="#f97316" stroke-width="3"
+  stroke-dasharray="6,6"
+  points="50,90 110,110 170,130 230,150 290,170 350,190"
+  stroke-dasharray="400" stroke-dashoffset="400"/>
+```
+
+  </svg>
+
+  <div class="grid" style="margin-top:20px;">
+    <div class="card en"><b>Stage I–II:</b> >90% survival</div>
+    <div class="card np hidden"><b>स्टेज I–II:</b> ९०% भन्दा बढी</div>
+
+```
+<div class="card en"><b>Stage III:</b> Good outcome</div>
+<div class="card np hidden"><b>स्टेज III:</b> राम्रो नतिजा</div>
+
+<div class="card en"><b>Stage IV:</b> Advanced care needed</div>
+<div class="card np hidden"><b>स्टेज IV:</b> जटिल अवस्था</div>
+```
+
+  </div>
+
+  <p class="en"><b>Final staging is usually confirmed after surgery.</b></p>
+  <p class="np hidden"><b>अन्तिम स्टेज अपरेशन पछि थाहा हुन्छ।</b></p>
+</div>
+
+<!-- FLOAT -->
+
+<div class="floating">
+  <a href="https://wa.me/919828769908" class="whatsapp">WhatsApp</a>
+  <a href="tel:9828769908" class="call">Call</a>
 </div>
 
 <script>
-function showLang(lang) {
-document.getElementById('en').style.display = (lang === 'en') ? 'block' : 'none';
-document.getElementById('np').style.display = (lang === 'np') ? 'block' : 'none';
+function toggleLang(){
+  document.querySelectorAll('.en').forEach(e=>e.classList.toggle('hidden'));
+  document.querySelectorAll('.np').forEach(e=>e.classList.toggle('hidden'));
 }
+
+window.onload=()=>{
+  setTimeout(()=>{curve1.style.strokeDashoffset="0";curve1.style.transition="2s";},300);
+  setTimeout(()=>{curve2.style.strokeDashoffset="0";curve2.style.transition="2s";},800);
+};
 </script>
+
+</body>
+</html>
