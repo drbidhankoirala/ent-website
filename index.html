@@ -22,10 +22,6 @@ header {
   box-shadow:0 2px 10px rgba(0,0,0,0.05);
 }
 
-nav {
-  margin-top:10px;
-}
-
 nav a {
   margin:0 10px;
   text-decoration:none;
@@ -59,7 +55,7 @@ nav a:hover {
   opacity:0.95;
 }
 
-/* PREMIUM BUTTON */
+/* BUTTON */
 .btn {
   display:inline-block;
   margin-top:20px;
@@ -98,7 +94,7 @@ nav a:hover {
   gap:20px;
 }
 
-/* CARD (CLICKABLE) */
+/* CARD */
 .card {
   background:white;
   padding:25px;
@@ -150,7 +146,7 @@ nav a:hover {
 <section class="hero">
   <h2>Focused Surgical Care for Head & Neck Cancer</h2>
   <p>
-  Dedicated to precise, safe cancer surgery with emphasis on speech, swallowing, and long-term quality of life.
+  Precision-driven surgery with emphasis on safety, function, and long-term quality of life.
   </p>
   <a class="btn" href="appointment.html">Book Consultation</a>
 </section>
@@ -174,7 +170,6 @@ nav a:hover {
   <h2 class="section-title">Core Services</h2>
 
   <div class="grid">
-
     <a href="oral-cancer.html" class="card">
       <h3>Oral Cancer</h3>
       <p>Early diagnosis, surgery, and reconstruction.</p>
@@ -189,7 +184,6 @@ nav a:hover {
       <h3>Head & Neck Cancer</h3>
       <p>Comprehensive management of complex tumors.</p>
     </a>
-
   </div>
 </section>
 
@@ -198,7 +192,6 @@ nav a:hover {
   <h2 class="section-title">Meet Your Surgeon</h2>
 
   <div style="display:flex; flex-wrap:wrap; gap:20px; align-items:center;">
-
     <div style="flex:1; text-align:center;">
       <img src="profile.jpg" alt="Dr Bidhan Koirala"
       style="width:220px; border-radius:12px;">
@@ -218,9 +211,7 @@ nav a:hover {
       </p>
 
       <a href="about.html" class="btn">View Full Profile</a>
-
     </div>
-
   </div>
 </section>
 
@@ -228,16 +219,20 @@ nav a:hover {
 <section style="padding:40px 20px; text-align:center; background:#f8fafc;">
   <h3>Find Us</h3>
 
-  <div style="max-width:600px; margin:auto; border-radius:12px; overflow:hidden;">
+  <div style="max-width:600px; margin:auto; border-radius:12px; overflow:hidden; box-shadow:0 6px 18px rgba(0,0,0,0.1);">
     <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28153.777238551003!2d84.426752!3d27.685683199999996"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28153.777238551003!2d84.426752!3d27.685683199999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3994fb63be173f5b%3A0x551928f70d657130!2sDr.%20Bidhan%20Koirala-ENT%20%2CHead%20and%20Neck%20Oncosurgeon!5e1!3m2!1sen!2snp!4v1777012901984!5m2!1sen!2snp"
     width="100%" height="250"
     style="border:0;" loading="lazy">
     </iframe>
   </div>
 
-  <a href="https://www.google.com/maps/dir/?api=1&destination=Dr.+Bidhan+Koirala"
-  target="_blank" class="btn">Get Directions</a>
+  <div style="margin-top:15px;">
+    <a href="https://www.google.com/maps/dir/?api=1&destination=27.6856832,84.426752"
+    target="_blank" class="btn">
+    📍 Get Directions
+    </a>
+  </div>
 </section>
 
 <!-- WHATSAPP -->
