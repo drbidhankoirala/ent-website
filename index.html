@@ -1,242 +1,373 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Bidhan Koirala | Head & Neck Oncosurgeon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
 
-<title>Dr. Bidhan Koirala | Head & Neck Oncosurgeon</title>
+        :root {
+            --primary: #0f766e;
+        }
 
-<style>
-body {
-  margin:0;
-  font-family:'Segoe UI',sans-serif;
-  background:#f1f5f9;
-  color:#0f172a;
-}
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        
+        .heading-font {
+            font-family: 'Playfair Display', sans-serif;
+        }
 
-/* HEADER */
-header {
-  background:white;
-  padding:20px;
-  text-align:center;
-  box-shadow:0 2px 10px rgba(0,0,0,0.05);
-}
+        .hero-bg {
+            background: linear-gradient(135deg, #0f766e 0%, #14b8a6 100%);
+        }
 
-nav a {
-  margin:0 10px;
-  text-decoration:none;
-  color:#0284c7;
-  font-weight:600;
-  padding:6px 10px;
-  border-radius:6px;
-  transition:0.3s;
-}
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
 
-nav a:hover {
-  background:#e0f2fe;
-}
+        .fade-in {
+            opacity: 0;
+            animation: fadeInUp 0.8s forwards;
+        }
 
-/* HERO */
-.hero {
-  background:linear-gradient(135deg,#0284c7,#0ea5e9);
-  color:white;
-  text-align:center;
-  padding:80px 20px;
-}
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-.hero h2 {
-  font-size:32px;
-  margin-bottom:10px;
-}
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #14b8a6;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
 
-.hero p {
-  max-width:600px;
-  margin:auto;
-  opacity:0.95;
-}
+        .stat-number {
+            transition: all 1.5s ease;
+        }
 
-/* BUTTON */
-.btn {
-  display:inline-block;
-  margin-top:20px;
-  padding:12px 24px;
-  border-radius:8px;
-  background:linear-gradient(135deg,#16a34a,#22c55e);
-  color:white;
-  text-decoration:none;
-  font-weight:600;
-  transition:0.3s;
-  box-shadow:0 4px 12px rgba(0,0,0,0.2);
-}
+        .whatsapp-float {
+            animation: whatsappPulse 2s infinite;
+        }
 
-.btn:hover {
-  transform:translateY(-2px);
-  box-shadow:0 8px 20px rgba(0,0,0,0.3);
-}
+        @keyframes whatsappPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+        }
 
-/* CONTAINER */
-.container {
-  max-width:1000px;
-  margin:auto;
-  padding:40px 20px;
-}
-
-.section-title {
-  text-align:center;
-  margin-bottom:30px;
-  color:#b91c1c;
-}
-
-/* GRID */
-.grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:20px;
-}
-
-/* CARD */
-.card {
-  background:white;
-  padding:25px;
-  border-radius:14px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.05);
-  transition:0.3s;
-  text-decoration:none;
-  color:inherit;
-}
-
-.card:hover {
-  transform:translateY(-5px);
-  box-shadow:0 12px 30px rgba(0,0,0,0.15);
-}
-
-/* WHATSAPP */
-.whatsapp {
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25D366;
-  color:white;
-  padding:16px;
-  border-radius:50%;
-  font-size:22px;
-  box-shadow:0 6px 15px rgba(0,0,0,0.3);
-  text-decoration:none;
-}
-</style>
-
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, #0f766e, #14b8a6);
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 9999px;
+        }
+    </style>
 </head>
+<body class="bg-slate-50 text-slate-800">
+    <!-- HEADER -->
+    <header class="bg-white border-b sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-teal-600 rounded-2xl flex items-center justify-center text-white font-bold text-2xl shadow-inner">BK</div>
+                <div>
+                    <h1 class="text-2xl font-semibold tracking-tight heading-font">Dr. Bidhan Koirala</h1>
+                    <p class="text-sm text-slate-500 -mt-1">Head &amp; Neck Oncosurgeon</p>
+                </div>
+            </div>
+            
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="about.html" class="nav-link text-slate-600 hover:text-teal-700">About</a>
+                <a href="oral-cancer.html" class="nav-link text-slate-600 hover:text-teal-700">Oral Cancer</a>
+                <a href="thyroid.html" class="nav-link text-slate-600 hover:text-teal-700">Thyroid</a>
+                <a href="head-neck.html" class="nav-link text-slate-600 hover:text-teal-700">Head &amp; Neck</a>
+                <a href="appointment.html" 
+                   class="ml-4 px-6 py-2.5 bg-teal-600 hover:bg-teal-700 text-white rounded-2xl font-semibold transition-all duration-300 shadow-lg shadow-teal-200 hover:shadow-xl hover:-translate-y-0.5">
+                    Book Consultation
+                </a>
+            </nav>
 
-<body>
+            <a href="appointment.html" 
+               class="md:hidden px-5 py-2.5 bg-teal-600 hover:bg-teal-700 text-white rounded-2xl font-semibold text-sm transition-all">
+                Book Now
+            </a>
+        </div>
+    </header>
 
-<header>
-  <h1>Dr. Bidhan Koirala</h1>
-  <p>Head & Neck Oncosurgeon | CMC Cancer Institute, Bharatpur</p>
+    <!-- HERO -->
+    <section class="hero-bg text-white py-24 md:py-32 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(at_bottom_right,#ffffff15_0%,transparent_50%)]"></div>
+        <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+            <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-5 py-2 rounded-3xl text-sm mb-6">
+                <span class="relative flex h-3 w-3">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                </span>
+                CMC Cancer Institute, Bharatpur
+            </div>
+            
+            <h2 class="text-5xl md:text-6xl font-bold heading-font leading-tight mb-6 tracking-tighter">
+                Precision Surgery.<br>Compassionate Care.
+            </h2>
+            <p class="max-w-2xl mx-auto text-xl md:text-2xl opacity-90 mb-10">
+                Expert Head &amp; Neck Oncosurgery with focus on function preservation and best possible outcomes.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="appointment.html" 
+                   class="inline-flex items-center justify-center gap-3 bg-white text-teal-700 hover:bg-teal-50 px-10 py-5 rounded-3xl text-lg font-semibold transition-all duration-300 shadow-xl">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    Book Consultation
+                </a>
+                <a href="#services" 
+                   class="inline-flex items-center justify-center gap-3 border border-white/70 hover:bg-white/10 px-8 py-5 rounded-3xl text-lg font-medium transition-all">
+                    Explore Services
+                </a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+            <i class="fa-solid fa-chevron-down text-3xl opacity-60"></i>
+        </div>
+    </section>
 
-  <nav>
-    <a href="about.html">About</a>
-    <a href="oral-cancer.html">Oral Cancer</a>
-    <a href="thyroid.html">Thyroid</a>
-    <a href="head-neck.html">Head & Neck</a>
-    <a href="appointment.html" class="btn">Book</a>
-  </nav>
-</header>
+    <!-- STATS -->
+    <section class="bg-white py-12 shadow">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="fade-in" style="animation-delay: 100ms">
+                    <div class="text-5xl font-bold text-teal-600 stat-number" data-target="1000">0</div>
+                    <p class="text-slate-600 mt-1 text-lg">Surgeries Performed</p>
+                </div>
+                <div class="fade-in" style="animation-delay: 300ms">
+                    <div class="text-5xl font-bold text-teal-600 stat-number" data-target="10">0</div>
+                    <p class="text-slate-600 mt-1 text-lg">Years Experience</p>
+                </div>
+                <div class="fade-in" style="animation-delay: 500ms">
+                    <div class="text-5xl font-bold text-teal-600">98%</div>
+                    <p class="text-slate-600 mt-1 text-lg">Patient Satisfaction</p>
+                </div>
+                <div class="fade-in" style="animation-delay: 700ms">
+                    <div class="text-5xl font-bold text-teal-600">24/7</div>
+                    <p class="text-slate-600 mt-1 text-lg">Support Available</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- HERO -->
-<section class="hero">
-  <h2>Focused Surgical Care for Head & Neck Cancer</h2>
-  <p>
-  Precision-driven surgery with emphasis on safety, function, and long-term quality of life.
-  </p>
-  <a class="btn" href="appointment.html">Book Consultation</a>
-</section>
+    <!-- SERVICES -->
+    <section id="services" class="py-20 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="px-4 py-2 bg-teal-100 text-teal-700 rounded-full text-sm font-medium">Expertise</span>
+                <h2 class="section-title text-4xl font-semibold heading-font mt-4">Core Services</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <a href="oral-cancer.html" class="card-hover group bg-white rounded-3xl overflow-hidden shadow-md">
+                    <div class="h-2 bg-gradient-to-r from-teal-400 to-cyan-500"></div>
+                    <div class="p-8">
+                        <div class="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">🦷</div>
+                        <h3 class="text-2xl font-semibold mb-3">Oral Cancer</h3>
+                        <p class="text-slate-600 leading-relaxed">Advanced surgical techniques with emphasis on early diagnosis, tumor resection, and functional reconstruction.</p>
+                        <div class="mt-8 text-teal-600 font-medium flex items-center gap-2">
+                            Learn more 
+                            <i class="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="thyroid.html" class="card-hover group bg-white rounded-3xl overflow-hidden shadow-md">
+                    <div class="h-2 bg-gradient-to-r from-teal-400 to-cyan-500"></div>
+                    <div class="p-8">
+                        <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">🦋</div>
+                        <h3 class="text-2xl font-semibold mb-3">Thyroid Cancer</h3>
+                        <p class="text-slate-600 leading-relaxed">Nerve-preserving thyroid surgery with excellent cosmetic outcomes and long-term voice protection.</p>
+                        <div class="mt-8 text-teal-600 font-medium flex items-center gap-2">
+                            Learn more 
+                            <i class="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="head-neck.html" class="card-hover group bg-white rounded-3xl overflow-hidden shadow-md">
+                    <div class="h-2 bg-gradient-to-r from-teal-400 to-cyan-500"></div>
+                    <div class="p-8">
+                        <div class="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">🧠</div>
+                        <h3 class="text-2xl font-semibold mb-3">Head &amp; Neck Cancer</h3>
+                        <p class="text-slate-600 leading-relaxed">Comprehensive management of complex tumors with multidisciplinary approach.</p>
+                        <div class="mt-8 text-teal-600 font-medium flex items-center gap-2">
+                            Learn more 
+                            <i class="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
 
-<!-- STATS -->
-<section style="background:white; padding:25px 10px; text-align:center;">
-  <div style="display:flex; justify-content:center; gap:40px; flex-wrap:wrap;">
-    <div>
-      <h2 style="margin:0; color:#0284c7;">1000+</h2>
-      <p style="margin:0; font-size:14px;">Surgeries</p>
-    </div>
-    <div>
-      <h2 style="margin:0; color:#0284c7;">10+ Years</h2>
-      <p style="margin:0; font-size:14px;">Experience</p>
-    </div>
-  </div>
-</section>
+    <!-- PROFILE -->
+    <section class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-5">
+                    <div class="relative">
+                        <img src="profile.jpg" alt="Dr. Bidhan Koirala" 
+                             class="rounded-3xl shadow-2xl w-full aspect-square object-cover">
+                        <div class="absolute -bottom-6 -right-6 bg-white rounded-3xl shadow-xl p-6 max-w-[180px]">
+                            <div class="flex items-center gap-4">
+                                <div class="text-emerald-500">
+                                    <i class="fa-solid fa-award text-4xl"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold">10+ Years</div>
+                                    <div class="text-sm text-slate-500">Clinical Excellence</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-7">
+                    <h2 class="text-4xl font-semibold heading-font mb-6">Meet Your Surgeon</h2>
+                    <div class="space-y-6 text-lg">
+                        <p class="text-slate-700">
+                            <strong class="text-teal-700">Dr. Bidhan Koirala</strong>, MBBS, MS (ENT &amp; Head &amp; Neck Surgery)
+                        </p>
+                        <p class="leading-relaxed text-slate-600">
+                            Assistant Professor – ENT &amp; Head &amp; Neck Oncosurgery at <strong>CMC Cancer Institute, Bharatpur</strong>.
+                        </p>
+                        <p class="leading-relaxed text-slate-600">
+                            With over <strong>1000+ successful surgeries</strong>, Dr. Koirala specializes in complex head and neck cancer surgeries with a strong emphasis on functional preservation, cosmetic outcomes, and patient-centered care.
+                        </p>
+                    </div>
+                    
+                    <a href="about.html" 
+                       class="mt-10 inline-flex items-center gap-3 px-8 py-4 bg-slate-900 hover:bg-black text-white rounded-3xl font-medium transition-all">
+                        View Full Profile 
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- SERVICES -->
-<section class="container">
-  <h2 class="section-title">Core Services</h2>
+    <!-- MAP -->
+    <section class="py-20 bg-slate-100">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-semibold mb-2">Visit Our Clinic</h3>
+                <p class="text-slate-600">CMC Cancer Institute, Bharatpur</p>
+            </div>
+            
+            <div class="rounded-3xl overflow-hidden shadow-2xl border border-slate-200">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28153.777238551003!2d84.426752!3d27.685683199999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3994fb63be173f5b%3A0x551928f70d657130!2sDr.%20Bidhan%20Koirala-ENT%20%2CHead%20and%20Neck%20Oncosurgeon!5e1!3m2!1sen!2snp!4v1777012901984!5m2!1sen!2snp"
+                    width="100%" 
+                    height="420" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+            
+            <div class="text-center mt-8">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=27.6856832,84.426752" 
+                   target="_blank"
+                   class="inline-flex items-center gap-3 px-8 py-4 bg-white hover:bg-slate-50 border border-slate-300 rounded-3xl font-medium text-slate-700 transition-all">
+                    <i class="fa-solid fa-location-dot"></i>
+                    Get Directions
+                </a>
+            </div>
+        </div>
+    </section>
 
-  <div class="grid">
-    <a href="oral-cancer.html" class="card">
-      <h3>Oral Cancer</h3>
-      <p>Early diagnosis, surgery, and reconstruction.</p>
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 py-12">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <p class="text-sm">© 2026 Dr. Bidhan Koirala. All Rights Reserved.</p>
+            <p class="text-xs mt-2 text-slate-500">Compassionate Cancer Care in Bharatpur</p>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP -->
+    <a href="https://wa.me/9779828769908" 
+       target="_blank"
+       class="whatsapp-float fixed bottom-8 right-8 w-16 h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center text-4xl shadow-2xl hover:scale-110 transition-all z-50">
+        <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <a href="thyroid.html" class="card">
-      <h3>Thyroid Cancer</h3>
-      <p>Safe thyroid surgery with nerve preservation.</p>
-    </a>
-
-    <a href="head-neck.html" class="card">
-      <h3>Head & Neck Cancer</h3>
-      <p>Comprehensive management of complex tumors.</p>
-    </a>
-  </div>
-</section>
-
-<!-- PROFILE -->
-<section class="container">
-  <h2 class="section-title">Meet Your Surgeon</h2>
-
-  <div style="display:flex; flex-wrap:wrap; gap:20px; align-items:center;">
-    <div style="flex:1; text-align:center;">
-      <img src="profile.jpg" alt="Dr Bidhan Koirala"
-      style="width:220px; border-radius:12px;">
-    </div>
-
-    <div style="flex:2;">
-      <h3>Dr. Bidhan Koirala</h3>
-      <p><b>MBBS, MS-ENT & Head & Neck Surgery</b></p>
-
-      <p>
-      Assistant Professor – ENT & Head & Neck Oncosurgery  
-      <br><b>CMC Cancer Institute</b>
-      </p>
-
-      <p style="color:#475569;">
-      Over <b>10+ years of experience</b> with <b>1000+ surgeries</b>, focusing on thyroid, oral, and complex head & neck cancers.
-      </p>
-
-      <a href="about.html" class="btn">View Full Profile</a>
-    </div>
-  </div>
-</section>
-
-<!-- MAP -->
-<section style="padding:40px 20px; text-align:center; background:#f8fafc;">
-  <h3>Find Us</h3>
-
-  <div style="max-width:600px; margin:auto; border-radius:12px; overflow:hidden; box-shadow:0 6px 18px rgba(0,0,0,0.1);">
-    <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28153.777238551003!2d84.426752!3d27.685683199999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3994fb63be173f5b%3A0x551928f70d657130!2sDr.%20Bidhan%20Koirala-ENT%20%2CHead%20and%20Neck%20Oncosurgeon!5e1!3m2!1sen!2snp!4v1777012901984!5m2!1sen!2snp"
-    width="100%" height="250"
-    style="border:0;" loading="lazy">
-    </iframe>
-  </div>
-
-  <div style="margin-top:15px;">
-    <a href="https://www.google.com/maps/dir/?api=1&destination=27.6856832,84.426752"
-    target="_blank" class="btn">
-    📍 Get Directions
-    </a>
-  </div>
-</section>
-
-<!-- WHATSAPP -->
-<a href="https://wa.me/9779828769908" class="whatsapp">💬</a>
-
+    <script>
+        // Tailwind script already loaded via CDN
+        
+        // Counter animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target')) || 1000;
+                let count = 0;
+                const increment = Math.ceil(target / 60);
+                
+                const timer = setInterval(() => {
+                    count += increment;
+                    if (count >= target) {
+                        count = target;
+                        clearInterval(timer);
+                    }
+                    counter.textContent = count + (target === 10 ? '+' : '+');
+                }, 40);
+            });
+        }
+        
+        // Trigger animations on scroll
+        window.addEventListener('load', () => {
+            animateCounters();
+            
+            // Intersection Observer for fade-ins
+            const fadeElements = document.querySelectorAll('.fade-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(el => observer.observe(el));
+        });
+    </script>
 </body>
 </html>
