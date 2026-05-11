@@ -1,194 +1,1137 @@
-<section class="container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Oral Cancer Management — Dr. Bidhan Koirala</title>
 
-<h1 style="color:#b91c1c;">Oral Cancer Management</h1>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet"/>
 
-<!-- LANGUAGE TOGGLE -->
-<div style="margin-bottom:20px;">
-<button onclick="showLang('en')" class="btn">English</button>
-<button onclick="showLang('np')" class="btn">नेपाली</button>
+<style>
+/* ─── CSS VARIABLES ─────────────────────────────────────────── */
+:root {
+  --crimson:   #c0152a;
+  --crimson-d: #8b0f1e;
+  --sky:       #0284c7;
+  --sky-d:     #015d8c;
+  --amber:     #d97706;
+  --violet:    #7c3aed;
+  --emerald:   #059669;
+  --bg:        #f9f5f0;
+  --card:      #ffffff;
+  --ink:       #1a1118;
+  --muted:     #6b6470;
+  --border:    rgba(0,0,0,0.08);
+  --shadow:    0 4px 24px rgba(0,0,0,0.09);
+  --shadow-lg: 0 16px 48px rgba(0,0,0,0.14);
+  --radius:    18px;
+  --wa-green:  #25D366;
+  --hp-blue:   #0ea5e9;
+  --transition: 0.38s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* ─── RESET & BASE ──────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ─── GRAIN OVERLAY ─────────────────────────────────────────── */
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* ─── HERO HEADER ───────────────────────────────────────────── */
+.hero {
+  position: relative;
+  background: linear-gradient(135deg, #1a0a0f 0%, #2d0d1a 40%, #0d1a2d 100%);
+  color: #fff;
+  padding: 64px 24px 72px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.hero::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 110%, rgba(192,21,42,0.35) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Animated rings */
+.ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.06);
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%) scale(0);
+  animation: ringPulse 6s ease-out infinite;
+}
+.ring:nth-child(1) { width: 300px; height: 300px; animation-delay: 0s; }
+.ring:nth-child(2) { width: 500px; height: 500px; animation-delay: 1.5s; }
+.ring:nth-child(3) { width: 720px; height: 720px; animation-delay: 3s; }
+
+@keyframes ringPulse {
+  0%   { transform: translate(-50%,-50%) scale(0); opacity: 1; }
+  100% { transform: translate(-50%,-50%) scale(1); opacity: 0; }
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(192,21,42,0.25);
+  border: 1px solid rgba(192,21,42,0.5);
+  color: #ffb3bc;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 100px;
+  margin-bottom: 20px;
+  position: relative; z-index: 1;
+  animation: fadeDown 0.7s ease both;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 6vw, 3.6rem);
+  font-weight: 900;
+  line-height: 1.12;
+  position: relative; z-index: 1;
+  animation: fadeDown 0.7s 0.1s ease both;
+}
+
+.hero h1 span { color: #ff6b7a; }
+
+.hero-sub {
+  margin-top: 12px;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.6);
+  font-weight: 300;
+  position: relative; z-index: 1;
+  animation: fadeDown 0.7s 0.2s ease both;
+}
+
+/* ─── LANGUAGE TOGGLE ───────────────────────────────────────── */
+.lang-bar {
+  display: flex; gap: 8px; justify-content: center;
+  margin-top: 28px;
+  position: relative; z-index: 1;
+  animation: fadeDown 0.7s 0.3s ease both;
+}
+
+.lang-btn {
+  cursor: pointer;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.7);
+  padding: 9px 24px;
+  border-radius: 100px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px; font-weight: 500;
+  transition: var(--transition);
+  outline: none;
+}
+
+.lang-btn:hover {
+  background: rgba(255,255,255,0.18);
+  color: #fff;
+}
+
+.lang-btn.active {
+  background: var(--crimson);
+  border-color: var(--crimson);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(192,21,42,0.45);
+}
+
+/* ─── MAIN CONTAINER ────────────────────────────────────────── */
+.container {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 40px 20px 120px;
+  position: relative; z-index: 1;
+}
+
+/* ─── SECTION CARDS ─────────────────────────────────────────── */
+.section-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 32px 32px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  transform: translateY(30px);
+  opacity: 0;
+  transition: transform 0.55s cubic-bezier(0.22,1,0.36,1), opacity 0.55s ease, box-shadow var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.section-card.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.section-card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+/* Accent bar on left */
+.section-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 20px; bottom: 20px;
+  width: 4px;
+  border-radius: 0 4px 4px 0;
+  background: var(--accent-color, var(--crimson));
+}
+
+/* ─── SECTION HEADINGS ──────────────────────────────────────── */
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.section-icon {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.section-heading h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+/* ─── FEATURE LIST ──────────────────────────────────────────── */
+.feature-list {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 14px;
+  background: var(--list-bg, #f8f5f5);
+  border-radius: 10px;
+  font-size: 0.93rem;
+  line-height: 1.45;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.feature-list li:hover {
+  transform: translateX(4px);
+  background: var(--list-hover, #f3eeee);
+}
+
+.feature-list li::before {
+  content: var(--bullet, '▸');
+  color: var(--accent-color, var(--crimson));
+  font-size: 12px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* ─── STAGING GRID ──────────────────────────────────────────── */
+.staging-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.stage-box {
+  background: #f3f0fa;
+  border-radius: 14px;
+  padding: 18px 14px;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.stage-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(124,58,237,0.15);
+}
+
+.stage-letter {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--violet);
+  line-height: 1;
+}
+
+.stage-label {
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.3;
+}
+
+/* ─── SURVIVAL STATS ────────────────────────────────────────── */
+.survival-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.stat-card {
+  border-radius: 14px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card.early  { background: linear-gradient(135deg, #d1fae5, #a7f3d0); }
+.stat-card.late   { background: linear-gradient(135deg, #fee2e2, #fecaca); }
+
+.stat-stage {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  opacity: 0.7;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.stat-label { font-size: 0.82rem; color: var(--ink); opacity: 0.75; }
+
+.stat-val {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.stat-card.early .stat-val { color: var(--emerald); }
+.stat-card.late  .stat-val { color: var(--crimson); }
+
+/* Progress bar */
+.progress-bar {
+  height: 6px;
+  border-radius: 100px;
+  background: rgba(0,0,0,0.1);
+  margin-top: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 100px;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 1.2s cubic-bezier(0.22,1,0.36,1) 0.3s;
+}
+
+.visible .progress-fill { transform: scaleX(1); }
+.stat-card.early .progress-fill { background: var(--emerald); }
+.stat-card.late  .progress-fill { background: var(--crimson); }
+
+/* ─── TREATMENT STEPS ───────────────────────────────────────── */
+.treatment-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+}
+
+.treatment-flow::before {
+  content: '';
+  position: absolute;
+  left: 22px;
+  top: 22px; bottom: 22px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--emerald), transparent);
+}
+
+.treatment-step {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 10px 0;
+  transition: transform 0.2s ease;
+}
+
+.treatment-step:hover { transform: translateX(6px); }
+
+.step-num {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--emerald);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(5,150,105,0.3);
+  position: relative; z-index: 1;
+}
+
+.step-content { padding-top: 8px; }
+.step-title { font-weight: 600; font-size: 0.95rem; }
+.step-desc  { font-size: 0.82rem; color: var(--muted); margin-top: 3px; }
+
+/* ─── WHY ONCOSURGEON ───────────────────────────────────────── */
+.reason-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.reason-item {
+  background: #fff5f5;
+  border: 1px solid #fdd;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  gap: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.reason-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(192,21,42,0.1);
+}
+
+.reason-icon { font-size: 1.4rem; flex-shrink: 0; }
+.reason-text { font-size: 0.875rem; line-height: 1.45; }
+.reason-text b { display: block; margin-bottom: 2px; color: var(--crimson); }
+
+/* ─── ALERT BANNER ──────────────────────────────────────────── */
+.alert-banner {
+  background: linear-gradient(135deg, #fff1f2, #fff5f5);
+  border: 1.5px solid #fecdd3;
+  border-radius: 14px;
+  padding: 16px 20px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-top: 16px;
+}
+
+.alert-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 1px; }
+.alert-text { font-size: 0.88rem; color: #9f1239; line-height: 1.5; }
+
+/* ─── BOOKING SECTION ───────────────────────────────────────── */
+.booking-section {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  border-radius: var(--radius);
+  padding: 36px 32px;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+  transform: translateY(30px);
+  opacity: 0;
+  transition: transform 0.55s cubic-bezier(0.22,1,0.36,1), opacity 0.55s ease;
+}
+
+.booking-section.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.booking-section::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 70% 80% at 50% 120%, rgba(192,21,42,0.2) 0%, transparent 70%);
+}
+
+.booking-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  position: relative;
+}
+
+.booking-sub {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 28px;
+  position: relative;
+}
+
+.btn-row {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.book-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 26px;
+  border-radius: 12px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.93rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.book-btn::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: rgba(255,255,255,0.15);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.book-btn:hover::after { opacity: 1; }
+
+.book-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+}
+
+.book-btn:active { transform: translateY(0); }
+
+.btn-wa  { background: var(--wa-green); color: #fff; box-shadow: 0 4px 16px rgba(37,211,102,0.35); }
+.btn-hp  { background: var(--hp-blue);  color: #fff; box-shadow: 0 4px 16px rgba(14,165,233,0.35); }
+
+/* Pulse on WA button */
+.btn-wa { animation: waPulse 2.5s ease-in-out infinite; }
+@keyframes waPulse {
+  0%, 100% { box-shadow: 0 4px 16px rgba(37,211,102,0.35); }
+  50%       { box-shadow: 0 4px 30px rgba(37,211,102,0.65); }
+}
+
+/* ─── QUOTE FOOTER ──────────────────────────────────────────── */
+.quote-block {
+  text-align: center;
+  padding: 32px 20px;
+  position: relative;
+}
+
+.quote-devanagari {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  color: var(--crimson);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.quote-english {
+  font-size: 0.88rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.quote-block::before,
+.quote-block::after {
+  content: '"';
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  color: rgba(192,21,42,0.1);
+  position: absolute;
+  line-height: 1;
+}
+
+.quote-block::before { top: 8px; left: 20px; }
+.quote-block::after  { bottom: 8px; right: 20px; content: '"'; }
+
+/* ─── FLOATING BUTTONS ──────────────────────────────────────── */
+.fab-group {
+  position: fixed;
+  bottom: 24px; right: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 900;
+}
+
+.fab {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.fab:hover {
+  transform: scale(1.12) translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.fab-wa { background: var(--wa-green); }
+.fab-hp { background: var(--hp-blue); }
+
+/* ─── LANGUAGE CONTENT ──────────────────────────────────────── */
+#lang-en, #lang-np {
+  transition: opacity 0.3s ease;
+}
+
+/* ─── ANIMATIONS ────────────────────────────────────────────── */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── RESPONSIVE ────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .section-card { padding: 22px 18px; }
+  .staging-grid { grid-template-columns: repeat(3,1fr); gap: 8px; }
+  .survival-grid { grid-template-columns: 1fr; }
+  .booking-section { padding: 28px 20px; }
+  .reason-grid { grid-template-columns: 1fr; }
+  .hero { padding: 48px 16px 56px; }
+  .treatment-flow::before { display: none; }
+}
+
+/* ─── SCROLLBAR ─────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #c9b8be; border-radius: 10px; }
+
+/* ─── COLOR ACCENTS PER CARD ────────────────────────────────── */
+.card-crimson  { --accent-color: var(--crimson);  --list-bg: #fff5f5;  --list-hover: #ffeef0; }
+.card-sky      { --accent-color: var(--sky);      --list-bg: #f0f9ff;  --list-hover: #e0f2fe; }
+.card-amber    { --accent-color: var(--amber);    --list-bg: #fffbeb;  --list-hover: #fef3c7; }
+.card-violet   { --accent-color: var(--violet);   --list-bg: #f5f3ff;  --list-hover: #ede9fe; }
+.card-emerald  { --accent-color: var(--emerald);  --list-bg: #f0fdf4;  --list-hover: #dcfce7; }
+
+.card-sky      .section-icon { background: #e0f2fe; }
+.card-amber    .section-icon { background: #fef3c7; }
+.card-violet   .section-icon { background: #ede9fe; }
+.card-emerald  .section-icon { background: #dcfce7; }
+.card-crimson  .section-icon { background: #ffe4e6; }
+</style>
+</head>
+
+<body>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<header class="hero">
+  <div class="ring"></div>
+  <div class="ring"></div>
+  <div class="ring"></div>
+
+  <div class="hero-badge">Head & Neck Oncosurgery</div>
+
+  <h1>
+    <span id="hero-title-en">Oral Cancer<br>Management</span>
+    <span id="hero-title-np" style="display:none;">मुखको क्यान्सर<br>व्यवस्थापन</span>
+  </h1>
+
+  <p class="hero-sub" id="hero-sub-en">Expert diagnosis, staging & surgery — Dr. Bidhan Koirala</p>
+  <p class="hero-sub" id="hero-sub-np" style="display:none;">विशेषज्ञ निदान, स्टेजिंग र शल्यक्रिया — डा. बिधान कोइराला</p>
+
+  <div class="lang-bar">
+    <button class="lang-btn active" onclick="showLang('en')" id="btn-en">🇬🇧 English</button>
+    <button class="lang-btn" onclick="showLang('np')" id="btn-np">🇳🇵 नेपाली</button>
+  </div>
+</header>
+
+
+<!-- ═══════════════ MAIN ═══════════════ -->
+<main class="container">
+
+  <!-- ─── ENGLISH CONTENT ─── -->
+  <div id="lang-en">
+
+    <!-- EARLY DIAGNOSIS -->
+    <article class="section-card card-sky observe">
+      <div class="section-heading">
+        <div class="section-icon"><span>🔍</span></div>
+        <h2 style="color:var(--sky);">Warning Signs — See a Doctor</h2>
+      </div>
+      <ul class="feature-list">
+        <li>Non-healing ulcer lasting more than 2 weeks</li>
+        <li>White patch (leukoplakia) or red patch (erythroplakia) inside mouth</li>
+        <li>Difficulty swallowing or persistent pain</li>
+        <li>Unexplained neck swelling or lumps</li>
+        <li>Loosening of teeth without dental cause</li>
+        <li>Numbness or bleeding in the mouth</li>
+      </ul>
+    </article>
+
+    <!-- RISK FACTORS -->
+    <article class="section-card card-amber observe">
+      <div class="section-heading">
+        <div class="section-icon"><span>⚠️</span></div>
+        <h2 style="color:var(--amber);">Risk Factors — Nepal / India Context</h2>
+      </div>
+      <ul class="feature-list">
+        <li>Tobacco chewing — <strong>gutkha, khaini, paan</strong> (highest risk)</li>
+        <li>Smoking — bidi carries higher risk than cigarette</li>
+        <li>Alcohol — synergistic effect with tobacco (multiplies risk)</li>
+        <li>Poor oral hygiene and sharp/broken teeth</li>
+        <li>HPV infection (selected cases)</li>
+        <li>Malnutrition and low immunity</li>
+      </ul>
+    </article>
+
+    <!-- STAGING -->
+    <article class="section-card card-violet observe">
+      <div class="section-heading">
+        <div class="section-icon"><span>📊</span></div>
+        <h2 style="color:var(--violet);">Staging — How It Is Done</h2>
+      </div>
+      <div class="staging-grid">
+        <div class="stage-box">
+          <div class="stage-letter">T</div>
+          <div class="stage-label">Tumor Size &amp;<br/>Depth of Invasion</div>
+        </div>
+        <div class="stage-box">
+          <div class="stage-letter">N</div>
+          <div class="stage-label">Lymph Node<br/>Involvement</div>
+        </div>
+        <div class="stage-box">
+          <div class="stage-letter">M</div>
+          <div class="stage-label">Distant<br/>Metastasis</div>
+        </div>
+      </div>
+      <div class="alert-banner" style="margin-top:18px; background:#f5f3ff; border-color:#c4b5fd;">
+        <span class="alert-icon">🔬</span>
+        <p class="alert-text" style="color:#5b21b6;"><strong>Final staging (pTNM) is confirmed AFTER surgery</strong> using histopathology — not before. Clinical staging guides initial planning.</p>
+      </div>
+    </article>
+
+    <!-- PROGNOSIS -->
+    <article class="section-card card-emerald observe">
+      <div class="section-heading">
+        <div class="section-icon"><span>📈</span></div>
+        <h2 style="color:var(--emerald);">Prognosis — Survival Rates</h2>
+      </div>
+      <div class="survival-grid">
+        <div class="stat-card early">
+          <div class="stat-stage">⬆ Early Stage (I–II)</div>
+          <div class="stat-row">
+            <span class="stat-label">Overall Survival</span>
+            <span class="stat-val">70–90%</span>
+          </div>
+          <div class="progress-bar"><div class="progress-fill" style="width:80%;"></div></div>
+          <div class="stat-row" style="margin-top:12px;">
+            <span class="stat-label">Disease-Free</span>
+            <span class="stat-val">65–85%</span>
+          </div>
+          <div class="progress-bar"><div class="progress-fill" style="width:75%;"></div></div>
+        </div>
+        <div class="stat-card late">
+          <div class="stat-stage">⬇ Advanced Stage (III–IV)</div>
+          <div class="stat-row">
+            <span class="stat-label">Overall Survival</span>
+            <span class="stat-val">30–60%</span>
+          </div>
+          <div class="progress-bar"><div class="progress-fill" style="width:45%;"></div></div>
+          <div class="stat-row" style="margin-top:12px;">
+            <span class="stat-label">Disease-Free</span>
+            <span class="stat-val">25–50%</span>
+          </div>
+          <div class="progress-bar"><div class="progress-fill" style="width:37%;"></div></div>
+        </div>
+      </div>
+      <div class="alert-banner">
+        <span class="alert-icon">✅</span>
+        <p class="alert-text"><strong>Early diagnosis dramatically improves survival.</strong> Stage I treated early can achieve cure rates above 85%. Don't wait.</p>
+      </div>
+    </article>
+
+    <!-- TREATMENT -->
+    <article class="section-card card-emerald observe">
+      <div class="section-heading">
+        <div class="section-icon"><span>🏥</span></div>
+        <h2 style="color:var(--emerald);">Treatment Pathway</h2>
+      </div>
+      <div class="treatment-flow">
+        <div class="treatment-step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <div class="step-title">Biopsy</div>
+            <div class="step-desc">Tissue confirmation of cancer type and grade</div>
+          </div>
+        </div>
+        <div class="treatment-step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <div class="step-title">Imaging &amp; Staging</div>
+            <div class="step-desc">CT / MRI / PET scan for accurate clinical staging</div>
+          </div>
+        </div>
+        <div class="treatment-step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <div class="step-title">Surgery</div>
+            <div class="step-desc">Wide local excision with safe margins</div>
+          </div>
+        </div>
+        <div class="treatment-step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <div class="step-title">Neck Dissection</div>
+            <div class="step-desc">Removal of regional lymph nodes when indicated</div>
+          </div>
+        </div>
+        <div class="treatment-step">
+          <div class="step-num">5</div>
+          <div class="step-content">
+            <div class="step-title">Reconstruction</div>
+            <div class="step-desc">Restoring form, speech, and swallowing function</div>
+          </div>
+        </div>
+        <div class="treatment-step">
+          <div class="step-num">6</div>
+          <div class="step-content">
+            <div class="step-title">Radiotherapy / Chemotherapy</div>
+            <div class="step-desc">Adjuvant therapy when pathology indicates need</div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- WHY ONCOSURGEON -->
+    <article class="section-card card-crimson observe">
+      <div class="section-heading">
+        <div class="section-icon"><span>👨‍⚕️</span></div>
+        <h2 style="color:var(--crimson);">Why a Head &amp; Neck Oncosurgeon?</h2>
+      </div>
+      <div class="reason-grid">
+        <div class="reason-item">
+          <span class="reason-icon">🎯</span>
+          <div class="reason-text"><b>Accurate Staging</b>Correct clinical and pathological staging guides every treatment decision.</div>
+        </div>
+        <div class="reason-item">
+          <span class="reason-icon">✂️</span>
+          <div class="reason-text"><b>Complete Tumor Removal</b>Safe surgical margins reduce recurrence risk significantly.</div>
+        </div>
+        <div class="reason-item">
+          <span class="reason-icon">🫀</span>
+          <div class="reason-text"><b>Expert Neck Dissection</b>Trained in all levels of lymph node clearance with nerve preservation.</div>
+        </div>
+        <div class="reason-item">
+          <span class="reason-icon">🔧</span>
+          <div class="reason-text"><b>Advanced Reconstruction</b>Flap surgery preserves speech, swallowing, and appearance.</div>
+        </div>
+        <div class="reason-item">
+          <span class="reason-icon">🤝</span>
+          <div class="reason-text"><b>Multidisciplinary Care</b>Coordinated team with oncology, radiation, and rehabilitation.</div>
+        </div>
+      </div>
+      <div class="alert-banner">
+        <span class="alert-icon">🚨</span>
+        <p class="alert-text"><strong>Improper initial treatment can worsen survival outcomes and significantly increase the risk of recurrence.</strong> First treatment must be right.</p>
+      </div>
+    </article>
+
+  </div><!-- end #lang-en -->
+
+
+  <!-- ─── NEPALI CONTENT ─── -->
+  <div id="lang-np" style="display:none;">
+
+    <!-- प्रारम्भिक पहिचान -->
+    <article class="section-card card-sky observe">
+      <div class="section-heading">
+        <div class="section-icon"><span>🔍</span></div>
+        <h2 style="color:var(--sky);">चेतावनी संकेतहरू</h2>
+      </div>
+      <ul class="feature-list">
+        <li>२ हप्ताभन्दा बढी निको नहुने घाउ</li>
+        <li>मुखभित्र सेतो वा रातो दाग (leukoplakia / erythroplakia)</li>
+        <li>निल्न गाह्रो हुनु वा निरन्तर दुखाइ</li>
+        <li>घाँटीमा गाँठो वा सुन्निएको ठाउँ</li>
+        <li>दाँत ढिलो हुनु (दन्त कारण बिना)</li>
+        <li>मुखमा सुन्निनु वा रगत आउनु</li>
+      </ul>
+    </article>
+
+    <!-- जोखिम कारकहरू -->
+    <article class="section-card card-amber observe">
+      <div class="section-heading">
+        <div class="section-icon"><span>⚠️</span></div>
+        <h2 style="color:var(--amber);">जोखिम कारकहरू</h2>
+      </div>
+      <ul class="feature-list">
+        <li>गुट्खा, खैनी, पान चबाउने बानी (सबैभन्दा बढी जोखिम)</li>
+        <li>धूम्रपान — बिडी सिगरेटभन्दा बढी खतरनाक</li>
+        <li>मदिरा सेवन — तम्बाकूसँग मिल्दा जोखिम कई गुणा बढ्छ</li>
+        <li>मुखको सरसफाइको कमी र टुटेको दाँत</li>
+        <li>HPV संक्रमण (केही बिरामीमा)</li>
+        <li>कुपोषण र कमजोर रोग प्रतिरोधक क्षमता</li>
+      </ul>
+    </article>
+
+    <!-- स्टेजिंग -->
+    <article class="section-card card-violet observe">
+      <div class="section-heading">
+        <div class="section-icon"><span>📊</span></div>
+        <h2 style="color:var(--violet);">स्टेज निर्धारण</h2>
+      </div>
+      <div class="staging-grid">
+        <div class="stage-box">
+          <div class="stage-letter">T</div>
+          <div class="stage-label">ट्युमरको आकार र गहिराइ</div>
+        </div>
+        <div class="stage-box">
+          <div class="stage-letter">N</div>
+          <div class="stage-label">लिम्फ नोडमा फैलावट</div>
+        </div>
+        <div class="stage-box">
+          <div class="stage-letter">M</div>
+          <div class="stage-label">टाढाको अंगमा फैलावट</div>
+        </div>
+      </div>
+      <div class="alert-banner" style="margin-top:18px; background:#f5f3ff; border-color:#c4b5fd;">
+        <span class="alert-icon">🔬</span>
+        <p class="alert-text" style="color:#5b21b6;"><strong>अन्तिम स्टेज (pTNM) अपरेशनपछि Histopathology बाट निर्धारण हुन्छ।</strong> प्रारम्भिक स्टेजिंग उपचार योजनाको लागि मात्र हो।</p>
+      </div>
+    </article>
+
+    <!-- निको हुने सम्भावना -->
+    <article class="section-card card-emerald observe">
+      <div class="section-heading">
+        <div class="section-icon"><span>📈</span></div>
+        <h2 style="color:var(--emerald);">निको हुने सम्भावना</h2>
+      </div>
+      <div class="survival-grid">
+        <div class="stat-card early">
+          <div class="stat-stage">⬆ प्रारम्भिक चरण (I–II)</div>
+          <div class="stat-row">
+            <span class="stat-label">कुल जीवित रहने</span>
+            <span class="stat-val">७०–९०%</span>
+          </div>
+          <div class="progress-bar"><div class="progress-fill" style="width:80%;"></div></div>
+          <div class="stat-row" style="margin-top:12px;">
+            <span class="stat-label">रोगमुक्त जीवन</span>
+            <span class="stat-val">६५–८५%</span>
+          </div>
+          <div class="progress-bar"><div class="progress-fill" style="width:75%;"></div></div>
+        </div>
+        <div class="stat-card late">
+          <div class="stat-stage">⬇ ढिलो चरण (III–IV)</div>
+          <div class="stat-row">
+            <span class="stat-label">कुल जीवित रहने</span>
+            <span class="stat-val">३०–६०%</span>
+          </div>
+          <div class="progress-bar"><div class="progress-fill" style="width:45%;"></div></div>
+          <div class="stat-row" style="margin-top:12px;">
+            <span class="stat-label">रोगमुक्त जीवन</span>
+            <span class="stat-val">२५–५०%</span>
+          </div>
+          <div class="progress-bar"><div class="progress-fill" style="width:37%;"></div></div>
+        </div>
+      </div>
+      <div class="alert-banner">
+        <span class="alert-icon">✅</span>
+        <p class="alert-text"><strong>चाँडो पहिचान गर्दा बाँच्ने सम्भावना धेरै बढ्छ।</strong> पहिलो चरणमा उपचार गर्दा ८५% भन्दा बढी निको हुन सक्छ।</p>
+      </div>
+    </article>
+
+    <!-- उपचार -->
+    <article class="section-card card-emerald observe">
+      <div class="section-heading">
+        <div class="section-icon"><span>🏥</span></div>
+        <h2 style="color:var(--emerald);">उपचार प्रक्रिया</h2>
+      </div>
+      <div class="treatment-flow">
+        <div class="treatment-step">
+          <div class="step-num">१</div>
+          <div class="step-content">
+            <div class="step-title">Biopsy</div>
+            <div class="step-desc">क्यान्सरको प्रकार र श्रेणी पुष्टि</div>
+          </div>
+        </div>
+        <div class="treatment-step">
+          <div class="step-num">२</div>
+          <div class="step-content">
+            <div class="step-title">Imaging र Staging</div>
+            <div class="step-desc">CT / MRI / PET scan बाट सटीक स्टेजिंग</div>
+          </div>
+        </div>
+        <div class="treatment-step">
+          <div class="step-num">३</div>
+          <div class="step-content">
+            <div class="step-title">Surgery</div>
+            <div class="step-desc">सुरक्षित मार्जिनसहित ट्युमर हटाउने</div>
+          </div>
+        </div>
+        <div class="treatment-step">
+          <div class="step-num">४</div>
+          <div class="step-content">
+            <div class="step-title">Neck Dissection</div>
+            <div class="step-desc">लिम्फ नोडहरू हटाउने आवश्यकता अनुसार</div>
+          </div>
+        </div>
+        <div class="treatment-step">
+          <div class="step-num">५</div>
+          <div class="step-content">
+            <div class="step-title">Reconstruction</div>
+            <div class="step-desc">बोली र खानपानको क्षमता फिर्ता गर्ने</div>
+          </div>
+        </div>
+        <div class="treatment-step">
+          <div class="step-num">६</div>
+          <div class="step-content">
+            <div class="step-title">Radiotherapy / Chemotherapy</div>
+            <div class="step-desc">Histopathology नतिजा अनुसार थप उपचार</div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- किन Oncosurgeon -->
+    <article class="section-card card-crimson observe">
+      <div class="section-heading">
+        <div class="section-icon"><span>👨‍⚕️</span></div>
+        <h2 style="color:var(--crimson);">किन Oncosurgeon रोज्नु पर्छ?</h2>
+      </div>
+      <div class="reason-grid">
+        <div class="reason-item">
+          <span class="reason-icon">🎯</span>
+          <div class="reason-text"><b>सही स्टेजिंग</b>सटीक स्टेज निर्धारणले सबै उपचार निर्णयहरू निर्देशन गर्छ।</div>
+        </div>
+        <div class="reason-item">
+          <span class="reason-icon">✂️</span>
+          <div class="reason-text"><b>पूर्ण क्यान्सर हटाउने</b>सुरक्षित मार्जिनले पुनरावृत्तिको जोखिम घटाउँछ।</div>
+        </div>
+        <div class="reason-item">
+          <span class="reason-icon">🫀</span>
+          <div class="reason-text"><b>Neck Dissection विशेषज्ञ</b>नसहरू सुरक्षित राख्दै लिम्फ नोड सफाई।</div>
+        </div>
+        <div class="reason-item">
+          <span class="reason-icon">🔧</span>
+          <div class="reason-text"><b>Advanced Reconstruction</b>Flap surgery ले बोली र रूप रक्षा गर्छ।</div>
+        </div>
+        <div class="reason-item">
+          <span class="reason-icon">🤝</span>
+          <div class="reason-text"><b>Team-Based Care</b>Oncology, Radiation र Rehabilitation टोलीसँग समन्वय।</div>
+        </div>
+      </div>
+      <div class="alert-banner">
+        <span class="alert-icon">🚨</span>
+        <p class="alert-text"><strong>गलत प्रारम्भिक उपचारले बाँच्ने सम्भावना घटाउँछ र पुनरावृत्तिको जोखिम बढाउँछ।</strong> पहिलो उपचार सही हुनुपर्छ।</p>
+      </div>
+    </article>
+
+  </div><!-- end #lang-np -->
+
+
+  <!-- BOOKING -->
+  <div class="booking-section observe">
+    <div class="booking-title" id="book-title-en">Book a Consultation</div>
+    <div class="booking-title" id="book-title-np" style="display:none;">परामर्श बुक गर्नुहोस्</div>
+    <div class="booking-sub" id="book-sub-en">Dr. Bidhan Koirala — Head &amp; Neck Oncosurgeon</div>
+    <div class="booking-sub" id="book-sub-np" style="display:none;">डा. बिधान कोइराला — Head &amp; Neck Oncosurgeon</div>
+    <div class="btn-row">
+      <a href="https://wa.me/9779828769908?text=Hello%20Doctor,%20I%20would%20like%20to%20book%20a%20consultation.%0AName:%0AAge:%0ASymptoms:%0ADuration:"
+         target="_blank" class="book-btn btn-wa">
+        💬 WhatsApp Booking
+      </a>
+      <a href="https://health.hamropatro.com/doctors/dr_bidhan_koirala_16430"
+         target="_blank" class="book-btn btn-hp">
+        📅 Book via HamroPatro
+      </a>
+    </div>
+  </div>
+
+  <!-- QUOTE -->
+  <div class="quote-block">
+    <span class="quote-devanagari">कर्मण्येवाधिकारस्ते मा फलेषु कदाचन</span>
+    <span class="quote-english">Act on time without fear — early treatment saves life.</span>
+  </div>
+
+</main>
+
+
+<!-- ═══ FLOATING ACTION BUTTONS ═══ -->
+<div class="fab-group">
+  <a href="https://wa.me/9779828769908?text=Hello%20Doctor,%20I%20would%20like%20to%20book%20a%20consultation.%0AName:%0AAge:%0ASymptoms:%0ADuration:"
+     target="_blank" class="fab fab-wa" title="WhatsApp">💬</a>
+  <a href="https://health.hamropatro.com/doctors/dr_bidhan_koirala_16430"
+     target="_blank" class="fab fab-hp" title="HamroPatro">📅</a>
 </div>
 
-<!-- ================= ENGLISH ================= -->
-<div id="en">
-
-<p>
-<b>Oral cancer is not just a disease—it affects speech, swallowing, appearance, and dignity.</b>
-</p>
-
-<h2 style="color:#0284c7;">Early Diagnosis</h2>
-<ul>
-<li>Non-healing ulcer > 2 weeks</li>
-<li>White/red patch (leukoplakia/erythroplakia)</li>
-<li>Difficulty swallowing</li>
-<li>Neck swelling</li>
-</ul>
-
-<h2 style="color:#f59e0b;">Risk Factors (Indian/Nepali Context)</h2>
-<ul>
-<li>Tobacco chewing (gutkha, khaini, paan)</li>
-<li>Smoking (bidi > cigarette risk)</li>
-<li>Alcohol (synergistic with tobacco)</li>
-<li>Poor oral hygiene</li>
-<li>Sharp tooth / chronic trauma</li>
-<li>HPV infection (selected cases)</li>
-<li>Malnutrition</li>
-</ul>
-
-<h2 style="color:#7c3aed;">Final Staging (How It Is Done)</h2>
-<ul>
-<li><b>T</b> – Tumor size & depth of invasion</li>
-<li><b>N</b> – Lymph node involvement</li>
-<li><b>M</b> – Distant metastasis</li>
-</ul>
-
-<p><b>Final stage is determined AFTER surgery using histopathology (pTNM).</b></p>
-
-<h2 style="color:#16a34a;">Prognosis (Survival)</h2>
-
-<p><b>Early Stage (I–II):</b></p>
-<ul>
-<li>Overall Survival (OS): <b>70–90%</b></li>
-<li>Disease-Free Survival (DFS): <b>65–85%</b></li>
-</ul>
-
-<p><b>Advanced Stage (III–IV):</b></p>
-<ul>
-<li>Overall Survival (OS): <b>30–60%</b></li>
-<li>Disease-Free Survival (DFS): <b>25–50%</b></li>
-</ul>
-
-<p style="color:#b91c1c;"><b>Early diagnosis dramatically improves survival.</b></p>
-
-<h2 style="color:#16a34a;">Treatment</h2>
-<ul>
-<li>Biopsy</li>
-<li>Surgery</li>
-<li>Neck Dissection</li>
-<li>Reconstruction</li>
-<li>Radiotherapy / Chemotherapy</li>
-</ul>
-
-<h2 style="color:#dc2626;">Why Consult a Head & Neck Oncosurgeon?</h2>
-<ul>
-<li>Accurate staging and decision making</li>
-<li>Complete tumor removal with safe margins</li>
-<li>Expert neck dissection</li>
-<li>Advanced reconstruction (speech & swallowing preservation)</li>
-<li>Multidisciplinary cancer care</li>
-</ul>
-
-<p style="color:#b91c1c;">
-<b>Improper initial treatment can worsen survival and increase recurrence risk.</b>
-</p>
-
-</div>
-
-<!-- ================= NEPALI ================= -->
-<div id="np" style="display:none;">
-
-<p>
-<b>मुखको क्यान्सरले बोली, खानपान, अनुहार र आत्मसम्मानमा असर पार्छ।</b>
-</p>
-
-<h2 style="color:#0284c7;">प्रारम्भिक पहिचान</h2>
-<ul>
-<li>२ हप्ता भन्दा बढी निको नहुने घाउ</li>
-<li>सेतो वा रातो दाग</li>
-<li>निल्न गाह्रो हुनु</li>
-<li>घाँटीमा गाठो आउनु</li>
-</ul>
-
-<h2 style="color:#f59e0b;">जोखिम कारकहरू</h2>
-<ul>
-<li>गुट्खा, खैनी, पान</li>
-<li>धूम्रपान (बिडी बढी खतरनाक)</li>
-<li>मदिरा सेवन</li>
-<li>मुखको सरसफाइको कमी</li>
-<li>दाँतको घर्षण</li>
-<li>पोषणको कमी</li>
-</ul>
-
-<h2 style="color:#7c3aed;">स्टेज निर्धारण</h2>
-<ul>
-<li>T – ट्युमरको आकार</li>
-<li>N – गाँठोमा फैलावट</li>
-<li>M – टाढा फैलावट</li>
-</ul>
-
-<p><b>अन्तिम स्टेज अपरेशनपछि Histopathology बाट निर्धारण हुन्छ।</b></p>
-
-<h2 style="color:#16a34a;">निको हुने सम्भावना</h2>
-<ul>
-<li>प्रारम्भिक: OS ७०–९०%, DFS ६५–८५%</li>
-<li>ढिलो: OS ३०–६०%, DFS २५–५०%</li>
-</ul>
-
-<h2 style="color:#16a34a;">उपचार</h2>
-<ul>
-<li>Biopsy</li>
-<li>Surgery</li>
-<li>Neck dissection</li>
-<li>Reconstruction</li>
-<li>Radiotherapy/Chemotherapy</li>
-</ul>
-
-<h2 style="color:#dc2626;">किन Oncosurgeon?</h2>
-<ul>
-<li>सही स्टेज निर्धारण</li>
-<li>पूरा क्यान्सर निकाल्ने क्षमता</li>
-<li>Advanced reconstruction</li>
-<li>Team-based treatment</li>
-</ul>
-
-</div>
-
-<!-- CONTACT BUTTONS -->
-<div style="margin-top:20px; display:flex; gap:10px; flex-wrap:wrap;">
-
-<a href="https://wa.me/9779828769908?text=Hello%20Doctor,%20I%20would%20like%20to%20book%20a%20consultation.%0AName:%0AAge:%0ASymptoms:%0ADuration:"
-target="_blank"
-style="background:#25D366; color:white; padding:12px 18px; border-radius:8px; text-decoration:none; font-weight:bold;">
-📱 WhatsApp Booking
-</a>
-
-<a href="https://health.hamropatro.com/doctors/dr_bidhan_koirala_16430"
-target="_blank"
-style="background:#0ea5e9; color:white; padding:12px 18px; border-radius:8px; text-decoration:none; font-weight:bold;">
-📅 Book via HamroPatro
-</a>
-
-</div>
-
-<!-- QUOTE -->
-<div style="margin-top:40px; text-align:center; font-style:italic;">
-“कर्मण्येवाधिकारस्ते मा फलेषु कदाचन”<br>
-<span style="font-size:0.9rem;">
-Act on time without fear — early treatment saves life.
-</span>
-</div>
-
-</section>
-
-<!-- FLOATING BUTTONS -->
-<div style="position:fixed; bottom:20px; right:20px; display:flex; flex-direction:column; gap:10px; z-index:999;">
-
-<a href="https://wa.me/9779828769908?text=Hello%20Doctor,%20I%20would%20like%20to%20book%20a%20consultation.%0AName:%0AAge:%0ASymptoms:%0ADuration:"
-target="_blank"
-style="background:#25D366; color:white; padding:14px; border-radius:50%; text-align:center; font-size:20px; text-decoration:none;">
-💬
-</a>
-
-<a href="https://health.hamropatro.com/doctors/dr_bidhan_koirala_16430"
-target="_blank"
-style="background:#0ea5e9; color:white; padding:14px; border-radius:50%; text-align:center; font-size:20px; text-decoration:none;">
-📅
-</a>
-
-</div>
 
 <script>
+/* ─── LANGUAGE TOGGLE ─────────────────────────── */
 function showLang(lang) {
-document.getElementById('en').style.display = (lang === 'en') ? 'block' : 'none';
-document.getElementById('np').style.display = (lang === 'np') ? 'block' : 'none';
+  const isEn = lang === 'en';
+
+  // Content panels
+  document.getElementById('lang-en').style.display = isEn ? 'block' : 'none';
+  document.getElementById('lang-np').style.display = isEn ? 'none' : 'block';
+
+  // Hero text
+  document.getElementById('hero-title-en').style.display = isEn ? 'inline' : 'none';
+  document.getElementById('hero-title-np').style.display = isEn ? 'none' : 'inline';
+  document.getElementById('hero-sub-en').style.display   = isEn ? 'block' : 'none';
+  document.getElementById('hero-sub-np').style.display   = isEn ? 'none' : 'block';
+
+  // Booking text
+  document.getElementById('book-title-en').style.display = isEn ? 'block' : 'none';
+  document.getElementById('book-title-np').style.display = isEn ? 'none' : 'block';
+  document.getElementById('book-sub-en').style.display   = isEn ? 'block' : 'none';
+  document.getElementById('book-sub-np').style.display   = isEn ? 'none' : 'block';
+
+  // Button states
+  document.getElementById('btn-en').classList.toggle('active', isEn);
+  document.getElementById('btn-np').classList.toggle('active', !isEn);
+
+  // Re-trigger scroll animations
+  setTimeout(observeAll, 100);
 }
+
+/* ─── INTERSECTION OBSERVER ───────────────────── */
+function observeAll() {
+  const cards = document.querySelectorAll('.observe');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, i * 80);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  cards.forEach(c => {
+    // Reset then re-observe on lang switch
+    io.observe(c);
+  });
+}
+
+/* ─── INIT ────────────────────────────────────── */
+document.addEventListener('DOMContentLoaded', () => {
+  observeAll();
+});
 </script>
+
+</body>
+</html>
