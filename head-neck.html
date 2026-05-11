@@ -1,239 +1,927 @@
-<section class="container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Head & Neck Cancer — Dr. Bidhan Koirala</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Outfit:wght@300;400;500;600&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet"/>
 
-<h1 style="color:#b91c1c;">Head & Neck Cancer (Nose, Skin, Ear, Salivary Gland)</h1>
+<style>
+/* ── TOKENS ─────────────────────────────────────────────────── */
+:root {
+  --teal:      #7c2d3e;
+  --teal-d:    #581e2c;
+  --teal-l:    #fdf0f2;
+  --teal-m:    #f0b8c2;
+  --steel:     #8a5a3b;
+  --steel-l:   #fdf3ec;
+  --amber:     #b45309;
+  --amber-l:   #fef3c7;
+  --violet:    #6d3eb5;
+  --violet-l:  #f0ebff;
+  --sage:      #3d6b5a;
+  --sage-l:    #e9f5f0;
+  --slate:     #334155;
+  --slate-m:   #64748b;
+  --slate-l:   #f1f5f9;
+  --bg:        #faf6f7;
+  --card:      #ffffff;
+  --ink:       #251418;
+  --border:    rgba(124,45,62,0.11);
+  --shadow:    0 2px 20px rgba(124,45,62,0.07);
+  --shadow-lg: 0 12px 40px rgba(124,45,62,0.13);
+  --r:         16px;
+  --wa:        #25D366;
+  --hp:        #0ea5e9;
+  --ease:      cubic-bezier(0.22,1,0.36,1);
+}
 
-<!-- LANGUAGE TOGGLE -->
-<div style="margin-bottom:20px;">
-<button onclick="showLang('en')" class="btn">English</button>
-<button onclick="showLang('np')" class="btn">नेपाली</button>
-</div>
+/* ── BASE ───────────────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Outfit',sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  min-height:100vh;
+  overflow-x:hidden;
+}
 
-<!-- ================= ENGLISH ================= -->
-<div id="en">
+/* grain */
+body::after{
+  content:'';
+  position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+}
 
-<p>
-<b>Head & neck cancers can arise from nose, sinuses, skin, ear, salivary glands, and even the eye. Early diagnosis and expert surgery are key to cure and preservation of function and appearance.</b>
-</p>
+/* ── HERO ───────────────────────────────────────────────────── */
+.hero{
+  background:linear-gradient(150deg,#2a0a12 0%,#4a1425 45%,#2a1a0a 100%);
+  color:#fff;
+  padding:0 0 0;
+  position:relative;
+  overflow:hidden;
+}
 
-<h2 style="color:#0284c7;">Common Warning Signs</h2>
-<ul>
-<li>Non-healing ulcer or skin lesion</li>
-<li>Nasal blockage or bleeding</li>
-<li>Swelling near jaw/ear (salivary gland)</li>
-<li>Ear discharge or growth</li>
-<li>Facial swelling, numbness, or eye symptoms</li>
-</ul>
+/* animated mesh blobs */
+.hero-blob{
+  position:absolute;border-radius:50%;
+  filter:blur(70px);opacity:0.18;
+  animation:blobFloat 9s ease-in-out infinite alternate;
+}
+.blob1{width:420px;height:420px;background:#9b2335;top:-100px;left:-80px;animation-delay:0s;}
+.blob2{width:300px;height:300px;background:#c0392b;top:60px;right:-60px;animation-delay:3s;}
+.blob3{width:260px;height:260px;background:#7c3eb5;bottom:-80px;left:40%;animation-delay:5s;}
+@keyframes blobFloat{
+  from{transform:translateY(0) scale(1);}
+  to  {transform:translateY(30px) scale(1.07);}
+}
 
-<h2 style="color:#f59e0b;">Risk Factors</h2>
-<ul>
-<li>Sun exposure (skin cancers)</li>
-<li>Tobacco & alcohol</li>
-<li>Chronic infections</li>
-<li>Radiation exposure</li>
-<li>Occupational exposure (wood dust – sinonasal tumors)</li>
-</ul>
+/* top booking strip */
+.top-strip{
+  background:rgba(255,255,255,0.07);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid rgba(255,255,255,0.1);
+  padding:10px 28px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+  position:relative;z-index:2;
+}
+.strip-label{
+  font-size:13px;
+  color:rgba(255,255,255,0.65);
+  font-weight:300;
+  letter-spacing:.04em;
+}
+.strip-btns{display:flex;gap:8px;flex-wrap:wrap;}
+.strip-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:7px 16px;border-radius:100px;
+  font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;
+  text-decoration:none;transition:transform .2s ease,box-shadow .2s ease;
+}
+.strip-btn:hover{transform:translateY(-2px);}
+.strip-btn.wa{background:var(--wa);color:#fff;box-shadow:0 2px 12px rgba(37,211,102,.3);}
+.strip-btn.hp{background:var(--hp);color:#fff;box-shadow:0 2px 12px rgba(14,165,233,.3);}
 
-<h2 style="color:#7c3aed;">Staging</h2>
-<ul>
-<li>TNM classification</li>
-<li>Final staging after biopsy/surgery (histopathology)</li>
-</ul>
+/* hero body */
+.hero-body{
+  padding:52px 28px 60px;
+  text-align:center;
+  position:relative;z-index:2;
+}
 
-<h2 style="color:#16a34a;">Types & Prognosis</h2>
+.hero-tag{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(220,100,120,0.18);
+  border:1px solid rgba(220,100,120,0.35);
+  color:#ffd0d8;
+  font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  padding:5px 14px;border-radius:100px;
+  margin-bottom:18px;
+  animation:fadeSlide .6s var(--ease) both;
+}
 
-<p><b>1. Skin Cancer (Face/Neck)</b></p>
-<ul>
-<li>Basal cell carcinoma – OS >95%</li>
-<li>Squamous cell carcinoma – OS 70–90%</li>
-<li>Melanoma – variable (stage dependent)</li>
-</ul>
+.hero h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2rem,6vw,3.4rem);
+  font-weight:700;line-height:1.1;
+  animation:fadeSlide .65s .08s var(--ease) both;
+}
+.hero h1 em{color:#ffb3be;font-style:normal;}
 
-<p><b>2. Nose & Paranasal Sinus Cancer</b></p>
-<ul>
-<li>Often late presentation</li>
-<li>OS: 40–70%</li>
-</ul>
+.hero-desc{
+  margin-top:12px;
+  font-size:.95rem;font-weight:300;
+  color:rgba(255,255,255,0.6);
+  max-width:580px;margin-inline:auto;
+  animation:fadeSlide .65s .16s var(--ease) both;
+  line-height:1.6;
+}
 
-<p><b>3. Salivary Gland Tumors</b></p>
-<ul>
-<li>Benign – excellent outcome</li>
-<li>Malignant – OS 50–80%</li>
-</ul>
+/* lang toggle in hero */
+.lang-bar{
+  display:flex;gap:8px;justify-content:center;
+  margin-top:26px;
+  animation:fadeSlide .65s .24s var(--ease) both;
+}
+.lang-btn{
+  cursor:pointer;
+  background:rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.18);
+  color:rgba(255,255,255,.7);
+  padding:8px 22px;border-radius:100px;
+  font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;
+  transition:all .25s ease;outline:none;
+}
+.lang-btn:hover{background:rgba(255,255,255,.18);color:#fff;}
+.lang-btn.active{
+  background:var(--teal);
+  border-color:var(--teal);
+  color:#fff;
+  box-shadow:0 4px 16px rgba(124,45,62,.45);
+}
 
-<p><b>4. Ear Cancer</b></p>
-<ul>
-<li>Rare but aggressive</li>
-<li>OS: 40–60%</li>
-</ul>
+/* hero sub-tags */
+.site-types{
+  display:flex;gap:8px;justify-content:center;flex-wrap:wrap;
+  margin-top:20px;
+  animation:fadeSlide .65s .3s var(--ease) both;
+}
+.site-chip{
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.15);
+  color:rgba(255,255,255,.75);
+  font-size:12px;padding:4px 12px;border-radius:100px;
+  transition:background .2s;
+}
+.site-chip:hover{background:rgba(255,255,255,.16);}
 
-<p><b>5. Eye (Orbital/Ocular Tumors)</b></p>
-<ul>
-<li>Advanced tumors may require <b>enucleation or evisceration</b></li>
-<li>Early diagnosis can preserve vision</li>
-</ul>
+/* ── MAIN CONTAINER ─────────────────────────────────────────── */
+.container{
+  max-width:940px;margin:0 auto;
+  padding:40px 20px 120px;
+  position:relative;z-index:1;
+}
 
-<h2 style="color:#16a34a;">Treatment</h2>
-<ul>
-<li>Biopsy for diagnosis</li>
-<li>Surgery (main treatment)</li>
-<li>Reconstruction (cosmetic + functional)</li>
-<li>Radiotherapy / Chemotherapy</li>
-</ul>
+/* ── CARD BASE ──────────────────────────────────────────────── */
+.card{
+  background:var(--card);
+  border-radius:var(--r);
+  padding:30px 30px;
+  margin-bottom:22px;
+  border:1px solid var(--border);
+  box-shadow:var(--shadow);
+  opacity:0;transform:translateY(28px);
+  transition:opacity .55s var(--ease),transform .55s var(--ease),box-shadow .3s ease;
+  position:relative;overflow:hidden;
+}
+.card.in{opacity:1;transform:translateY(0);}
+.card:hover{box-shadow:var(--shadow-lg);}
 
-<!-- MYTHS -->
-<h2 style="color:#0284c7;">Common Myths</h2>
-<ul>
-<li><b>“Skin cancer is minor and can be removed anywhere”</b><br>
-Reality: Improper removal can lead to recurrence and facial deformity.</li>
+/* accent stripe */
+.card::before{
+  content:'';position:absolute;
+  left:0;top:16px;bottom:16px;width:3px;
+  border-radius:0 3px 3px 0;
+  background:var(--ac,var(--teal));
+}
 
-<li><b>“Any surgeon can operate these cancers”</b><br>
-Reality: These tumors lie close to eye, nerve, and brain—require specialist expertise.</li>
+/* ── CARD HEADING ───────────────────────────────────────────── */
+.ch{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.ch-icon{
+  width:42px;height:42px;border-radius:11px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:19px;flex-shrink:0;
+  background:var(--icon-bg,var(--teal-l));
+}
+.ch h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.3rem;font-weight:700;
+  color:var(--ac,var(--teal));
+}
 
-<li><b>“If it doesn’t pain, it’s not cancer”</b><br>
-Reality: Many cancers are painless in early stages.</li>
-</ul>
+/* ── LIST ───────────────────────────────────────────────────── */
+.flist{list-style:none;display:grid;gap:9px;}
+.flist li{
+  display:flex;align-items:flex-start;gap:10px;
+  padding:9px 13px;
+  background:var(--li-bg,var(--teal-l));
+  border-radius:9px;
+  font-size:.9rem;line-height:1.5;
+  transition:transform .2s ease,background .2s ease;
+}
+.flist li:hover{transform:translateX(4px);filter:brightness(.97);}
+.flist li::before{
+  content:'›';
+  color:var(--ac,var(--teal));
+  font-size:14px;font-weight:700;
+  margin-top:1px;flex-shrink:0;
+}
 
-<h2 style="color:#dc2626;">Why High-Volume Oncosurgeon?</h2>
-<ul>
-<li>Better cosmetic outcome (face preservation)</li>
-<li>Lower recurrence rates</li>
-<li>Safe surgery near eye, nerve, brain</li>
-<li>Advanced reconstruction techniques</li>
-</ul>
+/* ── PROGNOSIS GRID ─────────────────────────────────────────── */
+.prog-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:12px;
+  margin-top:6px;
+}
+.prog-box{
+  border-radius:12px;
+  padding:16px 16px 14px;
+  background:var(--teal-l);
+  border:1px solid var(--teal-m);
+  transition:transform .22s ease,box-shadow .22s ease;
+}
+.prog-box:hover{transform:translateY(-4px);box-shadow:0 8px 22px rgba(124,45,62,.12);}
+.prog-site{
+  font-size:11px;font-weight:600;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--teal-d);
+  margin-bottom:8px;display:flex;align-items:center;gap:5px;
+}
+.prog-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.8rem;font-weight:700;
+  color:var(--teal);line-height:1;
+}
+.prog-label{font-size:.75rem;color:var(--slate-m);margin-top:3px;}
+.prog-bar{
+  height:5px;border-radius:100px;
+  background:rgba(124,45,62,.12);
+  margin-top:10px;overflow:hidden;
+}
+.prog-fill{
+  height:100%;border-radius:100px;
+  background:var(--teal);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform 1.1s var(--ease) .4s;
+}
+.in .prog-fill{transform:scaleX(1);}
 
-<h2 style="color:#dc2626;">Why Head & Neck Oncosurgeon?</h2>
-<ul>
-<li>Precise tumor removal with margins</li>
-<li>Specialized expertise in skin, salivary & complex cancers</li>
-<li>Facial nerve & organ preservation</li>
-<li>Multidisciplinary cancer care</li>
-</ul>
+/* ── MYTHS ──────────────────────────────────────────────────── */
+.myth-list{display:grid;gap:12px;margin-top:4px;}
+.myth-item{
+  border-radius:12px;
+  border:1px solid rgba(109,62,181,.15);
+  overflow:hidden;
+}
+.myth-false{
+  background:var(--violet-l);
+  padding:10px 14px;
+  font-size:.87rem;font-weight:600;
+  color:var(--violet);
+  display:flex;align-items:center;gap:8px;
+}
+.myth-false::before{content:'✗';font-size:13px;opacity:.7;}
+.myth-truth{
+  background:#fff;
+  padding:10px 14px;
+  font-size:.86rem;color:var(--slate);
+  line-height:1.5;
+  display:flex;align-items:flex-start;gap:8px;
+}
+.myth-truth::before{content:'✓';color:var(--sage);font-weight:700;flex-shrink:0;margin-top:1px;}
 
-<p style="color:#b91c1c;">
-<b>Choosing an experienced oncosurgeon significantly improves cure, appearance, and quality of life.</b>
-</p>
+/* ── WHY CARDS ──────────────────────────────────────────────── */
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:12px;
+  margin-top:6px;
+}
+.why-item{
+  background:var(--sage-l);
+  border:1px solid rgba(61,122,86,.15);
+  border-radius:12px;
+  padding:16px;
+  display:flex;gap:10px;
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.why-item:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(61,110,90,.12);}
+.why-icon{font-size:1.5rem;flex-shrink:0;}
+.why-text{font-size:.86rem;line-height:1.45;}
+.why-text b{display:block;margin-bottom:2px;color:var(--sage);}
 
-</div>
+/* ── ALERT ──────────────────────────────────────────────────── */
+.alert{
+  display:flex;gap:11px;align-items:flex-start;
+  border-radius:11px;padding:14px 16px;
+  margin-top:16px;
+  background:var(--steel-l);
+  border:1px solid rgba(59,107,138,.18);
+}
+.alert-icon{font-size:1.3rem;flex-shrink:0;margin-top:1px;}
+.alert-text{font-size:.86rem;line-height:1.55;color:var(--steel);}
 
-<!-- ================= NEPALI ================= -->
-<div id="np" style="display:none;">
+/* special teal alert */
+.alert.teal{background:var(--teal-l);border-color:var(--teal-m);}
+.alert.teal .alert-text{color:var(--teal-d);}
 
-<p>
-<b>नाक, छाला, कान, लार ग्रन्थी र आँखासम्बन्धी क्यान्सरहरू समयमै पत्ता लगाएर सही उपचार गरेमा राम्रो नतिजा प्राप्त गर्न सकिन्छ।</b>
-</p>
+/* ── BOOKING BANNER (bottom) ────────────────────────────────── */
+.book-section{
+  background:linear-gradient(135deg,#2a0a12,#4a1425);
+  border-radius:var(--r);
+  padding:36px 30px;
+  text-align:center;
+  color:#fff;
+  position:relative;overflow:hidden;
+  margin-bottom:22px;
+  opacity:0;transform:translateY(28px);
+  transition:opacity .55s var(--ease),transform .55s var(--ease);
+}
+.book-section.in{opacity:1;transform:translateY(0);}
+.book-section::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 80% at 50% 120%,rgba(180,50,80,.2) 0%,transparent 70%);
+}
+.book-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.6rem;font-weight:700;
+  position:relative;margin-bottom:6px;
+}
+.book-sub{
+  font-size:.87rem;color:rgba(255,255,255,.55);
+  position:relative;margin-bottom:26px;
+}
+.btn-row{
+  display:flex;gap:12px;justify-content:center;
+  flex-wrap:wrap;position:relative;
+}
+.book-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 24px;border-radius:11px;
+  font-family:'Outfit',sans-serif;font-size:.9rem;font-weight:600;
+  text-decoration:none;
+  transition:transform .2s ease,box-shadow .2s ease,filter .2s ease;
+}
+.book-btn:hover{transform:translateY(-3px);filter:brightness(1.08);}
+.book-btn.wa{background:var(--wa);color:#fff;box-shadow:0 4px 16px rgba(37,211,102,.35);animation:waPulse 2.8s ease-in-out infinite;}
+.book-btn.hp{background:var(--hp);color:#fff;box-shadow:0 4px 16px rgba(14,165,233,.35);}
+@keyframes waPulse{
+  0%,100%{box-shadow:0 4px 16px rgba(37,211,102,.35);}
+  50%    {box-shadow:0 4px 28px rgba(37,211,102,.62);}
+}
 
-<h2 style="color:#0284c7;">प्रारम्भिक लक्षणहरू</h2>
-<ul>
-<li>निको नहुने घाउ वा दाग</li>
-<li>नाक बन्द हुनु वा रगत बग्नु</li>
-<li>जबडा वा कान नजिक गाँठो</li>
-<li>कानबाट पस वा मासु उम्रिनु</li>
-<li>अनुहार वा आँखामा समस्या</li>
-</ul>
+/* ── QUOTE ──────────────────────────────────────────────────── */
+.quote{
+  text-align:center;padding:28px 20px 12px;
+  position:relative;
+}
+.quote::before,.quote::after{
+  font-family:'Cormorant Garamond',serif;font-size:5rem;
+  color:rgba(124,45,62,.12);position:absolute;line-height:1;
+}
+.quote::before{content:'"';top:4px;left:16px;}
+.quote::after {content:'"';bottom:0;right:16px;}
+.q-dev{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--teal);display:block;margin-bottom:6px;}
+.q-en {font-size:.86rem;color:var(--slate-m);font-style:italic;}
 
-<h2 style="color:#f59e0b;">जोखिम कारकहरू</h2>
-<ul>
-<li>घाममा धेरै बस्नु</li>
-<li>सुर्ती र मदिरा</li>
-<li>पुरानो संक्रमण</li>
-<li>Radiation exposure</li>
-<li>काठको धुलो</li>
-</ul>
+/* ── FLOATING BTNS ──────────────────────────────────────────── */
+.fab-g{
+  position:fixed;bottom:24px;right:24px;
+  display:flex;flex-direction:column;gap:10px;z-index:900;
+}
+.fab{
+  width:50px;height:50px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:19px;text-decoration:none;
+  box-shadow:0 5px 18px rgba(0,0,0,.22);
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.fab:hover{transform:scale(1.12) translateY(-2px);box-shadow:0 10px 26px rgba(0,0,0,.28);}
+.fab.wa{background:var(--wa);}
+.fab.hp{background:var(--hp);}
 
-<h2 style="color:#7c3aed;">स्टेज निर्धारण</h2>
-<ul>
-<li>TNM प्रणाली</li>
-<li>Biopsy वा सर्जरीपछि अन्तिम निर्धारण</li>
-</ul>
+/* ── ANIMATIONS ─────────────────────────────────────────────── */
+@keyframes fadeSlide{
+  from{opacity:0;transform:translateY(-18px);}
+  to  {opacity:1;transform:translateY(0);}
+}
 
-<h2 style="color:#16a34a;">प्रकार र नतिजा</h2>
-<ul>
-<li><b>छालाको क्यान्सर:</b> धेरैजसो निको हुन्छ (>90%)</li>
-<li><b>नाक/साइनस:</b> ढिलो पत्ता लाग्ने</li>
-<li><b>लार ग्रन्थी:</b> benign राम्रो, malignant मध्यम</li>
-<li><b>कान:</b> दुर्लभ तर गम्भीर</li>
-<li><b>आँखा:</b> गम्भीर अवस्थामा आँखाको अपरेशन (enucleation/evisceration) आवश्यक पर्न सक्छ</li>
-</ul>
+/* ── ACCENT MODIFIERS ───────────────────────────────────────── */
+.ac-teal  {--ac:var(--teal);  --icon-bg:var(--teal-l);  --li-bg:var(--teal-l);}
+.ac-steel {--ac:var(--steel); --icon-bg:var(--steel-l); --li-bg:var(--steel-l);}
+.ac-amber {--ac:var(--amber); --icon-bg:var(--amber-l); --li-bg:var(--amber-l);}
+.ac-violet{--ac:var(--violet);--icon-bg:var(--violet-l);--li-bg:var(--violet-l);}
+.ac-sage  {--ac:var(--sage);  --icon-bg:var(--sage-l);  --li-bg:var(--sage-l);}
 
-<h2 style="color:#16a34a;">उपचार</h2>
-<ul>
-<li>Biopsy</li>
-<li>सर्जरी</li>
-<li>Reconstruction</li>
-<li>Radiotherapy / Chemotherapy</li>
-</ul>
+/* ── RESPONSIVE ─────────────────────────────────────────────── */
+@media(max-width:600px){
+  .card{padding:20px 16px;}
+  .top-strip{padding:8px 16px;}
+  .hero-body{padding:36px 16px 44px;}
+  .prog-grid{grid-template-columns:1fr 1fr;}
+  .why-grid {grid-template-columns:1fr;}
+  .book-section{padding:26px 18px;}
+}
 
-<h2 style="color:#0284c7;">सामान्य भ्रम (Myths)</h2>
-<ul>
-<li><b>“छालाको क्यान्सर सामान्य हो”</b><br>
-गलत उपचारले पुनः बढ्न सक्छ र अनुहार बिग्रन सक्छ।</li>
+::-webkit-scrollbar{width:5px;}
+::-webkit-scrollbar-thumb{background:#e8b0ba;border-radius:10px;}
+</style>
+</head>
+<body>
 
-<li><b>“जो कोहीले पनि अपरेशन गर्न सक्छ”</b><br>
-यी क्यान्सरहरू आँख, नस र मस्तिष्क नजिक हुने भएकाले विशेषज्ञ आवश्यक हुन्छ।</li>
+<!-- ═══ HERO ══════════════════════════════════════════════════ -->
+<header class="hero">
+  <div class="hero-blob blob1"></div>
+  <div class="hero-blob blob2"></div>
+  <div class="hero-blob blob3"></div>
 
-<li><b>“दुखाइ नभए क्यान्सर होइन”</b><br>
-धेरै क्यान्सर सुरुमा दुख्दैनन्।</li>
-</ul>
+  <!-- TOP BOOKING STRIP -->
+  <div class="top-strip">
+    <span class="strip-label">Dr. Bidhan Koirala — Head &amp; Neck Oncosurgeon</span>
+    <div class="strip-btns">
+      <a href="https://wa.me/9779828769908?text=Hello%20Doctor,%20I%20would%20like%20to%20book%20consultation.%0AName:%0AAge:%0ASymptoms:%0ADuration:"
+         target="_blank" class="strip-btn wa">💬 WhatsApp</a>
+      <a href="https://health.hamropatro.com/doctors/dr_bidhan_koirala_16430"
+         target="_blank" class="strip-btn hp">📅 HamroPatro</a>
+    </div>
+  </div>
 
-<h2 style="color:#dc2626;">किन High-volume Surgeon?</h2>
-<ul>
-<li>अनुहार सुरक्षित राख्ने राम्रो क्षमता</li>
-<li>कम recurrence</li>
-<li>कम complication</li>
-</ul>
+  <!-- HERO BODY -->
+  <div class="hero-body">
+    <div class="hero-tag">🏥 Head &amp; Neck Oncosurgery</div>
 
-<h2 style="color:#dc2626;">किन Oncosurgeon?</h2>
-<ul>
-<li>क्यान्सर पूर्ण हटाउने</li>
-<li>नस र अंग जोगाउने</li>
-<li>उन्नत reconstruction</li>
-</ul>
+    <h1 id="h-en">Head &amp; Neck Cancer<br><em>Nose · Skin · Ear · Salivary Gland</em></h1>
+    <h1 id="h-np" style="display:none;">टाउको र घाँटीको क्यान्सर<br><em>नाक · छाला · कान · लार ग्रन्थी</em></h1>
 
-<p style="color:#b91c1c;">
-<b>अनुभवी oncosurgeon रोज्दा नतिजा, अनुहार र जीवनस्तर राम्रो हुन्छ।</b>
-</p>
+    <p class="hero-desc" id="hd-en">Expert diagnosis &amp; surgery for nose, sinuses, skin, ear, salivary glands, and orbital tumors. Early care preserves function and appearance.</p>
+    <p class="hero-desc" id="hd-np" style="display:none;">नाक, छाला, कान र लार ग्रन्थीका क्यान्सरहरूको विशेषज्ञ उपचार। समयमै गरेमा अनुहार र कार्यक्षमता जोगिन्छ।</p>
 
-</div>
+    <div class="site-types">
+      <span class="site-chip">🫁 Nose &amp; Sinuses</span>
+      <span class="site-chip">🧴 Skin (Face/Neck)</span>
+      <span class="site-chip">👂 Ear Canal</span>
+      <span class="site-chip">💧 Salivary Glands</span>
+      <span class="site-chip">👁️ Orbital / Eye</span>
+    </div>
 
-<!-- CONTACT BUTTONS -->
-<div style="margin-top:20px; display:flex; gap:10px; flex-wrap:wrap;">
+    <div class="lang-bar">
+      <button class="lang-btn active" id="btn-en" onclick="setLang('en')">🇬🇧 English</button>
+      <button class="lang-btn" id="btn-np" onclick="setLang('np')">🇳🇵 नेपाली</button>
+    </div>
+  </div>
+</header>
 
-<a href="https://wa.me/9779828769908?text=Hello%20Doctor,%20I%20would%20like%20to%20book%20consultation.%0AName:%0AAge:%0ASymptoms:%0ADuration:"
-target="_blank"
-style="background:#25D366; color:white; padding:12px 18px; border-radius:8px; text-decoration:none; font-weight:bold;">
-📱 WhatsApp Booking
-</a>
 
-<a href="https://health.hamropatro.com/doctors/dr_bidhan_koirala_16430"
-target="_blank"
-style="background:#0ea5e9; color:white; padding:12px 18px; border-radius:8px; text-decoration:none; font-weight:bold;">
-📅 Book via HamroPatro
-</a>
+<!-- ═══ CONTENT ════════════════════════════════════════════════ -->
+<main class="container">
 
-</div>
+  <!-- ── ENGLISH ── -->
+  <div id="en">
 
-</section>
+    <!-- Warning Signs -->
+    <div class="card ac-steel observe">
+      <div class="ch">
+        <div class="ch-icon">🔍</div>
+        <h2>Common Warning Signs</h2>
+      </div>
+      <ul class="flist">
+        <li>Non-healing ulcer or skin lesion (lasting &gt;2 weeks)</li>
+        <li>Nasal blockage, stuffiness, or unexplained nosebleeds</li>
+        <li>Swelling near the jaw or ear (possible salivary gland)</li>
+        <li>Ear discharge, pain, or a growth inside the ear canal</li>
+        <li>Facial swelling, numbness, or visual / eye symptoms</li>
+        <li>Neck lump that doesn't resolve in 2–3 weeks</li>
+      </ul>
+    </div>
 
-<!-- FLOATING BUTTONS -->
-<div style="position:fixed; bottom:20px; right:20px; display:flex; flex-direction:column; gap:10px; z-index:999;">
+    <!-- Risk Factors -->
+    <div class="card ac-amber observe">
+      <div class="ch">
+        <div class="ch-icon">⚠️</div>
+        <h2>Risk Factors</h2>
+      </div>
+      <ul class="flist">
+        <li>Prolonged sun exposure — primary cause of facial skin cancers</li>
+        <li>Tobacco &amp; alcohol use (especially combined)</li>
+        <li>Chronic infections — repeated ear or sinus infections</li>
+        <li>Radiation exposure (medical or occupational)</li>
+        <li>Wood dust / leather dust — linked to sinonasal tumours</li>
+        <li>Previous skin cancer or family history</li>
+      </ul>
+    </div>
 
-<a href="https://wa.me/9779828769908?text=Hello%20Doctor,%20I%20would%20like%20to%20book%20consultation.%0AName:%0AAge:%0ASymptoms:%0ADuration:"
-target="_blank"
-style="background:#25D366; color:white; padding:14px; border-radius:50%; text-align:center; font-size:20px;">
-💬
-</a>
+    <!-- Staging -->
+    <div class="card ac-violet observe">
+      <div class="ch">
+        <div class="ch-icon">📊</div>
+        <h2>Staging — TNM Classification</h2>
+      </div>
+      <ul class="flist">
+        <li><strong>T</strong> — Primary tumour size and extent of local invasion</li>
+        <li><strong>N</strong> — Regional lymph node involvement</li>
+        <li><strong>M</strong> — Distant metastasis to other organs</li>
+        <li>Final pathological staging (pTNM) confirmed after surgery / histopathology</li>
+      </ul>
+      <div class="alert teal">
+        <span class="alert-icon">🔬</span>
+        <span class="alert-text"><strong>Clinical staging guides planning.</strong> Final definitive staging requires histopathology report after biopsy or surgery.</span>
+      </div>
+    </div>
 
-<a href="https://health.hamropatro.com/doctors/dr_bidhan_koirala_16430"
-target="_blank"
-style="background:#0ea5e9; color:white; padding:14px; border-radius:50%; text-align:center; font-size:20px;">
-📅
-</a>
+    <!-- Prognosis -->
+    <div class="card ac-teal observe">
+      <div class="ch">
+        <div class="ch-icon">📈</div>
+        <h2>Types &amp; Prognosis (Overall Survival)</h2>
+      </div>
+      <div class="prog-grid">
+        <div class="prog-box">
+          <div class="prog-site">🧴 Basal Cell Carcinoma</div>
+          <div class="prog-num">&gt;95%</div>
+          <div class="prog-label">5-year Overall Survival</div>
+          <div class="prog-bar"><div class="prog-fill" style="width:95%;"></div></div>
+        </div>
+        <div class="prog-box">
+          <div class="prog-site">🧴 Squamous Cell (Skin)</div>
+          <div class="prog-num">70–90%</div>
+          <div class="prog-label">5-year Overall Survival</div>
+          <div class="prog-bar"><div class="prog-fill" style="width:80%;"></div></div>
+        </div>
+        <div class="prog-box" style="background:var(--violet-l);border-color:rgba(109,62,181,.2);">
+          <div class="prog-site" style="color:var(--violet);">🌑 Melanoma</div>
+          <div class="prog-num" style="color:var(--violet);">Stage-<br>dependent</div>
+          <div class="prog-label">Varies widely by stage &amp; subtype</div>
+          <div class="prog-bar"><div class="prog-fill" style="width:60%;background:var(--violet);"></div></div>
+        </div>
+        <div class="prog-box" style="background:var(--amber-l);border-color:rgba(180,83,9,.15);">
+          <div class="prog-site" style="color:var(--amber);">🫁 Nose &amp; Sinus</div>
+          <div class="prog-num" style="color:var(--amber);">40–70%</div>
+          <div class="prog-label">Often late presentation</div>
+          <div class="prog-bar"><div class="prog-fill" style="width:55%;background:var(--amber);"></div></div>
+        </div>
+        <div class="prog-box">
+          <div class="prog-site">💧 Salivary Gland (Benign)</div>
+          <div class="prog-num">Excellent</div>
+          <div class="prog-label">Near-complete cure expected</div>
+          <div class="prog-bar"><div class="prog-fill" style="width:97%;"></div></div>
+        </div>
+        <div class="prog-box" style="background:var(--steel-l);border-color:rgba(59,107,138,.15);">
+          <div class="prog-site" style="color:var(--steel);">💧 Salivary Gland (Malignant)</div>
+          <div class="prog-num" style="color:var(--steel);">50–80%</div>
+          <div class="prog-label">5-year Overall Survival</div>
+          <div class="prog-bar"><div class="prog-fill" style="width:65%;background:var(--steel);"></div></div>
+        </div>
+        <div class="prog-box" style="background:var(--sage-l);border-color:rgba(61,122,86,.15);">
+          <div class="prog-site" style="color:var(--sage);">👂 Ear Canal Cancer</div>
+          <div class="prog-num" style="color:var(--sage);">40–60%</div>
+          <div class="prog-label">Rare but aggressive</div>
+          <div class="prog-bar"><div class="prog-fill" style="width:50%;background:var(--sage);"></div></div>
+        </div>
+        <div class="prog-box" style="background:var(--amber-l);border-color:rgba(180,83,9,.15);">
+          <div class="prog-site" style="color:var(--amber);">👁️ Orbital / Eye Tumours</div>
+          <div class="prog-num" style="color:var(--amber);">Early = Vision preserved</div>
+          <div class="prog-label">Late: enucleation may be needed</div>
+          <div class="prog-bar"><div class="prog-fill" style="width:70%;background:var(--amber);"></div></div>
+        </div>
+      </div>
+    </div>
 
+    <!-- Treatment -->
+    <div class="card ac-teal observe">
+      <div class="ch">
+        <div class="ch-icon">🏥</div>
+        <h2>Treatment Pathway</h2>
+      </div>
+      <ul class="flist">
+        <li><strong>Biopsy</strong> — Tissue confirmation of cancer type and grade</li>
+        <li><strong>Imaging</strong> — CT / MRI / PET for accurate staging</li>
+        <li><strong>Surgery</strong> — Wide excision with safe surgical margins (primary treatment)</li>
+        <li><strong>Reconstruction</strong> — Flap surgery for cosmetic &amp; functional restoration</li>
+        <li><strong>Radiotherapy / Chemotherapy</strong> — Adjuvant, as per histopathology</li>
+      </ul>
+    </div>
+
+    <!-- Myths -->
+    <div class="card ac-violet observe">
+      <div class="ch">
+        <div class="ch-icon">💡</div>
+        <h2>Common Myths — Busted</h2>
+      </div>
+      <div class="myth-list">
+        <div class="myth-item">
+          <div class="myth-false">"Skin cancer is minor — any clinic can remove it"</div>
+          <div class="myth-truth">Improper removal leaves positive margins, causing recurrence and facial deformity. Specialist margins are essential.</div>
+        </div>
+        <div class="myth-item">
+          <div class="myth-false">"Any general surgeon can operate head &amp; neck tumours"</div>
+          <div class="myth-truth">These tumours lie adjacent to the eye, facial nerve, and brain. Specialist training is non-negotiable for safe outcomes.</div>
+        </div>
+        <div class="myth-item">
+          <div class="myth-false">"If it doesn't hurt, it can't be cancer"</div>
+          <div class="myth-truth">Most head &amp; neck cancers are painless in early stages. Painlessness is NOT reassurance — get it evaluated.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Why Oncosurgeon -->
+    <div class="card ac-sage observe">
+      <div class="ch">
+        <div class="ch-icon">👨‍⚕️</div>
+        <h2>Why a High-Volume Head &amp; Neck Oncosurgeon?</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-item">
+          <span class="why-icon">🎯</span>
+          <div class="why-text"><b>Precise Tumour Removal</b>Safe margins with lower recurrence rates than general surgery.</div>
+        </div>
+        <div class="why-item">
+          <span class="why-icon">🧠</span>
+          <div class="why-text"><b>Safe Near Critical Structures</b>Eye, facial nerve, and skull base require specialist skill.</div>
+        </div>
+        <div class="why-item">
+          <span class="why-icon">✨</span>
+          <div class="why-text"><b>Better Cosmetic Outcomes</b>Face-preserving techniques by experienced hands.</div>
+        </div>
+        <div class="why-item">
+          <span class="why-icon">🔧</span>
+          <div class="why-text"><b>Advanced Reconstruction</b>Flap and microvascular techniques restore form and function.</div>
+        </div>
+        <div class="why-item">
+          <span class="why-icon">🤝</span>
+          <div class="why-text"><b>Multidisciplinary Care</b>Oncology, radiation, and rehab working together.</div>
+        </div>
+      </div>
+      <div class="alert teal" style="margin-top:16px;">
+        <span class="alert-icon">✅</span>
+        <span class="alert-text"><strong>Choosing an experienced oncosurgeon significantly improves cure, appearance, and quality of life.</strong></span>
+      </div>
+    </div>
+
+  </div><!-- /en -->
+
+
+  <!-- ── NEPALI ── -->
+  <div id="np" style="display:none;">
+
+    <!-- चेतावनी -->
+    <div class="card ac-steel observe">
+      <div class="ch">
+        <div class="ch-icon">🔍</div>
+        <h2>प्रारम्भिक लक्षणहरू</h2>
+      </div>
+      <ul class="flist">
+        <li>२ हप्ताभन्दा बढी निको नहुने घाउ वा दाग</li>
+        <li>नाक बन्द हुनु वा अकारण रगत बग्नु</li>
+        <li>जबडा वा कान नजिक गाँठो (लार ग्रन्थी हुन सक्छ)</li>
+        <li>कानबाट पस आउनु, दुखाइ वा मासु उम्रिनु</li>
+        <li>अनुहार सुन्निनु, झमझम हुनु वा आँखामा समस्या</li>
+        <li>घाँटीमा गाँठो जो २–३ हप्तामा नजाने</li>
+      </ul>
+    </div>
+
+    <!-- जोखिम -->
+    <div class="card ac-amber observe">
+      <div class="ch">
+        <div class="ch-icon">⚠️</div>
+        <h2>जोखिम कारकहरू</h2>
+      </div>
+      <ul class="flist">
+        <li>अत्यधिक घाममा बस्नु — छालाको क्यान्सरको मुख्य कारण</li>
+        <li>सुर्ती र मदिरा (एकसाथ लिँदा धेरै खतरनाक)</li>
+        <li>पुरानो संक्रमण — बारम्बार नाक वा कानको संक्रमण</li>
+        <li>Radiation exposure</li>
+        <li>काठ वा छालाको धुलो — नाक/साइनस क्यान्सरसँग सम्बन्धित</li>
+      </ul>
+    </div>
+
+    <!-- स्टेजिंग -->
+    <div class="card ac-violet observe">
+      <div class="ch">
+        <div class="ch-icon">📊</div>
+        <h2>स्टेज निर्धारण</h2>
+      </div>
+      <ul class="flist">
+        <li><strong>T</strong> — ट्युमरको आकार र स्थानीय फैलावट</li>
+        <li><strong>N</strong> — लिम्फ नोडमा फैलिएको छ कि छैन</li>
+        <li><strong>M</strong> — टाढाका अंगमा फैलावट</li>
+        <li>अन्तिम पुष्टि biopsy वा सर्जरीपछि Histopathology बाट हुन्छ</li>
+      </ul>
+      <div class="alert teal">
+        <span class="alert-icon">🔬</span>
+        <span class="alert-text"><strong>Clinical staging उपचार योजनाको लागि हो।</strong> अन्तिम निर्धारण Histopathology नतिजाबाट मात्र हुन्छ।</span>
+      </div>
+    </div>
+
+    <!-- प्रकार र नतिजा -->
+    <div class="card ac-teal observe">
+      <div class="ch">
+        <div class="ch-icon">📈</div>
+        <h2>प्रकार र बाँच्ने सम्भावना</h2>
+      </div>
+      <div class="prog-grid">
+        <div class="prog-box">
+          <div class="prog-site">🧴 Basal Cell Carcinoma</div>
+          <div class="prog-num">&gt;95%</div>
+          <div class="prog-label">5-वर्षे जीवित रहने दर</div>
+          <div class="prog-bar"><div class="prog-fill" style="width:95%;"></div></div>
+        </div>
+        <div class="prog-box">
+          <div class="prog-site">🧴 Squamous Cell (छाला)</div>
+          <div class="prog-num">७०–९०%</div>
+          <div class="prog-label">5-वर्षे जीवित रहने दर</div>
+          <div class="prog-bar"><div class="prog-fill" style="width:80%;"></div></div>
+        </div>
+        <div class="prog-box" style="background:var(--amber-l);border-color:rgba(180,83,9,.15);">
+          <div class="prog-site" style="color:var(--amber);">🫁 नाक / साइनस</div>
+          <div class="prog-num" style="color:var(--amber);">४०–७०%</div>
+          <div class="prog-label">प्रायः ढिलो पत्ता लाग्ने</div>
+          <div class="prog-bar"><div class="prog-fill" style="width:55%;background:var(--amber);"></div></div>
+        </div>
+        <div class="prog-box">
+          <div class="prog-site">💧 लार ग्रन्थी (Benign)</div>
+          <div class="prog-num">उत्कृष्ट</div>
+          <div class="prog-label">पूर्ण निको हुने सम्भावना</div>
+          <div class="prog-bar"><div class="prog-fill" style="width:97%;"></div></div>
+        </div>
+        <div class="prog-box" style="background:var(--steel-l);border-color:rgba(59,107,138,.15);">
+          <div class="prog-site" style="color:var(--steel);">💧 लार ग्रन्थी (Malignant)</div>
+          <div class="prog-num" style="color:var(--steel);">५०–८०%</div>
+          <div class="prog-label">5-वर्षे जीवित रहने दर</div>
+          <div class="prog-bar"><div class="prog-fill" style="width:65%;background:var(--steel);"></div></div>
+        </div>
+        <div class="prog-box" style="background:var(--sage-l);border-color:rgba(61,122,86,.15);">
+          <div class="prog-site" style="color:var(--sage);">👂 कान क्यान्सर</div>
+          <div class="prog-num" style="color:var(--sage);">४०–६०%</div>
+          <div class="prog-label">दुर्लभ तर गम्भीर</div>
+          <div class="prog-bar"><div class="prog-fill" style="width:50%;background:var(--sage);"></div></div>
+        </div>
+        <div class="prog-box" style="background:var(--amber-l);border-color:rgba(180,83,9,.15);">
+          <div class="prog-site" style="color:var(--amber);">👁️ आँखा / Orbital</div>
+          <div class="prog-num" style="color:var(--amber);">चाँडो = आँखा जोगिन्छ</div>
+          <div class="prog-label">ढिलो भए enucleation आवश्यक</div>
+          <div class="prog-bar"><div class="prog-fill" style="width:70%;background:var(--amber);"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- उपचार -->
+    <div class="card ac-teal observe">
+      <div class="ch">
+        <div class="ch-icon">🏥</div>
+        <h2>उपचार प्रक्रिया</h2>
+      </div>
+      <ul class="flist">
+        <li><strong>Biopsy</strong> — क्यान्सरको प्रकार र श्रेणी पुष्टि</li>
+        <li><strong>Imaging</strong> — CT / MRI / PET बाट सटीक स्टेजिंग</li>
+        <li><strong>Surgery</strong> — सुरक्षित मार्जिनसहित ट्युमर हटाउने</li>
+        <li><strong>Reconstruction</strong> — अनुहार र कार्यक्षमता फिर्ता ल्याउने</li>
+        <li><strong>Radiotherapy / Chemotherapy</strong> — Histopathology नतिजा अनुसार</li>
+      </ul>
+    </div>
+
+    <!-- भ्रम -->
+    <div class="card ac-violet observe">
+      <div class="ch">
+        <div class="ch-icon">💡</div>
+        <h2>सामान्य भ्रम — सत्य के हो?</h2>
+      </div>
+      <div class="myth-list">
+        <div class="myth-item">
+          <div class="myth-false">"छालाको क्यान्सर सामान्य हो, जताततै हटाउन सकिन्छ"</div>
+          <div class="myth-truth">गलत हटाउँदा मार्जिन पुग्दैन, क्यान्सर फर्कन्छ र अनुहार बिग्रन्छ। विशेषज्ञकहाँ जानु जरुरी छ।</div>
+        </div>
+        <div class="myth-item">
+          <div class="myth-false">"जो कोहीले पनि यी क्यान्सरको अपरेशन गर्न सक्छ"</div>
+          <div class="myth-truth">आँखा, अनुहारको नस र मस्तिष्क नजिक हुने भएकाले विशेषज्ञ oncosurgeon आवश्यक हुन्छ।</div>
+        </div>
+        <div class="myth-item">
+          <div class="myth-false">"दुखाइ नभए क्यान्सर होइन"</div>
+          <div class="myth-truth">धेरै Head &amp; Neck क्यान्सर सुरुमा दुख्दैनन्। दुखाइ नहुनु सुरक्षाको संकेत होइन।</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- किन Oncosurgeon -->
+    <div class="card ac-sage observe">
+      <div class="ch">
+        <div class="ch-icon">👨‍⚕️</div>
+        <h2>किन High-Volume Oncosurgeon रोज्नु पर्छ?</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-item">
+          <span class="why-icon">🎯</span>
+          <div class="why-text"><b>पूर्ण क्यान्सर हटाउने</b>सुरक्षित मार्जिन र कम recurrence।</div>
+        </div>
+        <div class="why-item">
+          <span class="why-icon">🧠</span>
+          <div class="why-text"><b>नाजुक ठाउँमा सुरक्षित सर्जरी</b>आँखा, नस र खप्परको नजिक विशेषज्ञता चाहिन्छ।</div>
+        </div>
+        <div class="why-item">
+          <span class="why-icon">✨</span>
+          <div class="why-text"><b>राम्रो अनुहार नतिजा</b>अनुभवी हातले अनुहार सुरक्षित राख्छ।</div>
+        </div>
+        <div class="why-item">
+          <span class="why-icon">🔧</span>
+          <div class="why-text"><b>Advanced Reconstruction</b>Flap surgery ले रूप र कार्यक्षमता फिर्ता ल्याउँछ।</div>
+        </div>
+        <div class="why-item">
+          <span class="why-icon">🤝</span>
+          <div class="why-text"><b>Team-Based उपचार</b>Oncology, Radiation र Rehab टोलीसँग समन्वय।</div>
+        </div>
+      </div>
+      <div class="alert teal" style="margin-top:16px;">
+        <span class="alert-icon">✅</span>
+        <span class="alert-text"><strong>अनुभवी oncosurgeon रोज्दा नतिजा, अनुहार र जीवनस्तर राम्रो हुन्छ।</strong></span>
+      </div>
+    </div>
+
+  </div><!-- /np -->
+
+
+  <!-- BOOKING BOTTOM -->
+  <div class="book-section observe" id="book-en">
+    <div class="book-title">Book a Consultation</div>
+    <div class="book-sub">Dr. Bidhan Koirala — Head &amp; Neck Oncosurgeon</div>
+    <div class="btn-row">
+      <a href="https://wa.me/9779828769908?text=Hello%20Doctor,%20I%20would%20like%20to%20book%20consultation.%0AName:%0AAge:%0ASymptoms:%0ADuration:"
+         target="_blank" class="book-btn wa">💬 WhatsApp Booking</a>
+      <a href="https://health.hamropatro.com/doctors/dr_bidhan_koirala_16430"
+         target="_blank" class="book-btn hp">📅 Book via HamroPatro</a>
+    </div>
+  </div>
+
+  <div class="book-section observe" id="book-np" style="display:none;">
+    <div class="book-title">परामर्श बुक गर्नुहोस्</div>
+    <div class="book-sub">डा. बिधान कोइराला — Head &amp; Neck Oncosurgeon</div>
+    <div class="btn-row">
+      <a href="https://wa.me/9779828769908?text=Hello%20Doctor,%20I%20would%20like%20to%20book%20consultation.%0AName:%0AAge:%0ASymptoms:%0ADuration:"
+         target="_blank" class="book-btn wa">💬 WhatsApp बुकिङ</a>
+      <a href="https://health.hamropatro.com/doctors/dr_bidhan_koirala_16430"
+         target="_blank" class="book-btn hp">📅 HamroPatro मार्फत</a>
+    </div>
+  </div>
+
+  <!-- QUOTE -->
+  <div class="quote">
+    <span class="q-dev">कर्मण्येवाधिकारस्ते मा फलेषु कदाचन</span>
+    <span class="q-en">Act on time without fear — early treatment saves life.</span>
+  </div>
+
+</main>
+
+<!-- FLOATING BTNS -->
+<div class="fab-g">
+  <a href="https://wa.me/9779828769908?text=Hello%20Doctor,%20I%20would%20like%20to%20book%20consultation.%0AName:%0AAge:%0ASymptoms:%0ADuration:"
+     target="_blank" class="fab wa">💬</a>
+  <a href="https://health.hamropatro.com/doctors/dr_bidhan_koirala_16430"
+     target="_blank" class="fab hp">📅</a>
 </div>
 
 <script>
-function showLang(lang) {
-document.getElementById('en').style.display = (lang === 'en') ? 'block' : 'none';
-document.getElementById('np').style.display = (lang === 'np') ? 'block' : 'none';
+/* Language toggle */
+function setLang(l) {
+  const en = l==='en';
+  document.getElementById('en').style.display     = en?'block':'none';
+  document.getElementById('np').style.display     = en?'none':'block';
+  document.getElementById('h-en').style.display   = en?'block':'none';
+  document.getElementById('h-np').style.display   = en?'none':'block';
+  document.getElementById('hd-en').style.display  = en?'block':'none';
+  document.getElementById('hd-np').style.display  = en?'none':'block';
+  document.getElementById('book-en').style.display= en?'block':'none';
+  document.getElementById('book-np').style.display= en?'none':'block';
+  document.getElementById('btn-en').classList.toggle('active',en);
+  document.getElementById('btn-np').classList.toggle('active',!en);
+  setTimeout(activateObserver,60);
 }
+
+/* Scroll-reveal */
+function activateObserver(){
+  const io = new IntersectionObserver(entries=>{
+    entries.forEach((e,i)=>{
+      if(e.isIntersecting){
+        setTimeout(()=>e.target.classList.add('in'), i*70);
+      }
+    });
+  },{threshold:0.07});
+  document.querySelectorAll('.observe').forEach(el=>io.observe(el));
+}
+
+document.addEventListener('DOMContentLoaded', activateObserver);
 </script>
+</body>
+</html>
