@@ -1,26 +1,817 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>About Doctor</title>
-<link rel="stylesheet" href="style.css">
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- SEO Meta -->
+    <title>About Dr. Bidhan Koirala | Head & Neck Cancer Surgeon in Nepal | CMC Cancer Institute Bharatpur</title>
+    <meta name="description" content="Dr. Bidhan Koirala is a leading Head & Neck Oncosurgeon in Nepal, specialising in oral cancer surgery, thyroid cancer, and complex head & neck tumours at CMC Cancer Institute, Bharatpur. FHNO, ESMO, ASCO member with Tata Medical Centre fellowship.">
+    <meta name="keywords" content="head and neck cancer surgeon Nepal, oncosurgeon Bharatpur, oral cancer surgery Chitwan, thyroid cancer surgeon Nepal, ENT specialist Bharatpur, best cancer surgeon Nepal, neck dissection Nepal, Dr Bidhan Koirala, CMC Cancer Institute Bharatpur, FHNO Nepal, head neck oncosurgery Nepal">
+    <meta name="author" content="Dr. Bidhan Koirala">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Dr. Bidhan Koirala — Head & Neck Oncosurgeon, Nepal">
+    <meta property="og:description" content="Expert Head & Neck Cancer Surgery at CMC Cancer Institute, Bharatpur. Oral cancer, thyroid cancer, neck dissection & reconstructive oncosurgery.">
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://drbidhankoirala.com.np/about">
+    <meta property="og:image" content="profile.jpg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --primary: #0f766e;
+            --primary-light: #14b8a6;
+            --primary-dark: #0d6560;
+            --primary-50: #f0fdfa;
+            --primary-100: #ccfbf1;
+            --primary-200: #99f6e4;
+            --white: #ffffff;
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-200: #e2e8f0;
+            --slate-300: #cbd5e1;
+            --slate-400: #94a3b8;
+            --slate-500: #64748b;
+            --slate-600: #475569;
+            --slate-700: #334155;
+            --slate-800: #1e293b;
+            --slate-900: #0f172a;
+            --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+            --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Sans', system-ui, sans-serif;
+            background: var(--slate-50);
+            color: var(--slate-800);
+            overflow-x: hidden;
+        }
+
+        .serif { font-family: 'DM Serif Display', Georgia, serif; }
+
+        /* ── SCROLL REVEAL ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: opacity 0.75s var(--ease-out), transform 0.75s var(--ease-out);
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-left {
+            opacity: 0; transform: translateX(-36px);
+            transition: opacity 0.85s var(--ease-out), transform 0.85s var(--ease-out);
+        }
+        .reveal-left.visible { opacity: 1; transform: translateX(0); }
+        .reveal-right {
+            opacity: 0; transform: translateX(36px);
+            transition: opacity 0.85s var(--ease-out), transform 0.85s var(--ease-out);
+        }
+        .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+        /* ── HEADER ── */
+        header {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            padding: 0 2rem; height: 72px;
+            display: flex; align-items: center; justify-content: space-between;
+            background: rgba(255,255,255,0.88);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        header.scrolled {
+            border-color: var(--slate-200);
+            box-shadow: 0 4px 24px rgba(15,118,110,0.07);
+        }
+        .logo {
+            display: flex; align-items: center; gap: 14px;
+            text-decoration: none; color: inherit;
+        }
+        .logo-mark {
+            width: 44px; height: 44px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 14px; display: flex; align-items: center; justify-content: center;
+            color: #fff; font-weight: 700; font-size: 17px; letter-spacing: -0.5px;
+            box-shadow: 0 4px 12px rgba(15,118,110,0.35);
+            transition: transform 0.3s var(--ease-spring), box-shadow 0.3s;
+        }
+        .logo:hover .logo-mark { transform: rotate(-6deg) scale(1.05); box-shadow: 0 8px 20px rgba(15,118,110,0.4); }
+        .logo-text h1 { font-family: 'DM Serif Display', serif; font-size: 18px; line-height: 1.1; color: var(--slate-900); }
+        .logo-text p { font-size: 12px; color: var(--slate-500); letter-spacing: 0.03em; }
+
+        nav { display: flex; align-items: center; gap: 2rem; }
+        .nav-link {
+            font-size: 14px; font-weight: 500; color: var(--slate-600);
+            text-decoration: none; position: relative; transition: color 0.25s;
+        }
+        .nav-link.active { color: var(--primary); }
+        .nav-link::after {
+            content: ''; position: absolute; bottom: -3px; left: 0;
+            width: 0; height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+            border-radius: 99px; transition: width 0.3s var(--ease-out);
+        }
+        .nav-link:hover { color: var(--primary); }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+        .cta-btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 10px 22px; background: var(--primary); color: #fff;
+            border-radius: 99px; font-size: 14px; font-weight: 600;
+            text-decoration: none;
+            transition: background 0.25s, transform 0.25s var(--ease-spring), box-shadow 0.25s;
+            box-shadow: 0 4px 14px rgba(15,118,110,0.35);
+        }
+        .cta-btn:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(15,118,110,0.45); }
+
+        /* ── PAGE HERO ── */
+        .page-hero {
+            background: linear-gradient(155deg, #0c655e 0%, #0f766e 40%, #14b8a6 100%);
+            padding: 140px 2rem 80px;
+            position: relative; overflow: hidden;
+        }
+        .page-hero::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 80% 50%, rgba(255,255,255,0.06) 0%, transparent 60%);
+        }
+        /* Decorative geometric rings */
+        .hero-ring {
+            position: absolute; border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.08);
+            animation: ringExpand 12s ease-in-out infinite;
+        }
+        .hero-ring-1 { width: 400px; height: 400px; top: -100px; right: -80px; animation-delay: 0s; }
+        .hero-ring-2 { width: 600px; height: 600px; top: -200px; right: -200px; animation-delay: -4s; }
+        .hero-ring-3 { width: 200px; height: 200px; bottom: 20px; left: 10%; animation-delay: -8s; }
+        @keyframes ringExpand {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.06); opacity: 1; }
+        }
+
+        .page-hero-inner {
+            max-width: 1120px; margin: 0 auto;
+            display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: end;
+            position: relative; z-index: 2;
+        }
+        .hero-breadcrumb {
+            font-size: 12px; color: rgba(255,255,255,0.55);
+            letter-spacing: 0.1em; text-transform: uppercase;
+            margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
+        }
+        .hero-breadcrumb a { color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
+        .hero-breadcrumb a:hover { color: rgba(255,255,255,0.9); }
+        .page-hero h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: #fff; line-height: 1.05; letter-spacing: -0.02em;
+            margin-bottom: 16px;
+        }
+        .page-hero h2 em { font-style: italic; color: var(--primary-200); }
+        .hero-tags { display: flex; gap: 10px; flex-wrap: wrap; }
+        .hero-tag {
+            padding: 6px 16px;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 99px; font-size: 12px; color: rgba(255,255,255,0.85);
+            backdrop-filter: blur(8px);
+        }
+        .hero-contact-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 20px; padding: 24px 28px;
+            min-width: 240px;
+        }
+        .hero-contact-label { font-size: 11px; color: rgba(255,255,255,0.5); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px; }
+        .hero-contact-item {
+            display: flex; align-items: center; gap: 10px;
+            font-size: 13px; color: rgba(255,255,255,0.85);
+            margin-bottom: 10px;
+        }
+        .hero-contact-item:last-child { margin-bottom: 0; }
+        .hero-contact-item i { font-size: 14px; color: var(--primary-200); width: 16px; }
+        .hero-contact-item a { color: rgba(255,255,255,0.85); text-decoration: none; transition: color 0.2s; }
+        .hero-contact-item a:hover { color: #fff; }
+
+        /* ── MAIN LAYOUT ── */
+        .main-container {
+            max-width: 1120px; margin: 0 auto;
+            padding: 64px 2rem;
+            display: grid; grid-template-columns: 1fr 340px; gap: 64px; align-items: start;
+        }
+
+        /* ── SECTION COMMON ── */
+        .section-block { margin-bottom: 56px; }
+        .section-label {
+            font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
+            text-transform: uppercase; color: var(--primary); margin-bottom: 20px;
+            display: flex; align-items: center; gap: 10px;
+        }
+        .section-label::after {
+            content: ''; flex: 1; height: 1px; background: var(--slate-200);
+        }
+        .section-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2rem; color: var(--slate-900); margin-bottom: 16px; line-height: 1.15;
+        }
+
+        /* ── BIO ── */
+        .bio-text {
+            font-size: 16px; color: var(--slate-600); line-height: 1.85; font-weight: 300;
+        }
+        .bio-text + .bio-text { margin-top: 16px; }
+        .bio-highlight {
+            color: var(--primary); font-weight: 500;
+        }
+
+        /* ── STATS ROW ── */
+        .stats-row {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+            margin: 32px 0;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, var(--primary-50), var(--white));
+            border: 1px solid var(--primary-100);
+            border-radius: 16px; padding: 20px 24px; text-align: center;
+            transition: transform 0.3s var(--ease-spring), box-shadow 0.3s;
+        }
+        .stat-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(15,118,110,0.1); }
+        .stat-num {
+            font-family: 'DM Serif Display', serif; font-size: 2.4rem;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+            line-height: 1;
+        }
+        .stat-lbl { font-size: 12px; color: var(--slate-500); margin-top: 6px; }
+
+        /* ── TIMELINE ── */
+        .timeline { position: relative; padding-left: 28px; }
+        .timeline::before {
+            content: ''; position: absolute; left: 7px; top: 8px; bottom: 8px;
+            width: 1px; background: linear-gradient(to bottom, var(--primary-light), var(--slate-200));
+        }
+        .tl-item { position: relative; margin-bottom: 32px; }
+        .tl-item:last-child { margin-bottom: 0; }
+        .tl-dot {
+            position: absolute; left: -28px; top: 4px;
+            width: 14px; height: 14px; border-radius: 50%;
+            border: 2px solid var(--primary-light); background: var(--white);
+            transition: transform 0.3s var(--ease-spring), background 0.3s;
+        }
+        .tl-dot.current {
+            background: var(--primary); border-color: var(--primary);
+            box-shadow: 0 0 0 4px var(--primary-100);
+        }
+        .tl-item:hover .tl-dot { transform: scale(1.3); }
+        .tl-period {
+            display: inline-block; font-size: 11px; font-weight: 600;
+            color: var(--primary); letter-spacing: 0.05em; margin-bottom: 4px;
+            background: var(--primary-50); border: 1px solid var(--primary-100);
+            padding: 2px 10px; border-radius: 99px;
+        }
+        .tl-role {
+            font-size: 16px; font-weight: 500; color: var(--slate-900); margin: 4px 0 2px;
+        }
+        .tl-place { font-size: 13px; color: var(--slate-500); }
+        .tl-featured {
+            display: inline-flex; align-items: center; gap: 5px;
+            font-size: 11px; color: var(--primary-dark); background: var(--primary-100);
+            border-radius: 99px; padding: 2px 10px; margin-top: 6px;
+        }
+
+        /* ── CREDENTIALS ── */
+        .cred-list { display: flex; flex-direction: column; gap: 16px; }
+        .cred-item {
+            display: flex; gap: 16px; align-items: flex-start;
+            padding: 16px 20px;
+            background: var(--white); border: 1px solid var(--slate-200);
+            border-radius: 14px;
+            transition: border-color 0.25s, box-shadow 0.25s, transform 0.3s var(--ease-spring);
+        }
+        .cred-item:hover {
+            border-color: var(--primary-200); transform: translateX(4px);
+            box-shadow: 0 4px 20px rgba(15,118,110,0.08);
+        }
+        .cred-icon {
+            width: 40px; height: 40px; border-radius: 12px;
+            background: var(--primary-50); border: 1px solid var(--primary-100);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--primary); font-size: 18px; flex-shrink: 0;
+        }
+        .cred-title { font-size: 15px; font-weight: 500; color: var(--slate-900); margin-bottom: 2px; }
+        .cred-sub { font-size: 13px; color: var(--slate-500); }
+
+        /* ── PUBLICATIONS ── */
+        .pub-list { display: flex; flex-direction: column; gap: 16px; }
+        .pub-item {
+            padding: 20px 24px;
+            background: var(--white); border: 1px solid var(--slate-200);
+            border-left: 3px solid var(--primary); border-radius: 0 14px 14px 0;
+            transition: box-shadow 0.25s, transform 0.3s var(--ease-spring);
+        }
+        .pub-item:hover { box-shadow: 0 8px 24px rgba(15,118,110,0.09); transform: translateX(4px); }
+        .pub-type {
+            font-size: 10px; font-weight: 600; letter-spacing: 0.1em;
+            text-transform: uppercase; color: var(--primary); margin-bottom: 6px;
+        }
+        .pub-title { font-size: 15px; color: var(--slate-800); line-height: 1.55; font-weight: 400; }
+
+        /* ── SPECIALISATIONS TAGS ── */
+        .spec-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+        .spec-tag {
+            padding: 8px 18px; font-size: 13px; font-weight: 400;
+            color: var(--slate-700);
+            border: 1px solid var(--slate-200); border-radius: 99px; background: var(--white);
+            transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.25s var(--ease-spring);
+        }
+        .spec-tag:hover {
+            background: var(--primary-50); border-color: var(--primary-200);
+            color: var(--primary); transform: scale(1.04);
+        }
+
+        /* ── SIDEBAR ── */
+        .sidebar { position: sticky; top: 96px; display: flex; flex-direction: column; gap: 24px; }
+
+        .sidebar-card {
+            background: var(--white); border: 1px solid var(--slate-200);
+            border-radius: 20px; overflow: hidden;
+        }
+        .sidebar-card-header {
+            padding: 18px 22px 0; font-size: 11px; font-weight: 600;
+            letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate-400);
+        }
+        .sidebar-card-body { padding: 14px 22px 20px; }
+
+        /* profile image placeholder */
+        .profile-img-wrap {
+            width: 100%; aspect-ratio: 4/5; position: relative; overflow: hidden;
+        }
+        .profile-img {
+            width: 100%; height: 100%; object-fit: cover; display: block;
+            background: linear-gradient(135deg, var(--primary-100), #e0f2fe);
+        }
+        .profile-img-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(15,118,110,0.7) 0%, transparent 50%);
+        }
+        .profile-img-caption {
+            position: absolute; bottom: 0; left: 0; right: 0; padding: 20px 18px;
+            color: #fff;
+        }
+        .profile-img-caption h3 { font-family: 'DM Serif Display', serif; font-size: 1.3rem; line-height: 1.1; margin-bottom: 4px; }
+        .profile-img-caption p { font-size: 12px; opacity: 0.8; }
+
+        /* membership list */
+        .mem-list { display: flex; flex-direction: column; gap: 10px; }
+        .mem-item {
+            display: flex; gap: 10px; align-items: flex-start;
+            font-size: 13px; color: var(--slate-700); line-height: 1.4;
+        }
+        .mem-check { color: var(--primary); font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+
+        /* contact list */
+        .contact-list { display: flex; flex-direction: column; gap: 12px; }
+        .contact-item {
+            display: flex; gap: 12px; align-items: center;
+            font-size: 13px; color: var(--slate-700);
+        }
+        .contact-icon {
+            width: 32px; height: 32px; border-radius: 8px;
+            background: var(--primary-50); border: 1px solid var(--primary-100);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--primary); font-size: 13px; flex-shrink: 0;
+        }
+        .contact-item a { color: var(--primary); text-decoration: none; font-weight: 500; }
+        .contact-item a:hover { text-decoration: underline; }
+
+        /* book CTA */
+        .book-cta {
+            display: flex; flex-direction: column; gap: 12px; padding: 22px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 20px; color: #fff;
+        }
+        .book-cta h4 { font-family: 'DM Serif Display', serif; font-size: 1.3rem; line-height: 1.2; }
+        .book-cta p { font-size: 13px; opacity: 0.85; line-height: 1.5; }
+        .book-cta-btn {
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+            padding: 12px 20px; background: #fff; color: var(--primary);
+            border-radius: 99px; font-size: 14px; font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.25s var(--ease-spring);
+        }
+        .book-cta-btn:hover { background: var(--primary-50); transform: scale(1.02); }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--slate-900); color: var(--slate-400);
+            padding: 48px 2rem; text-align: center;
+        }
+        footer p { font-size: 14px; }
+        footer .sub { font-size: 12px; color: var(--slate-600); margin-top: 6px; }
+
+        /* ── WHATSAPP ── */
+        .wa-float {
+            position: fixed; bottom: 32px; right: 32px;
+            width: 60px; height: 60px; background: #25D366; color: #fff;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 28px; text-decoration: none; z-index: 999;
+            box-shadow: 0 8px 28px rgba(37,211,102,0.4);
+            transition: transform 0.3s var(--ease-spring), box-shadow 0.3s;
+            animation: waPulse 3s ease-in-out infinite;
+        }
+        .wa-float:hover { transform: scale(1.1) rotate(-8deg); }
+        @keyframes waPulse {
+            0%, 100% { box-shadow: 0 8px 28px rgba(37,211,102,0.4); }
+            50% { box-shadow: 0 8px 40px rgba(37,211,102,0.65); }
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 960px) {
+            .main-container { grid-template-columns: 1fr; }
+            .sidebar { position: static; }
+            .page-hero-inner { grid-template-columns: 1fr; }
+            .hero-contact-card { display: none; }
+            nav { display: none; }
+        }
+        @media (max-width: 600px) {
+            .stats-row { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
 <body>
 
-<section class="container">
+<!-- ═══ HEADER ═══ -->
+<header id="header">
+    <a href="index.html" class="logo">
+        <div class="logo-mark">BK</div>
+        <div class="logo-text">
+            <h1>Dr. Bidhan Koirala</h1>
+            <p>Head &amp; Neck Oncosurgeon</p>
+        </div>
+    </a>
+    <nav>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="oral-cancer.html" class="nav-link">Oral Cancer</a>
+        <a href="thyroid.html" class="nav-link">Thyroid</a>
+        <a href="head-neck.html" class="nav-link">Head &amp; Neck</a>
+        <a href="appointment.html" class="cta-btn">
+            <i class="fa-solid fa-calendar-check" style="font-size:13px"></i>
+            Book Consultation
+        </a>
+    </nav>
+</header>
 
-<h2>Dr. Bidhan Koirala</h2>
+<!-- ═══ PAGE HERO ═══ -->
+<section class="page-hero">
+    <div class="hero-ring hero-ring-1"></div>
+    <div class="hero-ring hero-ring-2"></div>
+    <div class="hero-ring hero-ring-3"></div>
 
-<p>
-ENT & Head-Neck Oncosurgeon based in Bharatpur, Nepal.
-Specialized in advanced cancer surgery, thyroid disorders, and complex ENT conditions.
-</p>
+    <div class="page-hero-inner">
+        <div>
+            <div class="hero-breadcrumb">
+                <a href="index.html">Home</a>
+                <i class="fa-solid fa-chevron-right" style="font-size:9px"></i>
+                About
+            </div>
+            <h2>Nepal's Specialist in<br><em>Head &amp; Neck Oncosurgery</em></h2>
+            <p style="color:rgba(255,255,255,0.75); font-size:16px; font-weight:300; line-height:1.7; margin: 16px 0 28px; max-width: 540px;">
+                Tata Medical Centre–trained oncosurgeon delivering world-class cancer surgery at CMC Cancer Institute, Bharatpur — with a focus on functional preservation and evidence-based outcomes.
+            </p>
+            <div class="hero-tags">
+                <span class="hero-tag"><i class="fa-solid fa-award" style="font-size:11px;margin-right:5px"></i>FHNO</span>
+                <span class="hero-tag">ASCO Member</span>
+                <span class="hero-tag">ESMO Member</span>
+                <span class="hero-tag">NMC Reg. 16430</span>
+                <span class="hero-tag">10+ Years Experience</span>
+            </div>
+        </div>
 
-<p>
-Focused on evidence-based surgical oncology and multidisciplinary patient care.
-</p>
-
+        <div class="hero-contact-card">
+            <div class="hero-contact-label">Contact</div>
+            <div class="hero-contact-item">
+                <i class="fa-solid fa-location-dot"></i>
+                CMC Cancer Institute, Bharatpur
+            </div>
+            <div class="hero-contact-item">
+                <i class="fa-solid fa-phone"></i>
+                <a href="tel:+9779828769908">+977-9828769908</a>
+            </div>
+            <div class="hero-contact-item">
+                <i class="fa-solid fa-envelope"></i>
+                <a href="mailto:drbidhankoirala@gmail.com">drbidhankoirala@gmail.com</a>
+            </div>
+            <div class="hero-contact-item">
+                <i class="fa-brands fa-whatsapp"></i>
+                <a href="https://wa.me/9779828769908" target="_blank">WhatsApp</a>
+            </div>
+        </div>
+    </div>
 </section>
 
+<!-- ═══ MAIN CONTENT ═══ -->
+<div class="main-container">
+
+    <!-- ── LEFT COLUMN ── -->
+    <main>
+
+        <!-- BIO -->
+        <div class="section-block reveal">
+            <div class="section-label">About</div>
+            <h2 class="section-title">Meet Dr. Bidhan Koirala</h2>
+            <p class="bio-text">
+                Dr. Bidhan Koirala is a specialist <span class="bio-highlight">head and neck cancer surgeon in Nepal</span>, currently serving as Assistant Professor of ENT &amp; Head and Neck Oncosurgery at <span class="bio-highlight">CMC Cancer Institute, Bharatpur</span>. He completed an advanced Fellowship in Head &amp; Neck Oncosurgery at <span class="bio-highlight">Tata Medical Centre, Kolkata</span> — one of Asia's leading comprehensive cancer centres — bringing internationally refined surgical techniques back to Nepal.
+            </p>
+            <p class="bio-text" style="margin-top:16px">
+                With over a decade of clinical experience and training across Nepal's premier institutions — including NAMS Bir Hospital and B.P. Koirala Memorial Cancer Hospital — Dr. Koirala specialises in <span class="bio-highlight">oral cancer surgery, thyroid cancer, laryngeal cancer, neck dissection, and reconstructive oncosurgery</span>. His practice is grounded in evidence-based surgical oncology, with a relentless commitment to nerve-sparing, function-preserving techniques that protect patients' voice, swallowing, and cosmetic outcomes.
+            </p>
+            <p class="bio-text" style="margin-top:16px">
+                A member of ASCO, ESMO, and FHNO, Dr. Koirala participates in the global oncology community and brings current international standards to every patient consultation in Chitwan, Nepal.
+            </p>
+
+            <div class="stats-row" style="margin-top:32px">
+                <div class="stat-card">
+                    <div class="stat-num">1000+</div>
+                    <div class="stat-lbl">Surgeries performed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">10+</div>
+                    <div class="stat-lbl">Years of experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">6</div>
+                    <div class="stat-lbl">Institutions served</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CAREER TIMELINE -->
+        <div class="section-block reveal">
+            <div class="section-label">Experience</div>
+            <h2 class="section-title">Career Timeline</h2>
+            <div class="timeline">
+
+                <div class="tl-item">
+                    <div class="tl-dot current"></div>
+                    <span class="tl-period">Sep 2025 – Present</span>
+                    <div class="tl-role">Assistant Professor — ENT &amp; Head and Neck Oncosurgery</div>
+                    <div class="tl-place">Chitwan Medical College &amp; Cancer Institute (CMC), Bharatpur</div>
+                    <span class="tl-featured"><i class="fa-solid fa-circle-check" style="font-size:10px"></i>Current Position</span>
+                </div>
+
+                <div class="tl-item">
+                    <div class="tl-dot"></div>
+                    <span class="tl-period">Aug 2023 – Aug 2025</span>
+                    <div class="tl-role">Fellow — Head &amp; Neck Oncosurgery</div>
+                    <div class="tl-place">Tata Medical Centre, Kolkata, India</div>
+                    <span class="tl-featured"><i class="fa-solid fa-star" style="font-size:10px"></i>International Fellowship</span>
+                </div>
+
+                <div class="tl-item">
+                    <div class="tl-dot"></div>
+                    <span class="tl-period">Nov 2021 – Aug 2023</span>
+                    <div class="tl-role">Assistant Professor — ENT &amp; Head and Neck Oncosurgery</div>
+                    <div class="tl-place">Chitwan Medical College, Bharatpur</div>
+                </div>
+
+                <div class="tl-item">
+                    <div class="tl-dot"></div>
+                    <span class="tl-period">Dec 2020 – Nov 2021</span>
+                    <div class="tl-role">Registrar — ENT &amp; Head and Neck Oncosurgery</div>
+                    <div class="tl-place">B.P. Koirala Memorial Cancer Hospital</div>
+                </div>
+
+                <div class="tl-item">
+                    <div class="tl-dot"></div>
+                    <span class="tl-period">Nov 2019 – Dec 2020</span>
+                    <div class="tl-role">Consultant ENT &amp; HNS · Head of Department</div>
+                    <div class="tl-place">Narayani Hospital, Birgunj</div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- EDUCATION -->
+        <div class="section-block reveal">
+            <div class="section-label">Education</div>
+            <h2 class="section-title">Academic Background</h2>
+            <div class="cred-list">
+                <div class="cred-item">
+                    <div class="cred-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <div>
+                        <div class="cred-title">MS — Otorhinolaryngology, Head &amp; Neck Surgery</div>
+                        <div class="cred-sub">National Academy of Medical Sciences (NAMS), Bir Hospital · 2016–2019</div>
+                    </div>
+                </div>
+                <div class="cred-item">
+                    <div class="cred-icon"><i class="fa-solid fa-book-medical"></i></div>
+                    <div>
+                        <div class="cred-title">MBBS — Bachelor of Medicine &amp; Surgery</div>
+                        <div class="cred-sub">Universal College of Medical Sciences, Bhairahawa · 2009–2014</div>
+                    </div>
+                </div>
+                <div class="cred-item">
+                    <div class="cred-icon"><i class="fa-solid fa-award"></i></div>
+                    <div>
+                        <div class="cred-title">MS-ORL-HNS Scholarship Recipient</div>
+                        <div class="cred-sub">National Academy of Medical Sciences, Bir Hospital, Kathmandu</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PUBLICATIONS -->
+        <div class="section-block reveal">
+            <div class="section-label">Research</div>
+            <h2 class="section-title">Publications &amp; Research</h2>
+            <div class="pub-list">
+                <div class="pub-item">
+                    <div class="pub-type">Journal Publication</div>
+                    <div class="pub-title">Clinical Outcomes and Prognostic Determinants in Poorly Differentiated Thyroid Cancer: A Surgical Perspective</div>
+                </div>
+                <div class="pub-item">
+                    <div class="pub-type">Journal Publication</div>
+                    <div class="pub-title">Relation between Chronic Rhinosinusitis and Vitamin D3 Level</div>
+                </div>
+                <div class="pub-item">
+                    <div class="pub-type">MS Thesis</div>
+                    <div class="pub-title">Surgical Anatomy of External Branch of Superior Laryngeal Nerve</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SPECIALISATIONS -->
+        <div class="section-block reveal">
+            <div class="section-label">Expertise</div>
+            <h2 class="section-title">Areas of Specialisation</h2>
+            <div class="spec-tags">
+                <span class="spec-tag">Oral cancer surgery</span>
+                <span class="spec-tag">Thyroid &amp; parathyroid surgery</span>
+                <span class="spec-tag">Neck dissection</span>
+                <span class="spec-tag">Laryngeal cancer</span>
+                <span class="spec-tag">Skull base tumours</span>
+                <span class="spec-tag">Nasal &amp; sinus tumours</span>
+                <span class="spec-tag">Reconstructive flap surgery</span>
+                <span class="spec-tag">Parotid gland surgery</span>
+                <span class="spec-tag">Salivary gland tumours</span>
+                <span class="spec-tag">Endoscopic sinus surgery</span>
+                <span class="spec-tag">Paediatric airway surgery</span>
+                <span class="spec-tag">Nerve-sparing oncosurgery</span>
+                <span class="spec-tag">Functional preservation surgery</span>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ── SIDEBAR ── -->
+    <aside class="sidebar">
+
+        <!-- Profile image -->
+        <div class="sidebar-card reveal-right">
+            <div class="profile-img-wrap">
+                <img src="profile.jpg" alt="Dr. Bidhan Koirala — Head and Neck Oncosurgeon Nepal" class="profile-img"
+                     onerror="this.style.background='linear-gradient(135deg,#ccfbf1,#e0f2fe)';this.removeAttribute('onerror')">
+                <div class="profile-img-overlay"></div>
+                <div class="profile-img-caption">
+                    <h3>Dr. Bidhan Koirala</h3>
+                    <p>MBBS, MS-ENT &amp; HNS · NMC 16430</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Memberships -->
+        <div class="sidebar-card reveal-right" style="transition-delay:0.1s">
+            <div class="sidebar-card-header">Memberships</div>
+            <div class="sidebar-card-body">
+                <div class="mem-list">
+                    <div class="mem-item">
+                        <i class="fa-solid fa-circle-check mem-check"></i>
+                        Fellow, Head &amp; Neck Oncology (FHNO)
+                    </div>
+                    <div class="mem-item">
+                        <i class="fa-solid fa-circle-check mem-check"></i>
+                        European Society for Medical Oncology (ESMO)
+                    </div>
+                    <div class="mem-item">
+                        <i class="fa-solid fa-circle-check mem-check"></i>
+                        American Society of Clinical Oncology (ASCO)
+                    </div>
+                    <div class="mem-item">
+                        <i class="fa-solid fa-circle-check mem-check"></i>
+                        Society of Otorhinolaryngologists, Nepal
+                    </div>
+                    <div class="mem-item">
+                        <i class="fa-solid fa-circle-check mem-check"></i>
+                        Korean Society of Otorhinolaryngology
+                    </div>
+                    <div class="mem-item">
+                        <i class="fa-solid fa-circle-check mem-check"></i>
+                        Nepal Medical Association
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="sidebar-card reveal-right" style="transition-delay:0.2s">
+            <div class="sidebar-card-header">Contact</div>
+            <div class="sidebar-card-body">
+                <div class="contact-list">
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div>
+                            <div style="font-size:11px;color:var(--slate-400);margin-bottom:2px">Hospital</div>
+                            CMC Cancer Institute, Bharatpur, Chitwan
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                        <div>
+                            <div style="font-size:11px;color:var(--slate-400);margin-bottom:2px">Phone</div>
+                            <a href="tel:+9779828769908">+977-9828769908</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div>
+                            <div style="font-size:11px;color:var(--slate-400);margin-bottom:2px">Email</div>
+                            <a href="mailto:drbidhankoirala@gmail.com">drbidhankoirala@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon" style="background:#e7fdf0;border-color:#b3f0c8;color:#1a7a3c"><i class="fa-brands fa-whatsapp"></i></div>
+                        <div>
+                            <div style="font-size:11px;color:var(--slate-400);margin-bottom:2px">WhatsApp</div>
+                            <a href="https://wa.me/9779828769908" target="_blank">Message directly</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book CTA -->
+        <div class="book-cta reveal-right" style="transition-delay:0.3s">
+            <h4>Book a Consultation</h4>
+            <p>Get expert head &amp; neck oncosurgery advice at CMC Cancer Institute, Bharatpur.</p>
+            <a href="appointment.html" class="book-cta-btn">
+                <i class="fa-solid fa-calendar-check" style="font-size:13px"></i>
+                Schedule Appointment
+            </a>
+            <a href="https://wa.me/9779828769908" target="_blank" class="book-cta-btn" style="background:rgba(255,255,255,0.15);color:#fff;border:1px solid rgba(255,255,255,0.35)">
+                <i class="fa-brands fa-whatsapp" style="font-size:15px"></i>
+                WhatsApp Us
+            </a>
+        </div>
+
+    </aside>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+    <p>© 2026 Dr. Bidhan Koirala · Head &amp; Neck Oncosurgeon, Bharatpur, Nepal</p>
+    <p class="sub">ENT &amp; Head and Neck Cancer Surgery · CMC Cancer Institute · NMC Reg. 16430</p>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/9779828769908" target="_blank" class="wa-float" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<script>
+    /* Header scroll */
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+        header.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+
+    /* Scroll reveal */
+    const els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(el => obs.observe(el));
+
+    /* Spec tag hover ripple */
+    document.querySelectorAll('.spec-tag').forEach(tag => {
+        tag.addEventListener('mouseenter', function() { this.style.transition = 'all 0.25s cubic-bezier(0.34,1.56,0.64,1)'; });
+    });
+
+    /* Stat cards stagger */
+    document.querySelectorAll('.stat-card').forEach((card, i) => {
+        card.style.transitionDelay = `${i * 80}ms`;
+    });
+</script>
 </body>
 </html>
