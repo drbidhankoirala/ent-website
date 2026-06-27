@@ -1,35 +1,344 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Appointment</title>
-<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book an Appointment | ENT, Head &amp; Neck, Thyroid &amp; Oral Cancer Care</title>
+<meta name="description" content="Book your ENT, head &amp; neck, thyroid, or oral cancer consultation online. A complete care package built around your better health — trusted as the best care in town.">
+<meta name="keywords" content="ENT specialist, ear nose throat doctor, head and neck surgery, thyroid treatment, oral cancer care, ENT consultation, better health, best care in town, complete care package">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --color-bg: #EEF3F5;
+  --color-bg-deep: #DCE6EA;
+  --color-surface: #FFFFFF;
+  --color-ink: #16233A;
+  --color-ink-soft: #51637A;
+  --color-primary: #1F3B57;
+  --color-accent: #E2823C;
+  --color-accent-dark: #C76A2B;
+  --color-sage: #7E9A8C;
+  --color-line: #D9E2E8;
+  --color-error: #C0392B;
+
+  --font-display: 'Fraunces', serif;
+  --font-body: 'IBM Plex Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  background: radial-gradient(circle at 50% -10%, var(--color-bg-deep), var(--color-bg) 60%);
+  min-height: 100vh;
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 56px 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 480px;
+  background: var(--color-surface);
+  border-radius: 18px;
+  padding: 44px 36px 40px;
+  box-shadow: 0 24px 48px -24px rgba(22, 35, 58, 0.25), 0 1px 0 rgba(22, 35, 58, 0.04);
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-sage);
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 2.1rem;
+  line-height: 1.15;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.waveform {
+  display: block;
+  width: 100%;
+  height: 32px;
+  margin: 20px 0 22px;
+  fill: none;
+  stroke: var(--color-accent);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 420;
+  stroke-dashoffset: 420;
+  animation: draw-waveform 1.4s ease-out 0.15s forwards;
+}
+
+@keyframes draw-waveform {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .waveform {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}
+
+.lede {
+  margin: 0 0 32px;
+  font-size: 0.96rem;
+  line-height: 1.65;
+  color: var(--color-ink-soft);
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.field-row {
+  display: flex;
+  gap: 16px;
+}
+
+.field-row .field {
+  flex: 1;
+  min-width: 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 11px 2px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-ink);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid var(--color-line);
+  border-radius: 0;
+  transition: border-color 0.2s ease;
+}
+
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 8'%3E%3Cpath fill='none' stroke='%2351637A' stroke-width='1.6' d='M1 1l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 4px center;
+  padding-right: 22px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 84px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #A8B4C2;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-bottom-color: var(--color-accent);
+}
+
+input.input-error,
+.input-error {
+  border-bottom-color: var(--color-error);
+}
+
+.field-hint {
+  margin: -8px 0 20px;
+  font-size: 0.78rem;
+  color: var(--color-ink-soft);
+}
+
+.field-error {
+  margin: -8px 0 18px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-error);
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 15px 28px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #FFFFFF;
+  background: var(--color-accent);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.btn:hover {
+  background: var(--color-accent-dark);
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--color-sage);
+  outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 36px 24px 32px;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  .field-row {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+</style>
 </head>
 
 <body>
 
-<section class="container">
+<main class="page">
+  <section class="container">
 
-<h2>Book Appointment</h2>
+    <p class="eyebrow">ENT &middot; Head &amp; Neck &middot; Thyroid &middot; Oral Cancer Care</p>
+    <h1>Book Your Appointment</h1>
 
-<form action="https://formspree.io/f/mjgjjdol" method="POST">
+    <svg class="waveform" viewBox="0 0 300 40" aria-hidden="true" focusable="false">
+      <path d="M0 20 H40 L52 4 L64 36 L76 20 L88 28 L100 20 H140 L152 8 L164 32 L176 20 L188 24 H230 L242 12 L254 28 L266 20 H300"/>
+    </svg>
 
-<input type="text" name="name" placeholder="Full Name"><br><br>
-<input type="tel" name="phone" placeholder="Phone Number"><br><br>
+    <p class="lede">
+      From diagnosis to recovery, we provide a complete care package designed
+      around your better health &mdash; trusted as the best care in town for
+      ear, nose, throat, and head &amp; neck conditions.
+    </p>
 
-<select name="service">
-<option>Oral Cancer</option>
-<option>Thyroid</option>
-<option>Head & Neck</option>
-<option>ENT Consultation</option>
-</select><br><br>
+    <form action="https://formspree.io/f/mjgjjdol" method="POST" id="appointment-form" novalidate>
 
-<textarea name="message" placeholder="Problem details"></textarea><br><br>
+      <div class="field">
+        <label for="name">Full name</label>
+        <input type="text" id="name" name="name" placeholder="e.g. Bidhan Sharma" required>
+      </div>
 
-<button class="btn">Submit Request</button>
+      <div class="field-row">
+        <div class="field">
+          <label for="phone">Phone number</label>
+          <input type="tel" id="phone" name="phone" placeholder="98XXXXXXXX" autocomplete="tel">
+        </div>
+        <div class="field">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email">
+        </div>
+      </div>
 
-</form>
+      <p class="field-hint" id="contact-hint">Please provide at least a phone number or an email so we can confirm your appointment.</p>
+      <p class="field-error" id="contact-error" role="alert" hidden>A phone number or email is required so we can confirm your appointment.</p>
 
-</section>
+      <div class="field">
+        <label for="service">Service</label>
+        <select id="service" name="service">
+          <option>Oral Cancer</option>
+          <option>Thyroid</option>
+          <option>Head &amp; Neck</option>
+          <option>ENT Consultation</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="message">Problem details</label>
+        <textarea id="message" name="message" placeholder="Briefly describe your symptoms or concern" rows="4"></textarea>
+      </div>
+
+      <button type="submit" class="btn">Submit Request</button>
+
+    </form>
+
+  </section>
+</main>
+
+<script>
+  (function () {
+    var form = document.getElementById('appointment-form');
+    var phone = document.getElementById('phone');
+    var email = document.getElementById('email');
+    var error = document.getElementById('contact-error');
+
+    function hasContact() {
+      return phone.value.trim().length > 0 || email.value.trim().length > 0;
+    }
+
+    function clearError() {
+      error.hidden = true;
+      phone.classList.remove('input-error');
+      email.classList.remove('input-error');
+    }
+
+    form.addEventListener('submit', function (e) {
+      if (!hasContact()) {
+        e.preventDefault();
+        error.hidden = false;
+        phone.classList.add('input-error');
+        email.classList.add('input-error');
+        phone.focus();
+      } else {
+        clearError();
+      }
+    });
+
+    [phone, email].forEach(function (field) {
+      field.addEventListener('input', function () {
+        if (hasContact()) clearError();
+      });
+    });
+  })();
+</script>
 
 </body>
 </html>
