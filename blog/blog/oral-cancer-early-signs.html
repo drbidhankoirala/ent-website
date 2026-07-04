@@ -20,7 +20,6 @@
       --border: #e2e8f0;
     }
     body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); }
-
     nav {
       background: var(--navy); padding: 0 24px;
       display: flex; align-items: center; justify-content: space-between;
@@ -32,80 +31,50 @@
     .nav-links a { color: rgba(255,255,255,0.82); text-decoration: none; font-size: 0.88rem; }
     .nav-links a:hover { color: var(--white); }
     .nav-cta { background: var(--gold); color: var(--navy); font-weight: 600; padding: 8px 18px; border-radius: 6px; text-decoration: none; font-size: 0.85rem; }
-
-    .article-hero {
-      background: var(--navy); padding: 52px 24px 44px; text-align: center;
-    }
+    .article-hero { background: var(--navy); padding: 52px 24px 44px; text-align: center; }
     .breadcrumb { color: rgba(255,255,255,0.5); font-size: 0.78rem; margin-bottom: 16px; }
     .breadcrumb a { color: rgba(255,255,255,0.5); text-decoration: none; }
     .breadcrumb a:hover { color: var(--gold); }
-    .article-tag {
-      display: inline-block; background: var(--gold); color: var(--navy);
-      font-size: 0.72rem; font-weight: 700; letter-spacing: 1px;
-      text-transform: uppercase; padding: 4px 12px; border-radius: 20px; margin-bottom: 16px;
-    }
-    .article-hero h1 {
-      color: var(--white); font-size: clamp(1.5rem, 3.5vw, 2.2rem);
-      font-weight: 700; line-height: 1.25; max-width: 700px; margin: 0 auto 16px;
-    }
+    .article-tag { display: inline-block; background: var(--gold); color: var(--navy); font-size: 0.72rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; margin-bottom: 16px; }
+    .article-hero h1 { color: var(--white); font-size: clamp(1.5rem, 3.5vw, 2.2rem); font-weight: 700; line-height: 1.25; max-width: 700px; margin: 0 auto 16px; }
     .article-meta { color: rgba(255,255,255,0.55); font-size: 0.82rem; }
-
-    .article-body {
-      max-width: 700px; margin: 0 auto; padding: 44px 20px 60px;
-    }
-    .author-card {
-      display: flex; gap: 14px; align-items: center;
-      background: var(--white); border: 1px solid var(--border);
-      border-radius: 10px; padding: 16px 20px; margin-bottom: 36px;
-    }
-    .author-avatar {
-      width: 48px; height: 48px; border-radius: 50%;
-      background: var(--navy); color: var(--gold);
-      display: flex; align-items: center; justify-content: center;
-      font-weight: 700; font-size: 1.1rem; flex-shrink: 0;
-    }
+    .article-body { max-width: 700px; margin: 0 auto; padding: 44px 20px 60px; }
+    .author-card { display: flex; gap: 14px; align-items: center; background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 32px; }
+    .author-avatar { width: 48px; height: 48px; border-radius: 50%; background: var(--navy); color: var(--gold); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem; flex-shrink: 0; }
     .author-info { font-size: 0.85rem; }
     .author-info strong { display: block; color: var(--navy); font-weight: 600; }
     .author-info span { color: var(--muted); }
 
-    .article-body h2 {
-      font-size: 1.25rem; font-weight: 700; color: var(--navy);
-      margin: 36px 0 12px; padding-top: 8px;
-      border-top: 2px solid var(--gold); display: inline-block;
+    /* IMAGE GALLERY */
+    .image-gallery-wrap { margin: 0 0 32px; }
+    .image-gallery-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+    .image-gallery {
+      display: flex; gap: 12px;
+      overflow-x: auto; padding-bottom: 10px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
     }
+    .image-gallery::-webkit-scrollbar { height: 4px; }
+    .image-gallery::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+    .image-item { flex-shrink: 0; scroll-snap-align: start; width: 200px; }
+    .image-item img { width: 200px; height: 150px; object-fit: cover; border-radius: 10px; display: block; border: 1px solid var(--border); }
+    .image-item p { font-size: 0.75rem; color: var(--muted); margin-top: 6px; text-align: center; line-height: 1.4; }
+
+    .article-body h2 { font-size: 1.25rem; font-weight: 700; color: var(--navy); margin: 36px 0 12px; padding-top: 8px; border-top: 2px solid var(--gold); display: inline-block; }
     .article-body p { font-size: 1rem; line-height: 1.78; color: #2d3748; margin-bottom: 16px; }
     .article-body ul { margin: 12px 0 20px 20px; }
     .article-body ul li { font-size: 1rem; line-height: 1.7; color: #2d3748; margin-bottom: 8px; }
-
-    .warning-box {
-      background: #fff8e7; border-left: 4px solid var(--gold);
-      border-radius: 0 8px 8px 0; padding: 16px 20px; margin: 28px 0;
-    }
+    .warning-box { background: #fff8e7; border-left: 4px solid var(--gold); border-radius: 0 8px 8px 0; padding: 16px 20px; margin: 28px 0; }
     .warning-box strong { color: var(--navy); display: block; margin-bottom: 6px; }
     .warning-box p { margin: 0; font-size: 0.95rem; color: #5a4a00; }
-
-    .cta-box {
-      background: var(--navy); border-radius: 12px;
-      padding: 32px 28px; text-align: center; margin-top: 48px;
-    }
+    .cta-box { background: var(--navy); border-radius: 12px; padding: 32px 28px; text-align: center; margin-top: 48px; }
     .cta-box h3 { color: var(--white); font-size: 1.2rem; margin-bottom: 10px; }
     .cta-box p { color: rgba(255,255,255,0.7); font-size: 0.92rem; margin-bottom: 20px; }
-    .cta-box a {
-      background: var(--gold); color: var(--navy); font-weight: 700;
-      padding: 12px 28px; border-radius: 8px; text-decoration: none;
-      font-size: 0.95rem; display: inline-block;
-    }
-
-    .back-link {
-      display: inline-flex; align-items: center; gap: 6px;
-      color: var(--navy); text-decoration: none; font-size: 0.88rem;
-      font-weight: 600; margin-bottom: 28px;
-    }
+    .cta-box a { background: var(--gold); color: var(--navy); font-weight: 700; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-size: 0.95rem; display: inline-block; }
+    .back-link { display: inline-flex; align-items: center; gap: 6px; color: var(--navy); text-decoration: none; font-size: 0.88rem; font-weight: 600; margin-bottom: 28px; }
     .back-link:hover { color: var(--gold); }
-
     footer { background: var(--navy); color: rgba(255,255,255,0.65); text-align: center; padding: 28px 20px; font-size: 0.82rem; line-height: 1.7; }
     footer a { color: rgba(255,255,255,0.65); text-decoration: none; }
-
     @media (max-width: 600px) { .nav-links { display: none; } }
   </style>
 </head>
@@ -143,6 +112,42 @@
       <span>MBBS, MS — ENT &amp; Head Neck Oncosurgeon, CMC Cancer Institute, Bharatpur</span>
     </div>
   </div>
+
+  <!-- ═══════════════════════════════════════════════
+       IMAGE GALLERY — sideways scrollable
+       To add a new image:
+       1. Upload image to blog/images/ in GitHub
+       2. Copy one .image-item block below
+       3. Paste it inside .image-gallery
+       4. Replace filename, alt text, and caption
+  ════════════════════════════════════════════════ -->
+  <div class="image-gallery-wrap">
+    <p class="image-gallery-label">Clinical Images — scroll to see more →</p>
+    <div class="image-gallery">
+
+      <!-- IMAGE 1 -->
+      <div class="image-item">
+        <img src="images/Leukoplakia.jpg" alt="Leukoplakia — white patch inside the mouth, a warning sign of oral cancer" />
+        <p>Leukoplakia — white patch inside the mouth</p>
+      </div>
+
+      <!-- IMAGE 2 — replace with your next image -->
+      <div class="image-item">
+        <img src="images/YOUR-SECOND-IMAGE.jpg" alt="YOUR DESCRIPTION" />
+        <p>YOUR CAPTION HERE</p>
+      </div>
+
+      <!-- IMAGE 3 — replace with your next image -->
+      <div class="image-item">
+        <img src="images/YOUR-THIRD-IMAGE.jpg" alt="YOUR DESCRIPTION" />
+        <p>YOUR CAPTION HERE</p>
+      </div>
+
+      <!-- ADD MORE IMAGES HERE — copy one image-item block above and paste -->
+
+    </div>
+  </div>
+  <!-- ═══════════════════════════════════════════ END IMAGE GALLERY -->
 
   <p>Oral cancer is one of the most common cancers in South Asia, yet it is also one of the most preventable and — when caught early — one of the most curable. The problem is that most patients come to me at a late stage, when the cancer has already spread to the neck or beyond. This happens because the early warning signs are easy to confuse with ordinary mouth problems.</p>
 
