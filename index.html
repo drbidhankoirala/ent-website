@@ -68,6 +68,10 @@
     --text-3:   #94a3b8;
     --shadow:   rgba(3,105,161,.10);
 
+    --icon-bg-1: #fff7ed;
+    --icon-bg-2: #f0f9ff;
+    --icon-bg-3: #faf5ff;
+
     --ease:     cubic-bezier(.22,1,.36,1);
     --spring:   cubic-bezier(.34,1.56,.64,1);
     --dur:      .3s;
@@ -81,10 +85,14 @@
     --text-2:   #94a3b8;
     --text-3:   #475569;
     --shadow:   rgba(0,0,0,.4);
+    --p-light:  #4a90b8;
     --p-50:     #0c1f2e;
     --p-100:    #102840;
     --p-200:    #1a3f5e;
-    --p-glow:   rgba(56,189,248,.12);
+    --p-glow:   rgba(74,144,184,.10);
+    --icon-bg-1: #2a2116;
+    --icon-bg-2: #102840;
+    --icon-bg-3: #241f33;
   }
 
   *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
@@ -370,12 +378,99 @@
   .dir-btn { display:inline-flex; align-items:center; gap:10px; margin-top:28px; padding:14px 28px; background:var(--bg-card); border:1px solid var(--border); color:var(--text-2); border-radius:99px; font-size:15px; font-weight:500; text-decoration:none; transition:all .3s var(--spring); box-shadow:0 2px 8px var(--p-glow); }
   .dir-btn:hover { background:var(--p); border-color:var(--p); color:#fff; transform:translateY(-2px); box-shadow:0 8px 24px rgba(3,105,161,.28); }
 
+  .location-note {
+    display:flex; align-items:flex-start; gap:14px;
+    background:var(--p-50); border:1px solid var(--p-200); border-radius:16px;
+    padding:20px 24px; margin:28px auto 0; max-width:680px;
+  }
+  .location-note i { color:var(--p); font-size:19px; margin-top:2px; flex-shrink:0; }
+  .location-note strong { display:block; color:var(--text); font-size:14px; margin-bottom:4px; }
+  .location-note span { color:var(--text-2); font-size:13.5px; line-height:1.65; }
+
+  /* ══════════════════
+     PATIENT EDUCATION / BLOG
+  ══════════════════ */
+  .blog-section { background:var(--bg-alt); transition:background var(--dur); }
+  .blog-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; margin-bottom:44px; }
+  .blog-card {
+    background:var(--bg-card); border:1px solid var(--border); border-radius:20px;
+    overflow:hidden; text-decoration:none; color:inherit; position:relative; display:block;
+    box-shadow:0 2px 12px rgba(0,0,0,.04);
+    transition:transform .4s var(--ease), box-shadow .4s var(--ease), border-color var(--dur), background var(--dur);
+  }
+  .blog-card::before {
+    content:''; position:absolute; top:0; left:0; right:0; height:3px; z-index:1;
+    background:linear-gradient(90deg,var(--p),var(--p-light));
+    transform:scaleX(0); transform-origin:left; transition:transform .4s var(--ease);
+  }
+  .blog-card:hover { transform:translateY(-8px); box-shadow:0 20px 44px var(--p-glow); border-color:var(--p-200); }
+  .blog-card:hover::before { transform:scaleX(1); }
+  .blog-card-img {
+    height:180px; background:var(--p-50); display:flex; align-items:center; justify-content:center;
+    font-size:3rem; overflow:hidden; transition:background var(--dur), transform .5s var(--ease);
+  }
+  .blog-card:hover .blog-card-img { transform:scale(1.03); }
+  .blog-card-img img { width:100%; height:100%; object-fit:cover; display:block; }
+  .blog-card-body { padding:22px 24px 26px; }
+  .blog-tag-row { display:flex; align-items:center; gap:10px; margin-bottom:12px; flex-wrap:wrap; }
+  .blog-tag {
+    background:var(--p-50); color:var(--p); font-size:11px; font-weight:600; letter-spacing:.05em;
+    padding:4px 12px; border-radius:99px; text-transform:uppercase; border:1px solid var(--p-200);
+  }
+  .blog-date { color:var(--text-3); font-size:12px; }
+  .blog-card h3 { font-family:'DM Serif Display',serif; font-size:1.08rem; line-height:1.4; color:var(--text); margin-bottom:8px; }
+  .blog-card p { font-size:14px; color:var(--text-2); line-height:1.65; font-weight:300; }
+  .blog-read { margin-top:16px; display:inline-flex; align-items:center; gap:7px; font-size:13px; font-weight:600; color:var(--p); }
+  .blog-read i { font-size:11px; transition:transform .3s var(--spring); }
+  .blog-card:hover .blog-read i { transform:translateX(4px); }
+  .blog-view-all { text-align:center; }
+  .blog-cta-btn {
+    display:inline-flex; align-items:center; gap:10px; padding:15px 32px;
+    background:var(--p); color:#fff; border-radius:99px; font-size:15px; font-weight:600;
+    text-decoration:none; box-shadow:0 4px 14px var(--p-glow);
+    transition:background .25s, transform .3s var(--spring), box-shadow .3s;
+  }
+  .blog-cta-btn:hover { background:var(--p-dark); transform:translateY(-2px); box-shadow:0 10px 28px rgba(3,105,161,.3); }
+
+  .blog-card.blog-soon { opacity:.72; cursor:default; }
+  .blog-card.blog-soon:hover { transform:none; box-shadow:0 2px 12px rgba(0,0,0,.04); border-color:var(--border); }
+  .blog-card.blog-soon:hover::before { transform:scaleX(0); }
+  .blog-soon-badge { position:absolute; top:14px; right:14px; z-index:2; background:var(--bg-card); color:var(--text-2); font-size:10px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:4px 10px; border-radius:99px; border:1px solid var(--border); }
+
+  /* ══════════════════
+     LANGUAGE TOGGLE (EN / नेपाली)
+  ══════════════════ */
+  .lang-toggle {
+    display:inline-flex; align-items:center; gap:2px; margin:18px auto 0;
+    background:var(--p-50); border:1px solid var(--p-200); border-radius:99px; padding:4px;
+    position:relative;
+  }
+  .lang-btn {
+    border:none; background:transparent; cursor:pointer; position:relative; z-index:1;
+    font-size:13px; font-weight:600; color:var(--text-2); padding:7px 20px; border-radius:99px;
+    transition:color .3s var(--ease);
+    font-family:'DM Sans',system-ui,sans-serif;
+  }
+  .lang-btn.active { color:#fff; }
+  .lang-toggle::before {
+    content:''; position:absolute; top:4px; left:4px; height:calc(100% - 8px); width:calc(50% - 4px);
+    background:linear-gradient(135deg,var(--p),var(--p-light)); border-radius:99px;
+    box-shadow:0 4px 14px var(--p-glow);
+    transition:transform .35s var(--spring);
+  }
+  .lang-toggle[data-active="np"]::before { transform:translateX(100%); }
+
+  #blog[data-lang="en"] .blog-card[data-lang="np"] { display:none; }
+  #blog[data-lang="np"] .blog-card[data-lang="en"] { display:none; }
+  .faq-section[data-lang="en"] .faq-item[data-lang="np"] { display:none; }
+  .faq-section[data-lang="np"] .faq-item[data-lang="en"] { display:none; }
+
   /* ══════════════════
      FOOTER
   ══════════════════ */
   footer { background:#0b1220; color:#64748b; padding:48px 2rem; }
   .footer-inner { max-width:1120px; margin:0 auto; display:flex; flex-direction:column; align-items:center; gap:16px; text-align:center; }
-  .footer-nmc { display:inline-flex; align-items:center; gap:8px; font-size:12px; color:#38bdf8; background:rgba(56,189,248,.1); border:1px solid rgba(56,189,248,.2); border-radius:99px; padding:5px 14px; }
+  .footer-nmc { display:inline-flex; align-items:center; gap:8px; font-size:12px; color:#5aa3c9; background:rgba(90,163,201,.12); border:1px solid rgba(90,163,201,.25); border-radius:99px; padding:5px 14px; }
   footer p { font-size:13px; }
   footer .sub { font-size:11px; color:#334155; }
 
@@ -550,7 +645,7 @@
     <div class="service-grid">
       <a href="oral-cancer.html" class="service-card reveal" style="transition-delay:.1s">
         <div class="service-card-inner">
-          <div class="service-icon" style="background:#fff7ed">🦷</div>
+          <div class="service-icon" style="background:var(--icon-bg-1)">🦷</div>
           <h3>Oral Cancer</h3>
           <p>Advanced surgical techniques with emphasis on early diagnosis, tumor resection, and functional reconstruction to restore quality of life.</p>
           <div class="service-link">Learn more <i class="fa-solid fa-arrow-right"></i></div>
@@ -558,7 +653,7 @@
       </a>
       <a href="thyroid.html" class="service-card reveal" style="transition-delay:.2s">
         <div class="service-card-inner">
-          <div class="service-icon" style="background:#f0f9ff">🦋</div>
+          <div class="service-icon" style="background:var(--icon-bg-2)">🦋</div>
           <h3>Thyroid Cancer</h3>
           <p>Nerve-preserving thyroid surgery with excellent cosmetic outcomes, long-term voice protection, and precise oncological control.</p>
           <div class="service-link">Learn more <i class="fa-solid fa-arrow-right"></i></div>
@@ -566,7 +661,7 @@
       </a>
       <a href="head-neck.html" class="service-card reveal" style="transition-delay:.3s">
         <div class="service-card-inner">
-          <div class="service-icon" style="background:#faf5ff">🧠</div>
+          <div class="service-icon" style="background:var(--icon-bg-3)">🧠</div>
           <h3>Head &amp; Neck Cancer</h3>
           <p>Comprehensive management of complex tumors using a multidisciplinary approach tailored to each patient's unique condition.</p>
           <div class="service-link">Learn more <i class="fa-solid fa-arrow-right"></i></div>
@@ -617,6 +712,149 @@
   </div>
 </section>
 
+<!-- ═══════════ PATIENT EDUCATION ═══════════ -->
+<section id="blog" class="blog-section" data-lang="en">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-chip">Patient Education</div>
+      <h2 class="section-title">Latest Health Articles</h2>
+      <p class="section-sub">Plain-language health information in English and Nepali — written by Dr. Bidhan Koirala.</p>
+      <div class="lang-toggle" id="blogLangToggle" data-active="en">
+        <button class="lang-btn active" data-lang-btn="en">English</button>
+        <button class="lang-btn" data-lang-btn="np">नेपाली</button>
+      </div>
+    </div>
+
+    <div class="blog-grid">
+
+      <!-- ORAL CANCER — EN -->
+      <a href="blog/oral-cancer-early-signs.html" class="blog-card reveal" data-lang="en" style="transition-delay:.1s">
+        <div class="blog-card-img">
+          🦷
+          <!-- Once you have a photo, swap the emoji line above for:
+          <img src="blog/images/oral-cancer.jpg" alt="Oral cancer awareness"> -->
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-tag-row">
+            <span class="blog-tag">Oral Cancer</span>
+            <span class="blog-date">July 2026 · English</span>
+          </div>
+          <h3>Early Signs of Oral Cancer You Should Never Ignore</h3>
+          <p>A persistent ulcer, white patch, or unexplained bleeding — here's what to watch for.</p>
+          <div class="blog-read">Read article <i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+      </a>
+
+      <!-- ORAL CANCER — NP -->
+      <a href="blog/oral-cancer-early-signs-np.html" class="blog-card reveal" data-lang="np" style="transition-delay:.1s">
+        <div class="blog-card-img">
+          🦷
+          <!-- <img src="blog/images/oral-cancer.jpg" alt="Oral cancer"> -->
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-tag-row">
+            <span class="blog-tag">Oral Cancer</span>
+            <span class="blog-date">July 2026 · नेपाली</span>
+          </div>
+          <h3>मुखको क्यान्सरका शुरुआती लक्षणहरू जसलाई बेवास्ता गर्नु हुँदैन</h3>
+          <p>मुखमा नसुक्ने घाउ, सेतो वा रातो दाग — यी संकेतहरूलाई सामान्य ठान्नु खतरनाक हुन सक्छ।</p>
+          <div class="blog-read">लेख पढ्नुस् <i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+      </a>
+
+      <!-- THYROID — EN -->
+      <a href="blog/thyroid-cancer-signs.html" class="blog-card reveal" data-lang="en" style="transition-delay:.2s">
+        <div class="blog-card-img">
+          🦋
+          <!-- <img src="blog/images/thyroid-cancer.jpg" alt="Thyroid cancer awareness"> -->
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-tag-row">
+            <span class="blog-tag">Thyroid</span>
+            <span class="blog-date">July 2026 · English</span>
+          </div>
+          <h3>Thyroid Nodule or Thyroid Cancer? What a Neck Lump Can Mean</h3>
+          <p>Most thyroid lumps are harmless — but a few warning signs mean it's time to get checked.</p>
+          <div class="blog-read">Read article <i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+      </a>
+
+      <!-- THYROID — NP -->
+      <a href="blog/thyroid-cancer-signs-np.html" class="blog-card reveal" data-lang="np" style="transition-delay:.2s">
+        <div class="blog-card-img">
+          🦋
+          <!-- <img src="blog/images/thyroid-cancer.jpg" alt="Thyroid cancer"> -->
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-tag-row">
+            <span class="blog-tag">Thyroid</span>
+            <span class="blog-date">July 2026 · नेपाली</span>
+          </div>
+          <h3>घाँटीमा गिर्खा : थाइरोइड नोड्युल कि क्यान्सर?</h3>
+          <p>धेरैजसो घाँटीका गिर्खाहरू हानिरहित हुन्छन् — तर केही लक्षणले जाँच गर्नु आवश्यक देखाउँछ।</p>
+          <div class="blog-read">लेख पढ्नुस् <i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+      </a>
+
+      <!-- HEAD & NECK — EN -->
+      <a href="blog/head-neck-cancer-awareness.html" class="blog-card reveal" data-lang="en" style="transition-delay:.3s">
+        <div class="blog-card-img">
+          🧠
+          <!-- <img src="blog/images/head-neck-cancer.jpg" alt="Head and neck cancer awareness"> -->
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-tag-row">
+            <span class="blog-tag">Head &amp; Neck</span>
+            <span class="blog-date">July 2026 · English</span>
+          </div>
+          <h3>Persistent Hoarseness or Neck Swelling? Don't Wait to Get Checked</h3>
+          <p>Understanding the early warning signs of head and neck cancers and when to see a specialist.</p>
+          <div class="blog-read">Read article <i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+      </a>
+
+      <!-- HEAD & NECK — NP -->
+      <a href="blog/head-neck-cancer-awareness-np.html" class="blog-card reveal" data-lang="np" style="transition-delay:.3s">
+        <div class="blog-card-img">
+          🧠
+          <!-- <img src="blog/images/head-neck-cancer.jpg" alt="Head and neck cancer"> -->
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-tag-row">
+            <span class="blog-tag">Head &amp; Neck</span>
+            <span class="blog-date">July 2026 · नेपाली</span>
+          </div>
+          <h3>लगातार स्वर बस्नु वा घाँटी सुन्निनु? बेवास्ता नगर्नुहोस्</h3>
+          <p>टाउको र घाँटीको क्यान्सरका शुरुआती लक्षणहरू र कहिले विशेषज्ञलाई भेट्ने भन्ने बारे जानकारी।</p>
+          <div class="blog-read">लेख पढ्नुस् <i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+      </a>
+
+      <!-- GENERAL ENT — COMING SOON (shown in both languages; update href + remove blog-soon class once the article is ready) -->
+      <div class="blog-card blog-soon reveal" style="transition-delay:.4s">
+        <span class="blog-soon-badge">Coming Soon</span>
+        <div class="blog-card-img">👂</div>
+        <div class="blog-card-body">
+          <div class="blog-tag-row">
+            <span class="blog-tag">General ENT</span>
+          </div>
+          <h3>General ENT Articles — Coming Soon</h3>
+          <p>Everyday ear, nose &amp; throat health guides will be added here shortly.</p>
+        </div>
+      </div>
+
+      <!-- ADD MORE CARDS HERE by copying a card block above — remember the data-lang attribute -->
+
+    </div>
+
+    <div class="blog-view-all reveal">
+      <a href="blog.html" class="blog-cta-btn">
+        View All Articles <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════ PROFILE ═══════════ -->
 <section class="profile-section">
   <div class="container">
@@ -654,53 +892,99 @@
 </section>
 
 <!-- ═══════════ FAQ ═══════════ -->
-<section class="faq-section">
+<section class="faq-section" data-lang="en">
   <div class="container">
     <div class="section-header reveal">
       <div class="section-chip">FAQ</div>
       <h2 class="section-title">Common Questions</h2>
       <p class="section-sub">Answers to what patients most frequently ask before their first consultation.</p>
+      <div class="lang-toggle" id="faqLangToggle" data-active="en">
+        <button class="lang-btn active" data-lang-btn="en">English</button>
+        <button class="lang-btn" data-lang-btn="np">नेपाली</button>
+      </div>
     </div>
     <div class="faq-grid">
 
-      <div class="faq-item reveal" style="transition-delay:.05s">
+      <div class="faq-item reveal" data-lang="en" style="transition-delay:.05s">
         <div class="faq-q"><span>What cancers does Dr. Koirala treat?</span><i class="fa-solid fa-plus"></i></div>
         <div class="faq-a"><div class="faq-a-inner">Dr. Koirala specialises in oral cavity cancer, oropharyngeal cancer, thyroid and parathyroid cancers, laryngeal cancer, salivary gland tumours, nasal and sinus cancers, skull base tumours, and cervical lymph node metastases.</div></div>
       </div>
 
-      <div class="faq-item reveal" style="transition-delay:.1s">
+      <div class="faq-item reveal" data-lang="en" style="transition-delay:.1s">
         <div class="faq-q"><span>Do I need a referral to book a consultation?</span><i class="fa-solid fa-plus"></i></div>
         <div class="faq-a"><div class="faq-a-inner">No referral is required. You can directly book a consultation via phone, WhatsApp, or the appointment form on this website. Bringing any prior medical reports, imaging, or biopsy results to your first visit is helpful but not mandatory.</div></div>
       </div>
 
-      <div class="faq-item reveal" style="transition-delay:.15s">
+      <div class="faq-item reveal" data-lang="en" style="transition-delay:.15s">
         <div class="faq-q"><span>Will surgery affect my voice or swallowing?</span><i class="fa-solid fa-plus"></i></div>
         <div class="faq-a"><div class="faq-a-inner">Dr. Koirala uses nerve-sparing and function-preserving techniques specifically designed to protect voice, swallowing, and facial movement. The goal is always to remove the cancer while maintaining the best possible quality of life. Outcomes vary by case and will be discussed in detail before any procedure.</div></div>
       </div>
 
-      <div class="faq-item reveal" style="transition-delay:.2s">
+      <div class="faq-item reveal" data-lang="en" style="transition-delay:.2s">
         <div class="faq-q"><span>How long is recovery after head and neck surgery?</span><i class="fa-solid fa-plus"></i></div>
         <div class="faq-a"><div class="faq-a-inner">Recovery depends on the extent of surgery. Minor procedures may require 1–3 days hospitalisation, while complex reconstructive operations can require 7–14 days. A structured follow-up and rehabilitation plan is provided to every patient post-surgery.</div></div>
       </div>
 
-      <div class="faq-item reveal" style="transition-delay:.25s">
+      <div class="faq-item reveal" data-lang="en" style="transition-delay:.25s">
         <div class="faq-q"><span>Is thyroid surgery safe? Will I need lifelong medication?</span><i class="fa-solid fa-plus"></i></div>
         <div class="faq-a"><div class="faq-a-inner">Thyroid surgery at CMC is performed using nerve monitoring to protect the recurrent laryngeal nerve. If the entire thyroid is removed (total thyroidectomy), daily thyroid hormone replacement (thyroxine) is required. For partial removal, medication may not be necessary.</div></div>
       </div>
 
-      <div class="faq-item reveal" style="transition-delay:.3s">
+      <div class="faq-item reveal" data-lang="en" style="transition-delay:.3s">
         <div class="faq-q"><span>Can I get a second opinion before deciding on surgery?</span><i class="fa-solid fa-plus"></i></div>
         <div class="faq-a"><div class="faq-a-inner">Absolutely. Dr. Koirala encourages patients to seek second opinions and take the time they need to feel confident in their treatment decision. All cases are also reviewed by the multidisciplinary tumour board at CMC Cancer Institute.</div></div>
       </div>
 
-      <div class="faq-item reveal" style="transition-delay:.35s">
+      <div class="faq-item reveal" data-lang="en" style="transition-delay:.35s">
         <div class="faq-q"><span>What should I bring to my first appointment?</span><i class="fa-solid fa-plus"></i></div>
         <div class="faq-a"><div class="faq-a-inner">Please bring any prior CT/MRI/PET scans (on CD or printed), biopsy reports, blood test results, a list of current medications, and a valid ID. If you have seen other doctors for the same problem, bring those referral letters or reports as well.</div></div>
       </div>
 
-      <div class="faq-item reveal" style="transition-delay:.4s">
+      <div class="faq-item reveal" data-lang="en" style="transition-delay:.4s">
         <div class="faq-q"><span>Does CMC Cancer Institute have insurance coverage?</span><i class="fa-solid fa-plus"></i></div>
         <div class="faq-a"><div class="faq-a-inner">CMC Cancer Institute accepts various health insurance schemes including government health insurance (Rastriya Swasthya Bima Karyakram) and many private insurers. Please contact the hospital billing department or WhatsApp us to confirm coverage for your specific plan.</div></div>
+      </div>
+
+      <!-- ══ NEPALI FAQ (hidden until नेपाली is selected) ══ -->
+
+      <div class="faq-item reveal" data-lang="np" style="transition-delay:.05s">
+        <div class="faq-q"><span>डा. कोइरालाले कुन-कुन क्यान्सरको उपचार गर्नुहुन्छ?</span><i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a"><div class="faq-a-inner">डा. कोइराला मुख गुहा क्यान्सर, ओरोफ्यारिन्जियल क्यान्सर, थाइरोइड र प्यारा‍थाइरोइड क्यान्सर, स्वरयन्त्र (larynx) क्यान्सर, लार ग्रन्थि ट्युमर, नाक तथा साइनस क्यान्सर, स्कल बेस ट्युमर, र घाँटीका लिम्फ नोड मेटास्टेसिसमा विशेषज्ञता राख्नुहुन्छ।</div></div>
+      </div>
+
+      <div class="faq-item reveal" data-lang="np" style="transition-delay:.1s">
+        <div class="faq-q"><span>के परामर्शका लागि रेफरल आवश्यक छ?</span><i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a"><div class="faq-a-inner">कुनै रेफरलको आवश्यकता छैन। तपाईं फोन, ह्वाट्सएप, वा यस वेबसाइटको एपोइन्टमेन्ट फारामबाट सिधै परामर्श बुक गर्न सक्नुहुन्छ। पहिलो भेटमा पुराना मेडिकल रिपोर्ट, इमेजिङ, वा बायोप्सी नतिजा ल्याउनु उपयोगी हुन्छ, तर अनिवार्य छैन।</div></div>
+      </div>
+
+      <div class="faq-item reveal" data-lang="np" style="transition-delay:.15s">
+        <div class="faq-q"><span>के शल्यक्रियाले मेरो आवाज वा निल्ने क्षमतामा असर गर्छ?</span><i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a"><div class="faq-a-inner">डा. कोइरालाले नस-सुरक्षा (nerve-sparing) र कार्य-संरक्षण गर्ने प्रविधिहरू प्रयोग गर्नुहुन्छ, जुन विशेष गरी आवाज, निल्ने क्षमता, र अनुहारको चाल जोगाउनका लागि डिजाइन गरिएको हो। उद्देश्य सधैं क्यान्सर हटाउँदै उत्तम जीवनस्तर कायम राख्नु हो। नतिजा प्रत्येक केसमा फरक हुन सक्छ र शल्यक्रिया अघि विस्तृत छलफल गरिन्छ।</div></div>
+      </div>
+
+      <div class="faq-item reveal" data-lang="np" style="transition-delay:.2s">
+        <div class="faq-q"><span>टाउको र घाँटीको शल्यक्रिया पछि निको हुन कति समय लाग्छ?</span><i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a"><div class="faq-a-inner">निको हुने समय शल्यक्रियाको प्रकारमा भर पर्छ। सामान्य प्रक्रियाका लागि १–३ दिन अस्पताल बस्नुपर्न सक्छ, जबकि जटिल पुनर्निर्माण शल्यक्रियाका लागि ७–१४ दिन लाग्न सक्छ। प्रत्येक बिरामीलाई शल्यक्रिया पछि संरचित फलोअप र पुनर्वास योजना दिइन्छ।</div></div>
+      </div>
+
+      <div class="faq-item reveal" data-lang="np" style="transition-delay:.25s">
+        <div class="faq-q"><span>के थाइरोइड शल्यक्रिया सुरक्षित छ? के आजीवन औषधि खानुपर्छ?</span><i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a"><div class="faq-a-inner">CMC मा थाइरोइड शल्यक्रिया नर्भ मोनिटरिङ प्रयोग गरी recurrent laryngeal nerve सुरक्षित राख्दै गरिन्छ। यदि सम्पूर्ण थाइरोइड हटाइयो भने (total thyroidectomy), दैनिक थाइरोइड हर्मोन (thyroxine) लिनुपर्छ। आंशिक हटाइएको खण्डमा औषधि आवश्यक नपर्न सक्छ।</div></div>
+      </div>
+
+      <div class="faq-item reveal" data-lang="np" style="transition-delay:.3s">
+        <div class="faq-q"><span>के शल्यक्रियाको निर्णय गर्नु अघि दोस्रो राय लिन सकिन्छ?</span><i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a"><div class="faq-a-inner">पक्कै हो। डा. कोइरालाले बिरामीहरूलाई दोस्रो राय लिन र उपचार निर्णयमा ढुक्क हुन आवश्यक समय लिन प्रोत्साहन दिनुहुन्छ। सबै केसहरू CMC क्यान्सर इन्स्टिच्युटको बहु-विषयक ट्युमर बोर्डद्वारा पनि समीक्षा गरिन्छ।</div></div>
+      </div>
+
+      <div class="faq-item reveal" data-lang="np" style="transition-delay:.35s">
+        <div class="faq-q"><span>पहिलो भेटमा के-के ल्याउनुपर्छ?</span><i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a"><div class="faq-a-inner">कृपया कुनै पनि पुराना CT/MRI/PET स्क्यान (CD वा प्रिन्ट गरिएको), बायोप्सी रिपोर्ट, रगत जाँच नतिजा, हाल खाइरहेको औषधिको सूची, र मान्य परिचयपत्र ल्याउनुहोस्। यदि यही समस्याका लागि अन्य डाक्टरलाई भेट्नुभएको छ भने ती रेफरल पत्र वा रिपोर्टहरू पनि ल्याउनुहोस्।</div></div>
+      </div>
+
+      <div class="faq-item reveal" data-lang="np" style="transition-delay:.4s">
+        <div class="faq-q"><span>के CMC क्यान्सर इन्स्टिच्युटमा बीमा सुविधा छ?</span><i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a"><div class="faq-a-inner">CMC क्यान्सर इन्स्टिच्युटले राष्ट्रिय स्वास्थ्य बीमा कार्यक्रम लगायत विभिन्न सरकारी तथा धेरै निजी बीमा योजनाहरू स्वीकार गर्दछ। कृपया आफ्नो योजनाको कभरेज सुनिश्चित गर्न अस्पतालको बिलिङ विभागमा सम्पर्क गर्नुहोस् वा हामीलाई ह्वाट्सएपमा सम्पर्क गर्नुहोस्।</div></div>
       </div>
 
     </div>
@@ -713,7 +997,7 @@
     <div class="section-header reveal">
       <div class="section-chip">Location</div>
       <h2 class="section-title">Visit Our Clinic</h2>
-      <p class="section-sub">CMC Cancer Institute, Bharatpur — accessible care at the heart of Nepal's medical excellence.</p>
+      <p class="section-sub">CMC Cancer Institute, Cancer Building, 2nd Floor, Room 104 — Bharatpur, Nepal.</p>
     </div>
     <div class="map-card reveal">
       <iframe
@@ -722,6 +1006,13 @@
         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
         title="CMC Cancer Institute Bharatpur location">
       </iframe>
+    </div>
+    <div class="location-note reveal">
+      <i class="fa-solid fa-circle-info"></i>
+      <div>
+        <strong>CMC Cancer Institute · Cancer Building · 2nd Floor · Room 104</strong>
+        <span>Appointments for Dr. Bidhan Koirala must be booked directly at the 2nd Floor Reception, Cancer Building.</span>
+      </div>
     </div>
     <div style="text-align:center;margin-top:28px" class="reveal">
       <a href="https://www.google.com/maps/dir/?api=1&destination=27.68514382647061,84.42835667533848"
@@ -738,82 +1029,7 @@
     <span class="footer-nmc"><i class="fa-solid fa-id-card"></i> NMC Registration No. 16430</span>
     <p>© 2026 Dr. Bidhan Koirala · Head &amp; Neck Oncosurgeon, Bharatpur, Nepal</p>
     <p class="sub">ENT &amp; Head and Neck Cancer Surgery · CMC Cancer Institute · drbidhankoirala@gmail.com · +977-9828769908</p>
-  </div><!-- ============================================================
-     BLOG SECTION — paste this into your index.html
-     Place it just before your <footer> tag
-     ============================================================ -->
-
-<section id="blog" style="background:#f8f9fb; padding: 60px 20px;">
-  <div style="max-width:1000px; margin:0 auto;">
-
-    <!-- Section header -->
-    <div style="text-align:center; margin-bottom:36px;">
-      <p style="color:#c9a84c; font-size:0.78rem; font-weight:600; letter-spacing:2px; text-transform:uppercase; margin-bottom:8px;">Patient Education</p>
-      <h2 style="font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#16324F; margin-bottom:10px;">Latest Health Articles</h2>
-      <p style="color:#5a6a7a; font-size:0.95rem; max-width:480px; margin:0 auto; line-height:1.6;">Plain-language health information in English and Nepali — written by Dr. Bidhan Koirala.</p>
-    </div>
-
-    <!-- Blog cards grid -->
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; margin-bottom:32px;">
-
-      <!-- CARD 1 — Duplicate this card to add more posts -->
-      <a href="blog/oral-cancer-early-signs.html"
-         style="background:#fff; border:1px solid #e2e8f0; border-radius:12px; overflow:hidden; text-decoration:none; color:inherit; display:block; transition:box-shadow 0.2s, transform 0.2s;"
-         onmouseover="this.style.boxShadow='0 8px 32px rgba(22,50,79,0.10)'; this.style.transform='translateY(-2px)'"
-         onmouseout="this.style.boxShadow='none'; this.style.transform='translateY(0)'">
-        <!-- IMAGE — replace src after uploading image to blog/images/ in GitHub -->
-        <div style="height:180px; background:#eef3f8; overflow:hidden; display:flex; align-items:center; justify-content:center; font-size:3rem;">
-          🦷
-          <!-- When you have an image, replace the emoji line above with:
-          <img src="blog/images/oral-cancer.jpg" alt="Oral cancer awareness" style="width:100%;height:100%;object-fit:cover;"> -->
-        </div>
-        <div style="padding:20px;">
-          <div style="margin-bottom:10px;">
-            <span style="background:#eef3f8; color:#16324F; font-size:0.7rem; font-weight:600; letter-spacing:0.5px; padding:3px 10px; border-radius:20px; text-transform:uppercase;">Oral Cancer</span>
-            <span style="color:#5a6a7a; font-size:0.78rem; margin-left:8px;">July 2026 · English</span>
-          </div>
-          <h3 style="font-size:1rem; font-weight:700; color:#16324F; line-height:1.35; margin-bottom:8px;">Early Signs of Oral Cancer You Should Never Ignore</h3>
-          <p style="font-size:0.88rem; color:#5a6a7a; line-height:1.6;">A persistent ulcer, white patch, or unexplained bleeding — here's what to watch for.</p>
-          <p style="margin-top:12px; font-size:0.83rem; font-weight:600; color:#16324F; border-bottom:1.5px solid #c9a84c; display:inline-block; padding-bottom:1px;">Read article →</p>
-        </div>
-      </a>
-
-      <!-- CARD 2 — Nepali version -->
-      <a href="blog/oral-cancer-early-signs-np.html"
-         style="background:#fff; border:1px solid #e2e8f0; border-radius:12px; overflow:hidden; text-decoration:none; color:inherit; display:block; transition:box-shadow 0.2s, transform 0.2s;"
-         onmouseover="this.style.boxShadow='0 8px 32px rgba(22,50,79,0.10)'; this.style.transform='translateY(-2px)'"
-         onmouseout="this.style.boxShadow='none'; this.style.transform='translateY(0)'">
-        <div style="height:180px; background:#eef3f8; overflow:hidden; display:flex; align-items:center; justify-content:center; font-size:3rem;">
-          🦷
-          <!-- <img src="blog/images/oral-cancer.jpg" alt="Oral cancer" style="width:100%;height:100%;object-fit:cover;"> -->
-        </div>
-        <div style="padding:20px;">
-          <div style="margin-bottom:10px;">
-            <span style="background:#eef3f8; color:#16324F; font-size:0.7rem; font-weight:600; letter-spacing:0.5px; padding:3px 10px; border-radius:20px; text-transform:uppercase;">Oral Cancer</span>
-            <span style="color:#5a6a7a; font-size:0.78rem; margin-left:8px;">July 2026 · नेपाली</span>
-          </div>
-          <h3 style="font-size:1rem; font-weight:700; color:#16324F; line-height:1.35; margin-bottom:8px;">मुखको क्यान्सरका शुरुआती लक्षणहरू जसलाई बेवास्ता गर्नु हुँदैन</h3>
-          <p style="font-size:0.88rem; color:#5a6a7a; line-height:1.6;">मुखमा नसुक्ने घाउ, सेतो वा रातो दाग — यी संकेतहरूलाई सामान्य ठान्नु खतरनाक हुन सक्छ।</p>
-          <p style="margin-top:12px; font-size:0.83rem; font-weight:600; color:#16324F; border-bottom:1.5px solid #c9a84c; display:inline-block; padding-bottom:1px;">लेख पढ्नुस् →</p>
-        </div>
-      </a>
-
-      <!-- ADD MORE CARDS HERE by copying a card block above -->
-
-    </div>
-
-    <!-- View all button -->
-    <div style="text-align:center;">
-      <a href="blog.html"
-         style="display:inline-block; background:#16324F; color:#fff; font-weight:600; padding:13px 32px; border-radius:8px; text-decoration:none; font-size:0.95rem;">
-        View All Articles →
-      </a>
-    </div>
-
   </div>
-</section>
-
-<!-- ============================================================ END BLOG SECTION -->
 </footer>
 
 <!-- WhatsApp float -->
@@ -921,6 +1137,23 @@ new IntersectionObserver(entries => {
       el.textContent = v.toLocaleString() + '*';
     });
 })();
+
+/* ── LANGUAGE TOGGLE (Blog + FAQ) ── */
+function setupLangToggle(toggleId, sectionSelector) {
+  const toggle = document.getElementById(toggleId);
+  const section = document.querySelector(sectionSelector);
+  if (!toggle || !section) return;
+  toggle.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.langBtn;
+      section.setAttribute('data-lang', lang);
+      toggle.setAttribute('data-active', lang);
+      toggle.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b === btn));
+    });
+  });
+}
+setupLangToggle('blogLangToggle', '#blog');
+setupLangToggle('faqLangToggle', '.faq-section');
 
 /* ── FAQ ACCORDION ── */
 document.querySelectorAll('.faq-item').forEach(item => {
