@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ne" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>लगातार स्वर बस्नु वा घाँटी सुन्निनु? बेवास्ता नगर्नुहोस् | डा. बिधान कोइराला</title>
+<meta name="description" content="टाउको र घाँटीको क्यान्सरका शुरुआती लक्षणहरू — स्वर बस्नु, घाँटीमा गिर्खा, नसुक्ने मुखको घाउ — र कहिले विशेषज्ञलाई भेट्ने भन्ने बारे जानकारी। डा. बिधान कोइराला, टाउको तथा घाँटी अनकोसर्जन, CMC क्यान्सर इन्स्टिच्युट।">
+<link rel="canonical" href="https://www.drbidhankoirala.com.np/blog/head-neck-cancer-awareness-np.html">
+
+<meta property="og:title" content="लगातार स्वर बस्नु वा घाँटी सुन्निनु? बेवास्ता नगर्नुहोस्">
+<meta property="og:description" content="टाउको र घाँटीको क्यान्सरका शुरुआती लक्षणहरू र कहिले विशेषज्ञलाई भेट्ने भन्ने बारे जानकारी।">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.drbidhankoirala.com.np/blog/head-neck-cancer-awareness-np.html">
+<!-- <meta property="og:image" content="https://www.drbidhankoirala.com.np/blog/images/headneck-hero.jpg"> -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+  :root {
+    --p:        #0369a1;
+    --p-dark:   #075985;
+    --p-light:  #38bdf8;
+    --p-50:     #f0f9ff;
+    --p-100:    #e0f2fe;
+    --p-200:    #bae6fd;
+    --bg:       #ffffff;
+    --bg-card:  #ffffff;
+    --bg-alt:   #f8fafc;
+    --border:   #e2e8f0;
+    --text:     #0f172a;
+    --text-2:   #475569;
+    --text-3:   #94a3b8;
+    --p-glow:   rgba(3,105,161,.14);
+    --dur: .3s;
+  }
+  [data-theme="dark"] {
+    --bg:       #0b1220;
+    --bg-card:  #111827;
+    --bg-alt:   #0f172a;
+    --border:   #1e3a4f;
+    --text:     #e2e8f0;
+    --text-2:   #94a3b8;
+    --text-3:   #475569;
+    --p-light:  #4a90b8;
+    --p-50:     #0c1f2e;
+    --p-100:    #102840;
+    --p-200:    #1a3f5e;
+    --p-glow:   rgba(74,144,184,.10);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family:'DM Sans',system-ui,sans-serif; font-weight:300;
+    background:var(--bg); color:var(--text);
+    transition:background var(--dur), color var(--dur);
+    line-height:1.8;
+  }
+  .container { max-width:760px; margin:0 auto; padding:0 24px; }
+
+  header {
+    position:sticky; top:0; z-index:50; background:var(--bg);
+    border-bottom:1px solid var(--border);
+    transition:background var(--dur), border-color var(--dur);
+  }
+  .nav-inner { display:flex; align-items:center; justify-content:space-between; padding:16px 24px; max-width:900px; margin:0 auto; }
+  .back-link { display:inline-flex; align-items:center; gap:8px; color:var(--text-2); text-decoration:none; font-size:14px; font-weight:500; }
+  .back-link:hover { color:var(--p); }
+  .theme-btn {
+    width:38px; height:38px; border-radius:50%; border:1px solid var(--border); background:var(--bg-card);
+    color:var(--text-2); display:flex; align-items:center; justify-content:center; cursor:pointer;
+    transition:all var(--dur);
+  }
+  .theme-btn:hover { background:var(--p-100); border-color:var(--p-200); }
+
+  article { padding:48px 0 80px; }
+
+  .article-tag { display:inline-block; background:var(--p-50); color:var(--p); font-size:12px; font-weight:600;
+    letter-spacing:.05em; text-transform:uppercase; padding:5px 14px; border-radius:99px; border:1px solid var(--p-200); margin-bottom:18px; }
+  h1 { font-family:'DM Serif Display',serif; font-size:clamp(1.5rem,4vw,2.1rem); line-height:1.4; margin-bottom:16px; }
+  .article-meta { display:flex; gap:16px; flex-wrap:wrap; color:var(--text-3); font-size:13.5px; margin-bottom:32px; }
+  .article-meta span { display:inline-flex; align-items:center; gap:6px; }
+
+  .img-placeholder {
+    width:100%; aspect-ratio:16/9; background:var(--p-50); border:2px dashed var(--p-200); border-radius:16px;
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px;
+    color:var(--text-3); text-align:center; padding:24px; margin:28px 0;
+  }
+  .img-placeholder i { font-size:26px; color:var(--p-light); }
+  .img-placeholder span { font-size:12.5px; line-height:1.6; max-width:400px; }
+  .img-placeholder code { background:var(--bg-card); border:1px solid var(--border); padding:1px 5px; border-radius:4px; font-size:11.5px; }
+
+  h2 { font-family:'DM Serif Display',serif; font-size:1.3rem; margin:38px 0 14px; color:var(--text); }
+  p { color:var(--text-2); font-size:15.5px; margin-bottom:16px; }
+  ul { margin:0 0 20px 20px; color:var(--text-2); font-size:15.5px; }
+  li { margin-bottom:10px; }
+  strong { color:var(--text); font-weight:600; }
+
+  .callout {
+    background:var(--p-50); border:1px solid var(--p-200); border-radius:16px; padding:20px 22px; margin:28px 0;
+    display:flex; gap:14px; align-items:flex-start;
+  }
+  .callout i { color:var(--p); font-size:18px; margin-top:2px; }
+  .callout p { margin:0; font-size:14.5px; color:var(--text-2); }
+  .callout strong { display:block; margin-bottom:4px; }
+
+  .cta-box {
+    background:linear-gradient(135deg,var(--p),var(--p-dark)); border-radius:20px; padding:32px 28px; margin:44px 0 8px;
+    text-align:center; color:#fff;
+  }
+  .cta-box h3 { font-family:'DM Serif Display',serif; font-size:1.2rem; margin-bottom:10px; }
+  .cta-box p { color:rgba(255,255,255,.85); margin-bottom:22px; font-size:14.5px; }
+  .cta-btn { display:inline-flex; align-items:center; gap:8px; background:#fff; color:var(--p); font-weight:600;
+    padding:12px 28px; border-radius:99px; text-decoration:none; font-size:14.5px; }
+
+  .disclaimer { font-size:12.5px; color:var(--text-3); margin-top:36px; padding-top:20px; border-top:1px solid var(--border); line-height:1.7; }
+
+  footer { border-top:1px solid var(--border); padding:28px 0; text-align:center; }
+  footer p { color:var(--text-3); font-size:13px; }
+  footer a { color:var(--p); text-decoration:none; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a href="../index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> होमपेजमा फर्कनुहोस्</a>
+    <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode"><i class="fa-solid fa-moon" id="themeIcon"></i></button>
+  </div>
+</header>
+
+<article>
+  <div class="container">
+
+    <span class="article-tag">टाउको तथा घाँटी</span>
+    <h1>लगातार स्वर बस्नु वा घाँटी सुन्निनु? बेवास्ता नगर्नुहोस्</h1>
+    <div class="article-meta">
+      <span><i class="fa-regular fa-calendar"></i> जुलाई २०२६</span>
+      <span><i class="fa-regular fa-clock"></i> ६ मिनेट पढाइ</span>
+      <span><i class="fa-solid fa-user-doctor"></i> डा. बिधान कोइराला</span>
+    </div>
+
+    <!-- HERO IMAGE — replace this placeholder div with:
+    <img src="images/headneck-hero.jpg" alt="टाउको र घाँटी जाँच" style="width:100%;border-radius:16px;margin-bottom:8px;"> -->
+    <div class="img-placeholder">
+      <i class="fa-solid fa-image"></i>
+      <span>यहाँ हिरो इमेज अपलोड गर्नुहोस् (सिफारिस १२००×६७५px)<br>यो div लाई यसरी बदल्नुहोस्:<br><code>&lt;img src="images/headneck-hero.jpg" alt="..."&gt;</code></span>
+    </div>
+
+    <p>रुघाखोकी लागेपछि आवाज बस्नु, वा आउने-जाने सानो सुन्निने समस्या — धेरैजसो अवस्थामा यी गम्भीर हुँदैनन्। तर स्वर हप्तौंसम्म बस्यो भने, वा घाँटीमा गिर्खा नगई रहन्छ भने, यसलाई गम्भीरतापूर्वक लिनु आवश्यक हुन्छ। टाउको र घाँटीको क्यान्सर सुरुमै पत्ता लागेमा राम्ररी उपचार गर्न सकिन्छ, तर धेरैजसो केसमा यसलाई सुरुमा सामान्य कुरा — लगातार खोकी, नसुक्ने मुखको घाउ, "साधारण" सुन्निएको ग्रन्थि — ठानी बेवास्ता गरिन्छ, जुन कारणले धेरैजसो केस ढिलो पत्ता लाग्छन्।</p>
+
+    <h2>"पर्ख र हेर्" गर्नु किन जोखिमपूर्ण हुनसक्छ</h2>
+    <p>टाउको र घाँटीको क्यान्सरमा स्वरयन्त्र (larynx), घाँटी (pharynx), मुख, लार ग्रन्थि, साइनस, र घाँटीका लिम्फ नोडका क्यान्सरहरू पर्छन्। अन्य धेरै क्यान्सरहरूभन्दा फरक, यसका धेरै शुरुआती लक्षणहरू — स्वर बस्नु, घाँटी दुख्नु, घाँटीमा गिर्खा — धेरै सामान्य र हानिरहित समस्याका पनि लक्षण हुन्। यही समानताले गर्दा मानिसहरूले डाक्टरलाई भेट्न ढिलो गर्छन्। महत्त्वपूर्ण भिन्नता <strong>समयावधि</strong> हो: भाइरल घाँटी दुखाइ एक-दुई हप्तामा निको हुन्छ; क्यान्सर सम्बन्धी लक्षण भने लामो समयसम्म रहन्छ र प्रायः विस्तारै बिग्रिन्छ।</p>
+
+    <!-- IN-CONTENT IMAGE — replace this placeholder div with:
+    <img src="images/headneck-anatomy.jpg" alt="टाउको र घाँटीको एनाटोमी चित्र" style="width:100%;border-radius:16px;margin:24px 0;"> -->
+    <div class="img-placeholder">
+      <i class="fa-solid fa-image"></i>
+      <span>यहाँ टाउको र घाँटीको एनाटोमी/चित्र सम्बन्धी इमेज अपलोड गर्नुहोस्<br>यो div लाई यसरी बदल्नुहोस्:<br><code>&lt;img src="images/headneck-anatomy.jpg" alt="..."&gt;</code></span>
+    </div>
+
+    <h2>बेवास्ता नगर्नुपर्ने चेतावनीका संकेतहरू</h2>
+    <p>तलका लक्षणमध्ये कुनै पनि <strong>२–३ हप्ता</strong>भन्दा बढी रहेमा विशेषज्ञलाई भेट्नुहोस्:</p>
+    <ul>
+      <li><strong>स्वर बस्नु वा आवाजमा परिवर्तन</strong> जुन सुधार नहुने</li>
+      <li><strong>घाँटीमा गिर्खा वा सुन्निनु</strong>, दुखे वा नदुखे पनि</li>
+      <li><strong>मुखको घाउ वा सेतो/रातो दाग</strong> जुन नसुक्ने</li>
+      <li><strong>निल्दा कठिनाइ वा दुख्नु</strong></li>
+      <li><strong>एकतर्फी लगातार घाँटी दुखाइ वा कान दुखाइ</strong>, स्पष्ट कारण नभई</li>
+      <li><strong>मुख वा नाकबाट अस्पष्ट रगत बग्नु</strong></li>
+      <li>अनुहार वा जिब्रोमा <strong>सुनसान वा कमजोरी</strong></li>
+      <li>माथिका कुनै लक्षणसँगै <strong>अस्पष्ट तौल घट्नु</strong></li>
+    </ul>
+
+    <div class="callout">
+      <i class="fa-solid fa-circle-info"></i>
+      <p><strong>यी धेरैजसो लक्षण क्यान्सर होइनन्।</strong> स्वर बस्नुको धेरैजसो कारण एसिड रिफ्लक्स, भाइरल संक्रमण, वा बढी प्रयोगले हुन्छ। मुख्य कुरा त्रसित हुनु होइन — लगातार रहेको लक्षणलाई अड्कल नगरी जाँच गराउनु हो।</p>
+    </div>
+
+    <h2>कोसँग जोखिम बढी छ</h2>
+    <p>केही बानी र सम्पर्कले टाउको र घाँटीको क्यान्सरको जोखिम उल्लेखनीय रूपमा बढाउँछ:</p>
+    <ul>
+      <li>कुनै पनि रूपको <strong>धुम्रपान वा खैनी, गुट्खा, तमाखु सेवन</strong></li>
+      <li><strong>पान र सुपारी चपाउनु</strong>, विशेष गरी तमाखुसँग मिसाएर — नेपाल र यस क्षेत्रमा राम्ररी स्थापित जोखिम कारक</li>
+      <li><strong>अत्यधिक मद्यपान</strong>, विशेष गरी तमाखुसँगै</li>
+      <li><strong>HPV (ह्युमन प्यापिलोमा भाइरस) संक्रमण</strong>, जुन घाँटी र टन्सिलको क्यान्सरसँग बढ्दो रूपमा जोडिएको छ, धुम्रपान नगर्नेहरूमा पनि</li>
+      <li>ओठको क्यान्सरका लागि <strong>लामो समयसम्म घामको सम्पर्क</strong></li>
+      <li>टाउको तथा घाँटीको क्यान्सरको पूर्व इतिहास वा रेडियोथेरापीको सम्पर्क</li>
+    </ul>
+
+    <h2>टाउको र घाँटीको क्यान्सर कसरी पत्ता लगाइन्छ?</h2>
+    <p>निदान सामान्यतया मुख, घाँटी, र गर्धनको राम्रो क्लिनिकल जाँचबाट सुरु हुन्छ, प्रायः सरल र छिटो <strong>नासोएन्डोस्कोपी</strong> सँगै — नाकबाट पठाइने पातलो, लचिलो क्यामेराले घाँटी र स्वरयन्त्र प्रत्यक्ष हेर्न मद्दत गर्छ। शंकास्पद केही भेटिएमा, निदान पुष्टि गर्न <strong>बायोप्सी</strong> लिइन्छ, र रोगको फैलावट मूल्यांकन गरी उपचार योजना बनाउन <strong>CT वा MRI स्क्यान</strong> गरिन्छ।</p>
+
+    <!-- IN-CONTENT IMAGE — replace this placeholder div with:
+    <img src="images/headneck-consultation.jpg" alt="टाउको तथा घाँटी क्यान्सर परामर्श" style="width:100%;border-radius:16px;margin:24px 0;"> -->
+    <div class="img-placeholder">
+      <i class="fa-solid fa-image"></i>
+      <span>यहाँ परामर्श सम्बन्धी इमेज अपलोड गर्नुहोस्<br>यो div लाई यसरी बदल्नुहोस्:<br><code>&lt;img src="images/headneck-consultation.jpg" alt="..."&gt;</code></span>
+    </div>
+
+    <h2>उपचार विधि</h2>
+    <p>उपचार क्यान्सरको प्रकार, स्थान, र चरणमा भर पर्छ, र यसमा शल्यक्रिया, रेडियोथेरापी, किमोथेरापी, वा यिनको संयोजन समावेश हुनसक्छ। CMC क्यान्सर इन्स्टिच्युटमा, प्रत्येक टाउको तथा घाँटी क्यान्सर केस <strong>बहु-विषयक ट्युमर बोर्ड (MDT)</strong> द्वारा समीक्षा गरिन्छ — शल्यचिकित्सक, रेडियोथेरापी अनकोलोजिस्ट, मेडिकल अनकोलोजिस्ट, र अन्य विशेषज्ञहरू मिलेर प्रत्येक बिरामीका लागि सबैभन्दा प्रभावकारी, व्यक्तिगत उपचार योजना तयार गर्नुहुन्छ। जहाँसम्म सम्भव छ, शल्यक्रिया योजनाले क्यान्सर पूर्णतया हटाउँदै आवाज, निल्ने क्षमता, र अनुहारको स्वरूप जोगाउनमा ध्यान दिन्छ।</p>
+
+    <h2>निष्कर्ष</h2>
+    <p>लगातार स्वर बस्नु वा घाँटीमा गिर्खा सामान्य कुरा हो, र धेरैजसो अवस्थामा यो क्यान्सर होइन। तर टाउको र घाँटीको क्यान्सर सुरुमै पत्ता लागेमा धेरै सजिलैसँग निको हुने भएकाले, दुई-तीन हप्ताभन्दा बढी रहने कुनै पनि लक्षणलाई बेवास्ता नगरी ठीकसँग जाँच गराउनु उत्तम हुन्छ।</p>
+
+    <div class="cta-box">
+      <h3>लगातार लक्षण देख्नुभयो?</h3>
+      <p>पूर्ण जाँचका लागि डा. बिधान कोइरालासँग परामर्श बुक गर्नुहोस्।</p>
+      <a href="../appointment.html" class="cta-btn"><i class="fa-brands fa-whatsapp"></i> परामर्श बुक गर्नुहोस्</a>
+    </div>
+
+    <p class="disclaimer">यो लेख सामान्य शैक्षिक उद्देश्यका लागि मात्र हो र यो पेशेवर चिकित्सा सल्लाह, निदान, वा उपचारको विकल्प होइन। कुनै पनि स्वास्थ्य समस्याका बारे प्रश्न भएमा सधैं डा. बिधान कोइराला वा अर्को योग्य स्वास्थ्यकर्मीसँग परामर्श लिनुहोस्।</p>
+
+  </div>
+</article>
+
+<footer>
+  <p>&copy; 2026 डा. बिधान कोइराला · <a href="../index.html">होम</a> · <a href="head-neck-cancer-awareness.html">Read in English</a></p>
+</footer>
+
+<script>
+  const html = document.documentElement;
+  const themeBtn = document.getElementById('themeBtn');
+  const themeIcon = document.getElementById('themeIcon');
+  const saved = localStorage.getItem('bk_theme') ||
+    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  function applyTheme(t) {
+    html.setAttribute('data-theme', t);
+    themeIcon.className = t === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+    localStorage.setItem('bk_theme', t);
+  }
+  applyTheme(saved);
+  themeBtn.addEventListener('click', () => {
+    applyTheme(html.dataset.theme === 'dark' ? 'light' : 'dark');
+  });
+</script>
+
+</body>
+</html>
